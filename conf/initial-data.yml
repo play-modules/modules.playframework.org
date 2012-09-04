@@ -863,22 +863,6 @@ modules:
         licenseType: (unknown)
 
     - !!models.Module
-        id: 65
-        owner: !!models.User
-            id: 6
-        key: antify
-        name: "Antify"
-        summary: "Generate an Ant project file for your application to run it with Ant (for Play 1.1)"
-        description: |
-            Antify module allows you to generate a ant project file for your play application and run it with ant.
-            
-            This module is no longer maintained. The antify support is now built-in since Play 1.2.2. [Unofficial instructions here](http://pragmatastic.blogspot.com/2011/08/using-antify-to-run-your-play.html)
-        contributors: Heikki Uljas
-        projectUrl: https://github.com/huljas/play-antify
-        organisation: (unknown)
-        licenseType: (unknown)
-
-    - !!models.Module
         id: 85
         owner: !!models.User
             id: 6
@@ -1332,22 +1316,6 @@ modules:
         licenseType: (unknown)
 
     - !!models.Module
-        id: 9
-        owner: !!models.User
-            id: 31
-        key: ecss
-        name: "Extended CSS"
-        summary: "Extends CSS to support constants"
-        description: |
-            This module allow you to use constants in the CSS files. It is very helpful when you work with large CSS files, to avoid to repeat yourself with color, fonts... 
-            
-            This module is no longer maintained. You should take a look at the sass module.
-        contributors: Guillaume Bort
-        projectUrl: http://github.com/guillaumebort/play-ecss
-        organisation: (unknown)
-        licenseType: (unknown)
-
-    - !!models.Module
         id: 49
         owner: !!models.User
             id: 32
@@ -1532,22 +1500,6 @@ modules:
             Integrate Gravatar into your Play application
         contributors: Matteo Barbieri
         projectUrl: https://github.com/mbarbieri/play-gravatar
-        organisation: (unknown)
-        licenseType: (unknown)
-
-    - !!models.Module
-        id: 10
-        owner: !!models.User
-            id: 40
-        key: grizzly
-        name: "Grizzly network stack"
-        summary: "Replacement network stack using Grizzly (for Play 1.0)"
-        description: |
-            Experimental module that replace the Mina based network stack by the Grizzly one.
-            
-            This module is no longer maintained. The grizzly support is now built-in since Play 1.1
-        contributors: Guillaume Bort
-        projectUrl: http://github.com/guillaumebort/play-grizzly
         organisation: (unknown)
         licenseType: (unknown)
 
@@ -3566,17 +3518,6 @@ versions:
     - !!models.ModuleVersion
         playModule:
             !!models.Module
-                id: 65
-        compatibility:
-            - !!models.PlayVersion
-                id: 12
-        versionCode: 1.0
-        releaseDate: 2011-04-06
-        releaseNotes: frameworkMatch=1.1
-
-    - !!models.ModuleVersion
-        playModule:
-            !!models.Module
                 id: 85
         compatibility:
             - !!models.PlayVersion
@@ -4787,17 +4728,6 @@ versions:
     - !!models.ModuleVersion
         playModule:
             !!models.Module
-                id: 9
-        compatibility:
-            - !!models.PlayVersion
-                id: 12
-        versionCode: 1.0
-        releaseDate: 2010-01-12
-        releaseNotes: frameworkMatch=1.0
-
-    - !!models.ModuleVersion
-        playModule:
-            !!models.Module
                 id: 49
         compatibility:
             - !!models.PlayVersion
@@ -5201,17 +5131,6 @@ versions:
         versionCode: 1.0.2
         releaseDate: 2011-11-17
         releaseNotes: frameworkMatch=1.2.3
-
-    - !!models.ModuleVersion
-        playModule:
-            !!models.Module
-                id: 10
-        compatibility:
-            - !!models.PlayVersion
-                id: 12
-        versionCode: head
-        releaseDate: 2010-01-12
-        releaseNotes: frameworkMatch=Should work with any version
 
     - !!models.ModuleVersion
         playModule:
