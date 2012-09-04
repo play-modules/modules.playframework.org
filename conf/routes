@@ -3,13 +3,6 @@ GET  /                       controllers.Application.index()
 # Sitemap
 GET  /sitemap.xml           controllers.Application.sitemap()
 
-# Login/logout/register/password reminder
-GET  /users/login            controllers.Application.login()
-POST /users/login            controllers.Application.authenticate()
-GET  /users/logout           controllers.Application.logout()
-GET  /users/register         controllers.Application.register()
-POST /users/register         controllers.Application.createAccount()
-
 # Browse (use query string for tags, text search ‘q’ and sorting on top of these)
 GET  /modules/mine                      controllers.Modules.myModules()
 # Note that featured/popular/rating are just sort params - the three entries below need revising for this
@@ -41,6 +34,13 @@ GET  /admin/featured                    controllers.FeaturedModules.showFeatured
 POST /admin/featured                    controllers.FeaturedModules.addNewFeaturedModule()
 POST /admin/featured/update             controllers.FeaturedModules.update()
 POST /admin/featured/delete             controllers.FeaturedModules.delete()
+
+# Authentication
+
+GET  /ss/login                          securesocial.controllers.LoginPage.login
+GET  /ss/logout                         securesocial.controllers.LoginPage.logout
+GET  /ss/authenticate/:provider         securesocial.controllers.LoginPage.authenticate(provider)
+POST /ss/authenticate/:provider         securesocial.controllers.LoginPage.authenticateByPost(provider)
 
 # Module details (the only path not containing a slash, to make the most published URL cleanest)
 GET  /:moduleKey                        controllers.Modules.details(moduleKey: String)

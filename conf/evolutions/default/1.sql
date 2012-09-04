@@ -25,6 +25,21 @@ create table comment (
   constraint pk_comment primary key (id))
 ;
 
+create table external_account (
+  id                        bigint not null,
+  user_id                   bigint not null,
+  external_id               varchar(255) not null,
+  provider                  varchar(255) not null,
+  display_name              varchar(255) not null,
+  email                     varchar(255),
+  avatar_url                varchar(255),
+  o_auth1info_id            bigint,
+  o_auth2info_id            bigint,
+  authentication_method     varchar(17),
+  constraint ck_external_account_authentication_method check (authentication_method in ('OAUTH1','OAUTH2','OPENID','USERNAME_PASSWORD')),
+  constraint pk_external_account primary key (id))
+;
+
 create table featured_module (
   id                        bigint not null,
   play_module_id            bigint not null,
@@ -40,6 +55,22 @@ create table historical_event (
   category                  varchar(255) not null,
   message                   varchar(1000) not null,
   constraint pk_historical_event primary key (id))
+;
+
+create table mpooauth1info (
+  id                        bigint not null,
+  token                     varchar(255),
+  secret                    varchar(255),
+  constraint pk_mpooauth1info primary key (id))
+;
+
+create table mpooauth2info (
+  id                        bigint not null,
+  access_token              varchar(255),
+  token_type                varchar(255),
+  expires_in                integer,
+  refresh_token             varchar(255),
+  constraint pk_mpooauth2info primary key (id))
 ;
 
 create table MPO_MODULE (
@@ -73,8 +104,7 @@ create table module_version (
   version_code              varchar(255) not null,
   release_notes             varchar(255) not null,
   release_date              timestamp not null,
-  -- TODO Add binaries and change binary_file_id back to not null
-  binary_file_id            bigint,
+  binary_file_id            bigint not null,
   source_file_id            bigint,
   document_file_id          bigint,
   constraint pk_module_version primary key (id))
@@ -119,10 +149,8 @@ create table MPO_USER (
   id                        bigint not null,
   user_name                 varchar(40) not null,
   display_name              varchar(100) not null,
-  passwd                    varchar(64) not null,
   avatar_url                varchar(2500),
   account_active            boolean not null,
-  confirmation_code         varchar(36),
   constraint uq_MPO_USER_user_name unique (user_name),
   constraint pk_MPO_USER primary key (id))
 ;
@@ -169,9 +197,15 @@ create sequence category_seq;
 
 create sequence comment_seq;
 
+create sequence external_account_seq;
+
 create sequence featured_module_seq;
 
 create sequence historical_event_seq;
+
+create sequence mpooauth1info_seq;
+
+create sequence mpooauth2info_seq;
 
 create sequence MPO_MODULE_seq;
 
@@ -197,30 +231,36 @@ alter table comment add constraint fk_comment_author_2 foreign key (author_id) r
 create index ix_comment_author_2 on comment (author_id);
 alter table comment add constraint fk_comment_inReplyTo_3 foreign key (in_reply_to_id) references comment (id) on delete restrict on update restrict;
 create index ix_comment_inReplyTo_3 on comment (in_reply_to_id);
-alter table featured_module add constraint fk_featured_module_playModule_4 foreign key (play_module_id) references MPO_MODULE (id) on delete restrict on update restrict;
-create index ix_featured_module_playModule_4 on featured_module (play_module_id);
-alter table MPO_MODULE add constraint fk_MPO_MODULE_owner_5 foreign key (owner_id) references MPO_USER (id) on delete restrict on update restrict;
-create index ix_MPO_MODULE_owner_5 on MPO_MODULE (owner_id);
-alter table MPO_MODULE add constraint fk_MPO_MODULE_category_6 foreign key (category_id) references category (id) on delete restrict on update restrict;
-create index ix_MPO_MODULE_category_6 on MPO_MODULE (category_id);
-alter table MPO_MODULE add constraint fk_MPO_MODULE_rating_7 foreign key (rating_id) references rating (id) on delete restrict on update restrict;
-create index ix_MPO_MODULE_rating_7 on MPO_MODULE (rating_id);
-alter table module_version add constraint fk_module_version_playModule_8 foreign key (play_module_id) references MPO_MODULE (id) on delete restrict on update restrict;
-create index ix_module_version_playModule_8 on module_version (play_module_id);
-alter table module_version add constraint fk_module_version_binaryFile_9 foreign key (binary_file_id) references binary_content (id) on delete restrict on update restrict;
-create index ix_module_version_binaryFile_9 on module_version (binary_file_id);
-alter table module_version add constraint fk_module_version_sourceFile_10 foreign key (source_file_id) references binary_content (id) on delete restrict on update restrict;
-create index ix_module_version_sourceFile_10 on module_version (source_file_id);
-alter table module_version add constraint fk_module_version_documentFil_11 foreign key (document_file_id) references binary_content (id) on delete restrict on update restrict;
-create index ix_module_version_documentFil_11 on module_version (document_file_id);
-alter table rate add constraint fk_rate_MPO_USER_12 foreign key (user_id) references MPO_USER (id) on delete restrict on update restrict;
-create index ix_rate_MPO_USER_12 on rate (user_id);
-alter table rate add constraint fk_rate_playModule_13 foreign key (play_module_id) references MPO_MODULE (id) on delete restrict on update restrict;
-create index ix_rate_playModule_13 on rate (play_module_id);
-alter table vote add constraint fk_vote_MPO_USER_14 foreign key (user_id) references MPO_USER (id) on delete restrict on update restrict;
-create index ix_vote_MPO_USER_14 on vote (user_id);
-alter table vote add constraint fk_vote_playModule_15 foreign key (play_module_id) references MPO_MODULE (id) on delete restrict on update restrict;
-create index ix_vote_playModule_15 on vote (play_module_id);
+alter table external_account add constraint fk_external_account_user_4 foreign key (user_id) references MPO_USER (id) on delete restrict on update restrict;
+create index ix_external_account_user_4 on external_account (user_id);
+alter table external_account add constraint fk_external_account_oAuth1Info_5 foreign key (o_auth1info_id) references mpooauth1info (id) on delete restrict on update restrict;
+create index ix_external_account_oAuth1Info_5 on external_account (o_auth1info_id);
+alter table external_account add constraint fk_external_account_oAuth2Info_6 foreign key (o_auth2info_id) references mpooauth2info (id) on delete restrict on update restrict;
+create index ix_external_account_oAuth2Info_6 on external_account (o_auth2info_id);
+alter table featured_module add constraint fk_featured_module_playModule_7 foreign key (play_module_id) references MPO_MODULE (id) on delete restrict on update restrict;
+create index ix_featured_module_playModule_7 on featured_module (play_module_id);
+alter table MPO_MODULE add constraint fk_MPO_MODULE_owner_8 foreign key (owner_id) references MPO_USER (id) on delete restrict on update restrict;
+create index ix_MPO_MODULE_owner_8 on MPO_MODULE (owner_id);
+alter table MPO_MODULE add constraint fk_MPO_MODULE_category_9 foreign key (category_id) references category (id) on delete restrict on update restrict;
+create index ix_MPO_MODULE_category_9 on MPO_MODULE (category_id);
+alter table MPO_MODULE add constraint fk_MPO_MODULE_rating_10 foreign key (rating_id) references rating (id) on delete restrict on update restrict;
+create index ix_MPO_MODULE_rating_10 on MPO_MODULE (rating_id);
+alter table module_version add constraint fk_module_version_playModule_11 foreign key (play_module_id) references MPO_MODULE (id) on delete restrict on update restrict;
+create index ix_module_version_playModule_11 on module_version (play_module_id);
+alter table module_version add constraint fk_module_version_binaryFile_12 foreign key (binary_file_id) references binary_content (id) on delete restrict on update restrict;
+create index ix_module_version_binaryFile_12 on module_version (binary_file_id);
+alter table module_version add constraint fk_module_version_sourceFile_13 foreign key (source_file_id) references binary_content (id) on delete restrict on update restrict;
+create index ix_module_version_sourceFile_13 on module_version (source_file_id);
+alter table module_version add constraint fk_module_version_documentFil_14 foreign key (document_file_id) references binary_content (id) on delete restrict on update restrict;
+create index ix_module_version_documentFil_14 on module_version (document_file_id);
+alter table rate add constraint fk_rate_MPO_USER_15 foreign key (user_id) references MPO_USER (id) on delete restrict on update restrict;
+create index ix_rate_MPO_USER_15 on rate (user_id);
+alter table rate add constraint fk_rate_playModule_16 foreign key (play_module_id) references MPO_MODULE (id) on delete restrict on update restrict;
+create index ix_rate_playModule_16 on rate (play_module_id);
+alter table vote add constraint fk_vote_MPO_USER_17 foreign key (user_id) references MPO_USER (id) on delete restrict on update restrict;
+create index ix_vote_MPO_USER_17 on vote (user_id);
+alter table vote add constraint fk_vote_playModule_18 foreign key (play_module_id) references MPO_MODULE (id) on delete restrict on update restrict;
+create index ix_vote_playModule_18 on vote (play_module_id);
 
 
 
@@ -264,7 +304,6 @@ alter sequence user_role_seq restart with 10000;
 
 alter sequence vote_seq restart with 10000;
 
-
 # --- !Downs
 
 SET REFERENTIAL_INTEGRITY FALSE;
@@ -275,9 +314,15 @@ drop table if exists category;
 
 drop table if exists comment;
 
+drop table if exists external_account;
+
 drop table if exists featured_module;
 
 drop table if exists historical_event;
+
+drop table if exists mpooauth1info;
+
+drop table if exists mpooauth2info;
 
 drop table if exists MPO_MODULE;
 
@@ -311,9 +356,15 @@ drop sequence if exists category_seq;
 
 drop sequence if exists comment_seq;
 
+drop sequence if exists external_account_seq;
+
 drop sequence if exists featured_module_seq;
 
 drop sequence if exists historical_event_seq;
+
+drop sequence if exists mpooauth1info_seq;
+
+drop sequence if exists mpooauth2info_seq;
 
 drop sequence if exists MPO_MODULE_seq;
 
@@ -332,4 +383,3 @@ drop sequence if exists MPO_USER_seq;
 drop sequence if exists user_role_seq;
 
 drop sequence if exists vote_seq;
-

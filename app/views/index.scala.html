@@ -46,7 +46,7 @@
 				@if(currentUser == null) {
 				<h2>Contribute</h2>
 				<p>
-					<a href="@routes.Application.login">Log in</a> or <a href="@routes.Application.register">Register</a>
+					<a href="@securesocial.controllers.routes.LoginPage.login">Log in</a>
 				</p>
 				}
 				<h2>Get involved</h2>
@@ -57,9 +57,9 @@
 				<p>
                     New and updated modules will be published to a syndication feed.  You can subscribe here.
                     <ul>
-                        <a href="@routes.Assets.at("feeds/mpo.atom.xml")">Atom 1.0</a>,
-                        <a href="@routes.Assets.at("feeds/mpo.rss1.xml")">RSS 1.0</a>,
-                        <a href="@routes.Assets.at("feeds/mpo.rss2.xml")">RSS 2.0</a>
+                        <a href='@routes.Assets.at("feeds/mpo.atom.xml")'>Atom 1.0</a>,
+                        <a href='@routes.Assets.at("feeds/mpo.rss1.xml")'>RSS 1.0</a>,
+                        <a href='@routes.Assets.at("feeds/mpo.rss2.xml")'>RSS 2.0</a>
                     </ul>
 				</p>
 			</div>

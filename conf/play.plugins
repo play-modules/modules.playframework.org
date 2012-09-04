@@ -1,1 +1,4 @@
 10000:be.objectify.deadbolt.DeadboltPlugin
+
+11000:ss.db.ExternalUserAccountService
+11001:securesocial.core.providers.TwitterProvider

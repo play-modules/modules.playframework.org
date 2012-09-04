@@ -12,7 +12,7 @@
         @restrict(la(as("admin"))) {
             <a href="@routes.PlayVersions.showPlayVersions">Admin</a> |
         }
-		<a href="@routes.Application.logout">Log out</a>
+		<a href="@securesocial.controllers.routes.LoginPage.logout">Log out</a>
 		} else {
 		<li>
 			This is the work-in-progress for the new modules repository, to be released on modules.playframework.org
