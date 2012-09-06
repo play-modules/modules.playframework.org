@@ -147,6 +147,7 @@ val appDependencies = Seq(
         $('tr.releaseRow').click(function() {
             $('span.exampleVersion').text($(this).attr('title'));
         });
+        $('tr.releaseRow:last').trigger("click");
 
         //Voting code
         @roleHolderPresent {
