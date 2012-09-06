@@ -3,40 +3,57 @@
   playTwoVersions: List[PlayVersion],
   versionForm: Form[models.PlayVersion])
 
+@import helper._
+@import helper.twitterBootstrap._
+
 @displayVersion(playVersion: PlayVersion) = {
-    <li><span id="name-@playVersion.id">@playVersion.name</span> - <span id="documentationUrl-@playVersion.id">@playVersion.documentationUrl</span> (<a href="javascript:editVersion('@playVersion.id', $('#name-@playVersion.id').text(), $('#documentationUrl-@playVersion.id').text())">Edit</a>)</li>
+    <tr>
+        <td><span id="name-@playVersion.id">@playVersion.name</span></td>
+        <td><span id="documentationUrl-@playVersion.id">@playVersion.documentationUrl</span></td>
+        <td><a href="javascript:editVersion('@playVersion.id', $('#name-@playVersion.id').text(), $('#documentationUrl-@playVersion.id').text())">Edit</a></td>
+    </tr>
 }
 
 @admin.adminTemplate("Play versions", currentUser) {
-<section>
-    <div id="overviewArea">
-        <h4>Play 1</h4>
-        <ul>
-            @for(playVersion <- playOneVersions) {
-            @displayVersion(playVersion)
+
+
+<div class="row">
+    <div class="span3">
+        <div class="adminBadge">
+            <h4>Add new version</h4>
+            @helper.form(routes.PlayVersions.addNewPlayVersion) {
+                @helper.inputText(versionForm("name"))
+                @helper.inputText(versionForm("documentationUrl"))
+
+                <button type="submit" class="btn">Add</button>
             }
-        </ul>
+        </div>
+    </div>
+    <div class="span8">
+        <h4>Play 1</h4>
+        <table class="table table-striped">
+            <tbody>
+            @for(playVersion <- playOneVersions) {
+                @displayVersion(playVersion)
+            }
+            </tbody>
+        </table>
 
         <h4>Play 2</h4>
-        <ul>
+        <table class="table table-striped">
+            <tbody>
             @for(playVersion <- playTwoVersions) {
-            @displayVersion(playVersion)
+                @displayVersion(playVersion)
             }
-        </ul>
+            </tbody>
+        </table>
     </div>
-    <div id="controlArea">
-        <h3>Add new version</h3>
-        @helper.form(routes.PlayVersions.addNewPlayVersion) {
-        @helper.inputText(versionForm("name"))
-        @helper.inputText(versionForm("documentationUrl"))
-        <p>
-            <button type="submit">Add</button>
-        </p>
-        }
-    </div>
-</section>
-<script type="text/javascript">
+</div>
 
+<script type="text/javascript">
+    $(function(){
+        setAdminNavbar("Version");
+    });
     var onError = function(form, message) {
         editVersion(form.id, form.name, form.documentationUrl, message);
     };

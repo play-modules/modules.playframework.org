@@ -1,36 +1,42 @@
 @(currentUser: User,
   module: Module,
   playVersions: List[PlayVersion],
-  form: Form[models.ModuleVersion])
+  versions: Form[models.ModuleVersion])
+
 @import tags._
+@import helper._
+@implicitField = @{ FieldConstructor(tags.horizontalFormLayout.f) }
 
 @main("Manage " + module.name + " versions", currentUser) {
 
 
-<section id="top">
-	<div class="wrapper">
-		<h1>Manage @module.name versions</h1>
-	</div>
-</section>
+<header>
+    <h1>Manage @module.name versions</h1>
+</header>
 
-<div id="content" class="wrapper">
-	<article>
-		@helper.form(routes.Modules.uploadNewVersion(module.key)) {
+<div class="row">
+    <div class="span12">
+		@helper.form(routes.Modules.uploadNewVersion(module.key), 'class->"form-horizontal") {
 
-		@helper.inputText(form("versionCode"))
-		@helper.textarea(form("releaseNotes"))
+		@helper.inputText(versions("versionCode"))
+		@helper.textarea(versions("releaseNotes"))
 
-        <div class="formSection">Compatibility</div>
-        @for(playVersion <- playVersions) {
-            <input type="checkbox" name="compatibility.id" value="@playVersion.id"/>@playVersion.name
-        }
+        <div class="control-group">
+            <label class="control-label">Compatibility</label>
+            <div class="controls">
+                @for(playVersion <- playVersions) {
+                    <input type="checkbox" name="compatibility.id" value="@playVersion.id"/>@playVersion.name &nbsp;&nbsp;
+                }
+            </div>
+        </div>
 
         @* best way to handle to handle the file upload? *@
-		<p>
-			<button type="submit">Upload</button>
-		</p>
+        <div class="control-group">
+            <div class="controls">
+		    	<button type="submit" class="btn">Upload</button>
+            </div>
+        </div>
 		}
-	</article>
-
+    </div>
 </div>
 }

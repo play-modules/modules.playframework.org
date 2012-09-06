@@ -1,63 +1,72 @@
-@(currentUser: User, form: Form[models.Module])
+@(currentUser: User, module: Form[models.Module])
+
 @import tags._
+@import helper._
+@implicitField = @{ FieldConstructor(tags.horizontalFormLayout.f) }
 
 @main("Submit a new module", currentUser) {
 
 
-<section id="top">
-	<div class="wrapper">
-		<h1>Submit a new module</h1>
-	</div>
-</section>
+<header>
+    <h1>Submit a new module</h1>
+</header>
 
-<div id="content" class="wrapper">
-	<article>
-		@helper.form(routes.Modules.submitModuleRegistrationForm) {
+<div class="row">
+    <div class="span12">
+		@helper.form(routes.Modules.submitModuleRegistrationForm, 'class->"form-horizontal") {
 
-		@helper.inputText(form("name"),
+		@helper.inputText(module("name"),
             'size  -> 50,
             '_label -> "Module Name"
         )
 
-        @helper.inputText(form("key"),
+        @helper.inputText(module("key"),
             'size  -> 50,
             '_label -> "Module Key"
         )
 
-        @helper.inputText(form("organisation"),
+        @helper.inputText(module("organisation"),
             'size -> 50,
             'maxLength -> 255
         )
 
-        @helper.inputText(form("summary"),
+        @helper.inputText(module("summary"),
             'size  -> 50,
             '_label -> "Describe your module in a single line"
         )
 
-        @helper.textarea(form("description"),
+        @helper.textarea(module("description"),
             'rows -> 10,
             'cols -> 80,
             '_label -> "Describe your module in a couple of lines"
         )
 
-        @helper.select(form("category.id"), helper.options(Category.options()))
+        @helper.select(module("category.id"), helper.options(Category.options()))
 
-        @helper.inputText(form("projectUrl"),
+        @helper.inputText(module("projectUrl"),
             'size  -> 50,
             '_label -> "Project URL",
             'placeholder -> "http://..."
         )
 
-        @helper.inputText(form("licenseType"),
+        @helper.inputText(module("licenseType"),
             'size  -> 50,
             '_label -> "License"
         )
 
-		<p>
-			<button type="submit">Submit!</button>
-		</p>
+        <div class="control-group">
+            <div class="controls">
+			    <button type="submit" class="btn">Submit!</button>
+            </div>
+        </div>
 		}
-	</article>
-
+    </div>
 </div>
+
+<script type="text/javascript">
+    $(function(){
+    setNavbar("SubmitModules");
+    });
+</script>
+
 }

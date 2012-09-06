@@ -11,61 +11,58 @@
 
 @main(module.name, currentUser, moreScripts) {
 
-<section id="top">
-    <div class="wrapper">
-        <h1>@module.name</h1>
-        <h2>@module.summary</h2>
-    </div>
-</section>
+<header>
+    <h1>@module.name</h1>
+    <h2>@module.summary</h2>
+</header>
 
-<div class="wrapper">
-
-  <article>
-    <div id="overviewArea">
-
+<div class="row">
+    <div class="span12">
         <div class="description">
             @Html(module.getDescriptionHtml())
         </div>
+    </div>
+</div>
 
-        <div class="subSection">
+<div class="row">
+    <div class="span8">
         <h2>Releases</h2>
-        <table class="releases">
-          <thead>
-          <tr>
-          <th>Version</th>
-          <th>Release date</th>
-          <th>Release notes</th>
-          @* Commented out until actual compatibility data is available (Peter, 12 May 2012)
-            <th>Compatible with</th>
-          *@
-          @if(majorVersions.contains(PlayVersion.MajorVersion.ONE)) {
-            <th></th>
-            <th></th>
-          }
-          </tr>
-          </thead>
-          <tbody>
-            @for(version <- versions){
-              <tr class="releaseRow" title="@version.versionCode">
-                <td>@version.versionCode</td>
-                <td>@(if(version.releaseDate != null) version.releaseDate.format("dd-MM-yyyy"))</td>
-                <td>@version.releaseNotes</td>
-                @* Commented out until actual compatibility data is available (Peter, 12 May 2012)
-                <td>
-                  @for(compatible <- version.compatibility) {
-                    <span class="lineList">@compatible.name,</span>
-                  }
-                </td>
-                *@
-                @if(majorVersions.contains(PlayVersion.MajorVersion.ONE)) {
-                  <td><a href='@current.configuration.getString("modules.repository")@module.key-@version.versionCode/home'>Documentation</a></td>
-                  <td><a href='@current.configuration.getString("modules.repository")@module.key-@(version.versionCode).zip'>Download</a></td>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Version</th>
+                    <th>Release date</th>
+			        <th>Release notes</th>
+                    @* Commented out until actual compatibility data is available (Peter, 12 May 2012)
+                    <th>Compatible with</th>
+                    *@
+                    @if(majorVersions.contains(PlayVersion.MajorVersion.ONE)) {
+                      <th></th>
+                      <th></th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @for(version <- versions){
+                  <tr class="releaseRow" title="@version.versionCode">
+                    <td>@version.versionCode</td>
+                    <td>@(if(version.releaseDate != null) version.releaseDate.format("dd-MM-yyyy"))</td>
+					<td>@version.releaseNotes</td>
+                    @* Commented out until actual compatibility data is available (Peter, 12 May 2012)
+                    <td>
+		              @for(compatible <- version.compatibility) {
+		                <span class="lineList">@compatible.name,</span>
+		              }
+		            </td>
+                    *@
+                    @if(majorVersions.contains(PlayVersion.MajorVersion.ONE)) {
+                      <td><a href='@current.configuration.getString("modules.repository")@module.key-@version.versionCode/home'>Documentation</a></td>
+                      <td><a href='@current.configuration.getString("modules.repository")@module.key-@(version.versionCode).zip'>Download</a></td>
+                    }
+                  </tr>
                 }
-              </tr>
-            }
-          </tbody>
+            </tbody>
         </table>
-        </div>
 
         <div class="subSection">
           <h2>Installation</h2>
@@ -96,11 +93,10 @@ val appDependencies = Seq(
           }
         </div>
     </div>
-  </article>
 
-  <aside>
-    <h3>Project home</h3>
-        <a href="@module.projectUrl" target="_blank">@module.projectUrl</a>
+    <div class="span3 aside">
+        <h3>Project home</h3>
+        <p><a href="@module.projectUrl" target="_blank">@module.projectUrl</a></p>
 
         @if(!isEmpty(module.demoUrl)) {
             <h3>Demo: </h3>
@@ -118,36 +114,41 @@ val appDependencies = Seq(
             </p>
         }
 
-    <h3>Owner</h3>
-    <p>@module.owner.displayName</p>
+        <h3>Owner</h3>
+        <p>@module.owner.displayName</p>
 
-    @if(!isEmpty(module.contributors)){
-      <h3>Contributors</h3>
-      <p>@module.contributors</p>
-    }
+         @if(!isEmpty(module.contributors)){
+            <h3>Contributors</h3>
+            <p>@module.contributors</p>
+         }
 
-        <h3>Voting</h3>
-        <span class="vote upVote @roleHolderPresent{activeVote}" @roleHolderPresent{title="Vote up"}>@module.upVoteCount</span>
-        <span class="vote downVote @roleHolderPresent{activeVote}" @roleHolderPresent{title="Vote down"}>@module.downVoteCount</span>
+         <h3>Voting</h3>
+         <span class="vote upVote @roleHolderPresent{activeVote}" @roleHolderPresent{title="Vote up"}>@module.upVoteCount</span>
+         <span class="vote downVote @roleHolderPresent{activeVote}" @roleHolderPresent{title="Vote down"}>@module.downVoteCount</span>
 
-        <h3>Rating</h3>
-        @roleHolderPresent {
+         <h3>Rating</h3>
+         @roleHolderPresent {
             <input name="rating" type="radio" id="rating-1" class="auto-submit-star" value="1"/>
             <input name="rating" type="radio" id="rating-2" class="auto-submit-star" value="2"/>
             <input name="rating" type="radio" id="rating-3" class="auto-submit-star" value="3"/>
             <input name="rating" type="radio" id="rating-4" class="auto-submit-star" value="4"/>
             <input name="rating" type="radio" id="rating-5" class="auto-submit-star" value="5"/>
-        }
-        <span id="ratingSummary"/>
+         }
+         <span id="ratingSummary"/>
+    </div>
+</div>
+
+       
   </aside>
 </div>
 <script type="text/javascript">
-    $(document).ready(function() {
-
+    $(function() {
+        //Updates the installation instructions on click of a row identifying a release
         $('tr.releaseRow').click(function() {
             $('span.exampleVersion').text($(this).attr('title'));
         });
 
+        //Voting code
         @roleHolderPresent {
          $('span.upVote').click(function() {
              var self = this;
@@ -176,6 +177,8 @@ val appDependencies = Seq(
           }
          }
         }
+
+        // Display star rating
         setRatingSummary('@module.rating.averageRating',
                          '@module.rating.totalRatings()');
 
@@ -189,6 +192,7 @@ val appDependencies = Seq(
          $('#rating-@rate.rating').attr('checked', 'checked');
         }
 
+        // Star rating voting code
         @roleHolderPresent {
         $('.auto-submit-star').rating(
                 {

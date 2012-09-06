@@ -5,7 +5,14 @@
 @import tags.moduleList
 
 @admin.adminTemplate("Categories > " + category.name, currentUser) {
-<article>
+
     @moduleList("Modules in " + category.name, modules)
-</article>
+
+    <script type="text/javascript">
+        $(function(){
+            setAdminNavbar("Categories");
+            setNavbar("Admin");
+        });
+    </script>
 }
+

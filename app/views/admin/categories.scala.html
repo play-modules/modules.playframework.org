@@ -2,26 +2,47 @@
   categories: List[Category],
   versionForm: Form[Category])
 
+@import helper._
+@import helper.twitterBootstrap._
+
 @admin.adminTemplate("Categories", currentUser) {
-<section>
-    <div id="overviewArea">
-        <ul>
-            @for(category <- categories) {
-            <li><a id="name-@category.id" href="@routes.Categories.categoryDetails(category.name)">@category.name</a> (<a href="javascript:editCategory('@category.id', $('#name-@category.id').text())">Edit</a>)</li>
+
+<div class="row">
+    <div class="span3">
+        <div class="adminBadge">
+            <h4>Add new category</h4>
+            @helper.form(routes.Categories.addNewCategory) {
+                @helper.inputText(versionForm("name"))
+
+                <button type="submit" class="btn">Add</button>
+
             }
-        </ul>
+        </div>
     </div>
-    <div id="controlArea">
-        <h3>Add new category</h3>
-        @helper.form(routes.Categories.addNewCategory) {
-        @helper.inputText(versionForm("name"))
-        <p>
-            <button type="submit">Add</button>
-        </p>
-        }
+    <div class="span8">
+        <h4>List of Categories</h4>
+        <table class="table table-striped">
+            <tbody>
+            @for(category <- categories) {
+                <tr>
+                    <td>
+                        <a id="name-@category.id" href="@routes.Categories.categoryDetails(category.name)">@category.name</a>
+                    </td>
+                    <td>
+                        <a href="javascript:editCategory('@category.id', $('#name-@category.id').text())">Edit</a></li>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
     </div>
-</section>
+</div>
+
+
 <script type="text/javascript">
+    $(function(){
+        setAdminNavbar("Categories");
+    });
 
     var onError = function(form, message) {
         editCategory(form.id, form.name, message);

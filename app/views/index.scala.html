@@ -8,74 +8,84 @@
 @import tags._
 
 @featureList(title: String, moduleAccessors: List[_ <: ModuleAccessor]) = {
-	<div class="item">
-		<h2>@title</h2>
+    <h2>@title</h2>
+    <table class="table table-striped">
+        <tbody>
 		@for(accessor <- moduleAccessors) {
 			@defining(accessor.getModule()) { module =>
-				<p><a href="@routes.Modules.details(module.key)">@module.name</a> - @module.summary</p>
+				<tr>
+                    <td><a href="@routes.Modules.details(module.key)">@module.name</a></td>
+                    <td>@module.summary</td>
+                </tr>
 			}
 		}
-	</div>
+        </tbody>
+    </table>
 }
 
 @main("Home", currentUser) {
+<header>
+    <h1 class="introduction">Play Modules</h1>
+</header>
 
-	<section id="introduction">
-		<div class="wrapper">
-			<div id="title">
-				<h1>
-					@moduleCount Play framework<br>
-					modules for<br>
-					Play 2.x and Play 1.x
-				</h1>
-				<p>
-					Here you can find great modules contributed by the play community. Browse the catalog and add instant power to your application.
-				</p>
-			</div>
-			<div id="quicklinks">
-				<h2>Browse 2.x modules</h2>
-				<p>
-					<a href='@routes.Modules.getModulesByPlayVersion("2")'>All</a>,
-					<a href="">Featured </a>, <a href="">Latest </a>, <a href="">Highest-rated</a>,
-				</p>
-				<h2>Browse 1.x modules</h2>
-				<p>
-					<a href='@routes.Modules.getModulesByPlayVersion("1")'>All</a>,
-					<a href="">Featured </a>, <a href="">Latest </a>, <a href="">Highest-rated</a>,
-				</p>
-				@if(currentUser == null) {
-				<h2>Contribute</h2>
-				<p>
-					<a href="@routes.Application.login">Log in</a> or <a href="@routes.Application.register">Register</a>
-				</p>
-				}
-				<h2>Get involved</h2>
-				<p>
-					Check out the <a href="http://github.com/playframework/Play20" target="_blank">source code on Github</a>.
-				</p>
-				<h2>Stay in the loop</h2>
-				<p>
-                    New and updated modules will be published to a syndication feed.  You can subscribe here.
-                    <ul>
-                        <a href="@routes.Assets.at("feeds/mpo.atom.xml")">Atom 1.0</a>,
-                        <a href="@routes.Assets.at("feeds/mpo.rss1.xml")">RSS 1.0</a>,
-                        <a href="@routes.Assets.at("feeds/mpo.rss2.xml")">RSS 2.0</a>
-                    </ul>
-				</p>
-			</div>
-		</div>
-	</section>
+<div class="landingDetails">
+    <h1>@moduleCount Play framework modules for Play 2.x and Play 1.x</h1>
+    <div class="subheader">Here you can find great modules contributed by the play community.Browse the catalog and add instant power to your application.</div>
+</div>
 
-	<section id="features">
-		<div class="wrapper">
-			@featureList("Latest 2.x modules", mostRecentModules)
-			@featureList("Featured 2.x modules", featuredModules)
-			@featureList("Highest-rated 2.x", highestRatedModules)
-		</div>
-		<div class="wrapper">
-			<div class="item"><h2>Latest 1.x modules</h2></div>
-			<div class="item"><h2>Featured 1.x modules</h2></div>
-			<div class="item"><h2>Highest-rated 1.x</h2></div>
-		</div>
-	</section>
+<div class="row">
+    <div class="span4">
+        <a href='@routes.Modules.getModulesByPlayVersion("2")' class="btn btn-large btn-block">Browse Play 2.x Modules</a>
+        <br/>
+        <p>Or browse by <a href="">Featured </a>, <a href="">Latest </a>, <a href="">Highest-rated</a></p>
+    </div>
+    <div class="span4">
+        <a href='@routes.Modules.getModulesByPlayVersion("1")' class="btn btn-large btn-inverse btn-block">Browse Play 1.x Modules</a>
+        <br/>
+        <p>Or browse by <a href="">Featured </a>, <a href="">Latest </a>, <a href="">Highest-rated</a></p>
+    </div>
+    <div class="span4">
+        <a href="@routes.Application.login" class="btn btn-large btn-success">Contribute your Modules</a>
+        <br/><br/>
+        <p>
+        New and updated modules will be published to a syndication feed. You can subscribe here:<br/>
+        <a href='@routes.Assets.at("feeds/mpo.atom.xml")'><img src="@routes.Assets.at("images/feed-icon-14x14.png")">&nbsp;Atom 1.0</a>,
+        <a href='@routes.Assets.at("feeds/mpo.rss1.xml")'><img src="@routes.Assets.at("images/feed-icon-14x14.png")">&nbsp;RSS 1.0</a>,
+        <a href='@routes.Assets.at("feeds/mpo.rss2.xml")'><img src="@routes.Assets.at("images/feed-icon-14x14.png")">&nbsp;RSS 2.0</a>
+        </p>
+    </div>
+</div>
+
+<hr/>
+<div class="row">
+    <div class="span4">
+        @featureList("Latest 2.x modules", mostRecentModules)
+    </div>
+    <div class="span4">
+        @featureList("Featured 2.x modules", featuredModules)
+    </div>
+    <div class="span4">
+        @featureList("Highest-rated 2.x", highestRatedModules)
+    </div>
+</div>
+
+<div class="row">
+    <div class="span4">
+        @featureList("Latest 1.x modules", mostRecentModules)
+    </div>
+    <div class="span4">
+        @featureList("Featured 1.x modules", featuredModules)
+    </div>
+    <div class="span4">
+        @featureList("Highest-rated 1.x", highestRatedModules)
+    </div>
+</div>
+
+
+<script>
+    $(function(){
+        setNavbar("Home");
+    });
+</script>
+
 }

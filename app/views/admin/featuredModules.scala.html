@@ -2,41 +2,51 @@
   featuredModules: List[FeaturedModule],
   featuredModuleForm: Form[models.FeaturedModule])
 
+@import helper._
+@import helper.twitterBootstrap._
+
 @displayFeaturedModule(featuredModule: FeaturedModule) = {
-    <tr class="tableSectionHeader featuredModule-@featuredModule.id">
-        <td>@featuredModule.playModule.name (@featuredModule.creationDate.format("dd/MM/yyyy"))</td>
-        <td class="tableTools">
-            <a href="javascript:editFeaturedModule('@featuredModule.id', $('#description-@featuredModule.id').text())">Edit</a> |
-            <a href="javascript:confirmDelete('@featuredModule.playModule.name', '@routes.FeaturedModules.delete()', @featuredModule.id, function(){removeElement('tr.featuredModule-@featuredModule.id')})">Delete</a>
-        </td>
-    </tr>
-    <tr class="featuredModule-@featuredModule.id">
-        <td  id="description-@featuredModule.id" colspan="2">@featuredModule.description</td>
-    </tr>
+    <div class="span8 well well-small clearfix featuredModule-@featuredModule.id">
+        <div class="pull-left"><strong>@featuredModule.playModule.name</strong> (@featuredModule.creationDate.format("dd/MM/yyyy"))</div>
+        <div class="pull-right">
+                <a href="javascript:editFeaturedModule('@featuredModule.id', $('#description-@featuredModule.id').text())">Edit</a> |
+                <a href="javascript:confirmDelete('@featuredModule.playModule.name', '@routes.FeaturedModules.delete()', @featuredModule.id, function(){removeElement('div.featuredModule-@featuredModule.id')})">Delete</a>
+        </div>
+        <br/>
+        <div class="pull-left">@featuredModule.description</div>
+    </div>
 }
 
 @admin.adminTemplate("Featured modules", currentUser) {
-<section>
-    <div id="overviewArea">
-        <table>
-            @for(featuredModule <- featuredModules) {
-            @displayFeaturedModule(featuredModule)
+
+<div class="row">
+    <div class="span3">
+        <div class="adminBadge">
+            <h4>Add new featured module</h4>
+            @helper.form(routes.FeaturedModules.addNewFeaturedModule) {
+                <input type="hidden" name="sticky" value="false"/>
+
+                @helper.select(featuredModuleForm("playModule.id"), helper.options(Module.options()))
+                @helper.textarea(featuredModuleForm("description"))
+
+                <button type="submit" class="btn">Add</button>
             }
-        </table>
+        </div>
     </div>
-    <div id="controlArea">
-        <h3>Add new featured module</h3>
-        @helper.form(routes.FeaturedModules.addNewFeaturedModule) {
-        <input type="hidden" name="sticky" value="false"/>
-        @helper.select(featuredModuleForm("playModule.id"), helper.options(Module.options()))
-        @helper.textarea(featuredModuleForm("description"))
-        <p>
-            <button type="submit">Add</button>
-        </p>
+    <div class="span8">
+        <h4>List of Featured Modules</h4>
+        @for(featuredModule <- featuredModules) {
+            @displayFeaturedModule(featuredModule)
         }
     </div>
-</section>
+</div>
+
+
 <script type="text/javascript">
+    $(function(){
+        setAdminNavbar("Featured");
+    });
+
     function editFeaturedModule(id, description, message) {
         message = (typeof message == 'undefined') ? '' : message;
         var template = _.template($('#editFeaturedModuleTemplate').html(),
@@ -48,6 +58,7 @@
                          function(form, message) {});
     }
 </script>
+
 <script type="underscore-template" id="editFeaturedModuleTemplate">
     <form>
         <input type="hidden" name="id" value="<%= id %>"/>

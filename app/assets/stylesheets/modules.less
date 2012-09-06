@@ -1,0 +1,280 @@
+@background: #EEEEEE;
+@secondaryBackground: #fff;
+@quotes: #999999;
+@lightText: #555555;
+@borders: #494949;
+@introduction: #ffffff;
+@introductionBackground: #333333;
+
+/* Common */
+
+body {
+    background-color: @background;
+}
+
+.spacer {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.footer {
+    p {
+        color: @lightText;
+        margin-bottom: 0;
+    }
+    .licence {
+        //Empty by now
+    }
+}
+
+
+/* Support */
+.rounded-corners (@radius: 5px) {
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+}
+
+
+
+/* Landing page */
+
+.introduction {
+    font-size: 45px;
+    letter-spacing: -1px;
+    line-height: 1;
+    text-align: center;
+}
+
+.test{
+    .rounded-corners(15px);
+    color: @introduction;
+    background: @introductionBackground;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@lightText', endColorstr='@introductionBackground');
+    background: -webkit-gradient(linear, center top, center bottom, from(@lightText), to(@introductionBackground));
+    background: -moz-linear-gradient(center top , @lightText, @introductionBackground) repeat scroll 0 0 transparent;
+    border: 2px solid @borders;
+    margin: 15px 0px;
+
+    .title {
+        padding: 10px 0px;
+        h1 {
+            margin-bottom: 10px;
+            &.huge {
+
+            }
+        }
+    }
+    .quicklinks {
+        text-align: center;
+        a {
+            margin: 5px 10px 15px 10px;
+            padding: 3px 10px;
+            font-size: 25px;
+        }
+    }
+}
+
+.landingDetails {
+    margin-top: 25px;
+    h1 {
+        text-align: center;
+        font-weight: 300;
+        font-size: 40px;
+    }
+    .subheader {
+        color: @quotes;
+        text-align: center;
+        font-size: 20px;
+        line-height: 25px;
+        margin-bottom: 20px;
+    }
+    h2 {
+        font-size: 22px;
+        font-weight: bolder;
+        line-height: 35px;
+    }
+}
+
+
+/* Page Headers */
+
+header {
+    margin-bottom: 15px;
+    h1 {
+        .rounded-corners;
+        background: none repeat scroll 0 0 @lightText;
+        color: @introduction;
+        margin-top: -10px;
+        padding: 5px;
+    }
+}
+
+.sectionHeader {
+    //TODO
+}
+
+/* Module details */
+
+.moduleTitle {
+    font-size: 1.1em;
+}
+
+
+.aside {
+    .rounded-corners(10px);
+    border: 1px solid @borders;
+    padding: 15px;
+    background-color: @secondaryBackground;
+}
+
+
+/* Voting on Module */
+span{
+    &.activeVote {
+        cursor: pointer;
+    }
+    &.vote {
+        background-image: url(../images/votes.png);
+        background-repeat: no-repeat;
+        padding-left: 18px;
+        margin-right: 10px;
+    }
+    &.upVote {
+        background-position: 0 0;
+    }
+    &.votedUp {
+        background-position: 0 -25px;
+    }
+    &.downVote {
+        background-position: 0 -50px;
+    }
+    &.votedDown {
+        background-position: 0 -75px;
+    }
+}
+
+/* Admin */
+.adminBadge {
+    .rounded-corners(10px);
+    border: 2px solid @borders;
+    padding: 5px 5px 5px 10px;
+    background-color: @secondaryBackground;
+}
+
+/* JQuery impromptu styles - they draw from bootstrap less styles*/
+.jqifade{
+    position: absolute;
+    background-color: #aaaaaa;
+}
+
+div {
+    &.jqi{
+        width: 400px;
+        font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+        position: absolute;
+        background-color: #ffffff;
+        font-size: 11px;
+        text-align: left;
+        border: solid 1px #eeeeee;
+        .rounded-corners(10px);
+        padding: 7px;
+
+        .jqicontainer{
+            font-weight: bold;
+        }
+
+        .jqiclose{
+            position: absolute;
+            top: 4px; right: -2px;
+            width: 18px;
+            cursor: default;
+            color: #bbbbbb;
+            font-weight: bold;
+        }
+        .jqimessage{
+            padding: 10px;
+            line-height: 20px;
+            color: #444444;
+        }
+        .jqibuttons{
+            text-align: right;
+            padding: 5px 0 5px 0;
+            border: solid 1px #eeeeee;
+            background-color: #f4f4f4;
+        }
+        button{
+            padding: 3px 10px;
+            margin: 0 10px;
+            background-color: #2F6073;
+            border: solid 1px #f4f4f4;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 12px;
+
+            &:hover{
+                background-color: #728A8C;
+            }
+
+            &.jqidefaultbutton{
+                background-color: #BF5E26;
+            }
+        }
+    }
+}
+
+.jqiwarning .jqi .jqibuttons{
+    background-color: #BF5E26;
+}
+
+.jqi {
+    .jqiarrow { position: absolute; height: 0; width:0; line-height: 0; font-size: 0; border: solid 10px transparent;}
+
+     .jqiarrowtl{ left: 10px; top: -20px; border-bottom-color: #ffffff; }
+     .jqiarrowtc{ left: 50%; top: -20px; border-bottom-color: #ffffff; margin-left: -10px; }
+     .jqiarrowtr{ right: 10px; top: -20px; border-bottom-color: #ffffff; }
+
+     .jqiarrowbl{ left: 10px; bottom: -20px; border-top-color: #ffffff; }
+     .jqiarrowbc{ left: 50%; bottom: -20px; border-top-color: #ffffff; margin-left: -10px; }
+     .jqiarrowbr{ right: 10px; bottom: -20px; border-top-color: #ffffff; }
+
+     .jqiarrowlt{ left: -20px; top: 10px; border-right-color: #ffffff; }
+     .jqiarrowlm{ left: -20px; top: 50%; border-right-color: #ffffff; margin-top: -10px; }
+     .jqiarrowlb{ left: -20px; bottom: 10px; border-right-color: #ffffff; }
+
+     .jqiarrowrt{ right: -20px; top: 10px; border-left-color: #ffffff; }
+     .jqiarrowrm{ right: -20px; top: 50%; border-left-color: #ffffff; margin-top: -10px; }
+     .jqiarrowrb{ right: -20px; bottom: 10px; border-left-color: #ffffff; }
+ }
+
+/* ===== Primary Styles ====================================================== */
+
+// Landscape phones and down
+@media (max-width: 480px) {
+    //TODO
+}
+
+// Landscape phone to portrait tablet
+@media (max-width: 768px) {
+    //TODO
+}
+
+// Portrait tablet to landscape and desktop
+@media (min-width: 768px) and (max-width: 980px) {
+    //TODO
+}
+
+// Large desktop
+@media (min-width: 1200px) {
+    //TODO
+}
+
+
+
+
+
+
+
+
+
+

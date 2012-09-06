@@ -3,21 +3,22 @@
 
 @main("My modules", currentUser) {
 
-<section id="top">
-    <div class="wrapper">
-        <h1>My Modules</h1>
-    </div>
-</section>
+<header>
+    <h1>My Modules</h1>
+</header>
 
 
-<div class="wrapper">
+<div class="row">
+    <div class="span12">
 
     @if(modules != null && !modules.isEmpty()) {
-    <ul>
-        @for(module <- modules) {
-            @moduleControl(module)
-        }
-    </ul>
+        <table class="table table-striped table-hover">
+            <tbody>
+            @for(module <- modules) {
+                @moduleControl(module)
+            }
+            </tbody>
+        </table>
     } else {
         <p>You don't have any modules yet. You can submit a new module
             <a href="@routes.Modules.showModuleRegistrationForm">here</a>.
@@ -25,4 +26,11 @@
     }
 
     </div>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        setNavbar("MyModules");
+    });
+</script>
 }

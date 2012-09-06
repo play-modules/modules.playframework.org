@@ -6,11 +6,21 @@
 }
 
 @main("Admin :: " + title, currentUser, moreScripts) {
-<div id="content" class="wrapper">
-    @tags.admin.adminMenu()
-    @content
+<div class="row">
+    <div class="span12">
+        @tags.admin.adminMenu()
+    </div>
 </div>
 
+@content
+
+<script type="text/javascript">
+    $(function(){
+        setNavbar("Admin");
+    });
+</script>
+
+@* Common template to be used on deletion of an item *@
 <script type="underscore-template" id="confirmDeleteTemplate">
     <p>Are you sure you want to delete this item?</p>
     <p><%= description %></p>
