@@ -91,602 +91,516 @@ users:
         userName: ahmed.mahmoud.mohammed.abd.el.wahab
         displayName: Ahmed Mahmoud Mohammed Abd El-wahab
         accountActive: true
-        password: none
 
     - !!models.User
         id: 74
         userName: aishwarya.singhal
         displayName: Aishwarya Singhal
         accountActive: true
-        password: none
 
     - !!models.User
         id: 80
         userName: an.do
         displayName: An Do
         accountActive: true
-        password: none
 
     - !!models.User
         id: 59
         userName: andrew.louth
         displayName: Andrew Louth
         accountActive: true
-        password: none
 
     - !!models.User
         id: 6
         userName: andre.pareis
         displayName: André Pareis
         accountActive: true
-        password: none
 
     - !!models.User
         id: 35
         userName: ben.verbeken
         displayName: Ben Verbeken
         accountActive: true
-        password: none
 
     - !!models.User
         id: 18
         userName: benoit.courtine
         displayName: Benoît Courtine
         accountActive: true
-        password: none
 
     - !!models.User
         id: 54
         userName: benoit.simard
         displayName: Benoît Simard
         accountActive: true
-        password: none
 
     - !!models.User
         id: 46
         userName: bing.ran
         displayName: Bing Ran
         accountActive: true
-        password: none
 
     - !!models.User
         id: 45
         userName: blr
         displayName: BLR
         accountActive: true
-        password: none
 
     - !!models.User
         id: 60
         userName: bogdan.tanase
         displayName: Bogdan Tanase
         accountActive: true
-        password: none
 
     - !!models.User
         id: 3
         userName: brian.nesbitt
         displayName: Brian Nesbitt
         accountActive: true
-        password: none
 
     - !!models.User
         id: 13
         userName: damien.gouyette
         displayName: Damien Gouyette
         accountActive: true
-        password: none
 
     - !!models.User
         id: 63
         userName: dave.cheong
         displayName: Dave Cheong
         accountActive: true
-        password: none
 
     - !!models.User
         id: 85
         userName: dave.jafari
         displayName: Dave Jafari
         accountActive: true
-        password: none
 
     - !!models.User
         id: 24
         userName: david.cardon
         displayName: David Cardon
         accountActive: true
-        password: none
 
     - !!models.User
         id: 57
         userName: dirk
         displayName: Dirk
         accountActive: true
-        password: none
 
     - !!models.User
         id: 4
         userName: dustin.whitney
         displayName: Dustin Whitney
         accountActive: true
-        password: none
 
     - !!models.User
         id: 9
         userName: edward.southey
         displayName: Edward Southey
         accountActive: true
-        password: none
 
     - !!models.User
         id: 33
         userName: eric.jacob
         displayName: Eric Jacob
         accountActive: true
-        password: none
 
     - !!models.User
         id: 50
         userName: erik.bakker
         displayName: Erik Bakker
         accountActive: true
-        password: none
 
     - !!models.User
         id: 53
         userName: erwan.le.goulven
         displayName: Erwan Le Goulven
         accountActive: true
-        password: none
 
     - !!models.User
         id: 7
         userName: erwan.loisant
         displayName: Erwan Loisant
         accountActive: true
-        password: none
 
     - !!models.User
         id: 29
         userName: felipe.oliveira
         displayName: Felipe Oliveira
         accountActive: true
-        password: none
 
     - !!models.User
         id: 70
         userName: florian.gutmann
         displayName: Florian Gutmann
         accountActive: true
-        password: none
 
     - !!models.User
         id: 43
         userName: gaetan.renaudeau
         displayName: Gaëtan Renaudeau
         accountActive: true
-        password: none
 
     - !!models.User
         id: 30
         userName: green.luo
         displayName: Green Luo
         accountActive: true
-        password: none
 
     - !!models.User
         id: 31
         userName: guillaume.bort
         displayName: Guillaume Bort
         accountActive: true
-        password: none
 
     - !!models.User
         id: 5
         userName: guy.mograbi
         displayName: Guy Mograbi
         accountActive: true
-        password: none
 
     - !!models.User
         id: 2
         userName: heikki.uljas
         displayName: Heikki Uljas
         accountActive: true
-        password: none
 
     - !!models.User
         id: 61
         userName: hugo.lassiege
         displayName: Hugo Lassiege
         accountActive: true
-        password: none
 
     - !!models.User
         id: 48
         userName: igor.yova
         displayName: Igor Yova
         accountActive: true
-        password: none
 
     - !!models.User
         id: 17
         userName: ivan.meredith
         displayName: Ivan Meredith
         accountActive: true
-        password: none
 
     - !!models.User
         id: 37
         userName: james.gregory
         displayName: James Gregory
         accountActive: true
-        password: none
 
     - !!models.User
         id: 42
         userName: james.ward
         displayName: James Ward
         accountActive: true
-        password: none
 
     - !!models.User
         id: 75
         userName: jean.francois.poux
         displayName: Jean-Francois POUX
         accountActive: true
-        password: none
 
     - !!models.User
         id: 36
         userName: jesper.joergensen
         displayName: Jesper Joergensen
         accountActive: true
-        password: none
 
     - !!models.User
         id: 68
         userName: joel.soderstrom
         displayName: Joel Söderström
         accountActive: true
-        password: none
 
     - !!models.User
         id: 76
         userName: jorge.aliss
         displayName: Jorge Aliss
         accountActive: true
-        password: none
 
     - !!models.User
         id: 20
         userName: julien.bille
         displayName: Julien Bille
         accountActive: true
-        password: none
 
     - !!models.User
         id: 83
         userName: julien.richard.foy
         displayName: Julien Richard-Foy
         accountActive: true
-        password: none
 
     - !!models.User
         id: 19
         userName: jorg.viola
         displayName: Jörg Viola
         accountActive: true
-        password: none
 
     - !!models.User
         id: 64
         userName: kumaresan
         displayName: Kumaresan
         accountActive: true
-        password: none
 
     - !!models.User
         id: 15
         userName: lawrence.mcalpin
         displayName: Lawrence McAlpin
         accountActive: true
-        password: none
 
     - !!models.User
         id: 27
         userName: leif.singer
         displayName: Leif Singer
         accountActive: true
-        password: none
 
     - !!models.User
         id: 55
         userName: logisima
         displayName: logisima
         accountActive: true
-        password: none
 
     - !!models.User
         id: 62
         userName: lungisa.matshobam
         displayName: Lungisa Matshobam
         accountActive: true
-        password: none
 
     - !!models.User
         id: 28
         userName: lyubomir.ivanov
         displayName: Lyubomir Ivanov
         accountActive: true
-        password: none
 
     - !!models.User
         id: 11
         userName: marc.deschamps
         displayName: Marc Deschamps
         accountActive: true
-        password: none
 
     - !!models.User
         id: 47
         userName: marc.fornos
         displayName: Marc Fornos
         accountActive: true
-        password: none
 
     - !!models.User
         id: 67
         userName: marius.andra
         displayName: Marius Andra
         accountActive: true
-        password: none
 
     - !!models.User
         id: 39
         userName: matteo.barbieri
         displayName: Matteo Barbieri
         accountActive: true
-        password: none
 
     - !!models.User
         id: 32
         userName: michael.murray
         displayName: Michael Murray
         accountActive: true
-        password: none
 
     - !!models.User
         id: 34
         userName: morten.kjetland
         displayName: Morten Kjetland
         accountActive: true
-        password: none
 
     - !!models.User
         id: 44
         userName: naholyr
         displayName: naholyr
         accountActive: true
-        password: none
 
     - !!models.User
         id: 25
         userName: nicolas.leroux
         displayName: Nicolas Leroux
         accountActive: true
-        password: none
 
     - !!models.User
         id: 58
         userName: olivier.gilbert
         displayName: Olivier GILBERT
         accountActive: true
-        password: none
 
     - !!models.User
         id: 10
         userName: olivier.refalo
         displayName: Olivier Refalo
         accountActive: true
-        password: none
 
     - !!models.User
         id: 12
         userName: pascal.voitot
         displayName: Pascal Voitot
         accountActive: true
-        password: none
 
     - !!models.User
         id: 40
         userName: peter.hausel
         displayName: Peter Hausel
         accountActive: true
-        password: none
 
     - !!models.User
         id: 51
         userName: peter.hilton
         displayName: Peter Hilton
         accountActive: true
-        password: none
 
     - !!models.User
         id: 79
         userName: peter.lundberg
         displayName: Peter Lundberg
         accountActive: true
-        password: none
 
     - !!models.User
         id: 49
         userName: piero.sartini
         displayName: Piero Sartini
         accountActive: true
-        password: none
 
     - !!models.User
         id: 87
         userName: raghu.kaippully
         displayName: Raghu Kaippully
         accountActive: true
-        password: none
 
     - !!models.User
         id: 14
         userName: raphael.andre.bauer
         displayName: Raphael André Bauer
         accountActive: true
-        password: none
 
     - !!models.User
         id: 69
         userName: regis.bamba
         displayName: Regis Bamba
         accountActive: true
-        password: none
 
     - !!models.User
         id: 81
         userName: rich.kroll
         displayName: Rich Kroll
         accountActive: true
-        password: none
 
     - !!models.User
         id: 21
         userName: rob.figueiredo
         displayName: Rob Figueiredo
         accountActive: true
-        password: none
 
     - !!models.User
         id: 38
         userName: rustem.suniev
         displayName: Rustem Suniev
         accountActive: true
-        password: none
 
     - !!models.User
         id: 73
         userName: sadek.drobi
         displayName: Sadek Drobi
         accountActive: true
-        password: none
 
     - !!models.User
         id: 84
         userName: satoshi.takata
         displayName: Satoshi Takata
         accountActive: true
-        password: none
 
     - !!models.User
         id: 86
         userName: scott.clasen
         displayName: Scott Clasen
         accountActive: true
-        password: none
 
     - !!models.User
         id: 77
         userName: scott.phillips
         displayName: Scott Phillips
         accountActive: true
-        password: none
 
     - !!models.User
         id: 23
         userName: sebastian.hoss
         displayName: Sebastian Hoß
         accountActive: true
-        password: none
 
     - !!models.User
         id: 65
         userName: sebastian.scarano
         displayName: Sebastián Scarano
         accountActive: true
-        password: none
 
     - !!models.User
         id: 22
         userName: sondre.eikanger.kvalo
         displayName: Sondre Eikanger Kvalø
         accountActive: true
-        password: none
 
     - !!models.User
         id: 72
         userName: stephane.epardaud
         displayName: Stéphane Épardaud
         accountActive: true
-        password: none
 
     - !!models.User
         id: 8
         userName: stephane.godbillon
         displayName: Stephane Godbillon
         accountActive: true
-        password: none
 
     - !!models.User
         id: 26
         userName: steve.chaloner
         displayName: Steve Chaloner
         accountActive: true
-        password: none
 
     - !!models.User
         id: 71
         userName: tim.kral
         displayName: Tim Kral
         accountActive: true
-        password: none
 
     - !!models.User
         id: 82
         userName: tony.tam
         displayName: Tony Tam
         accountActive: true
-        password: none
 
     - !!models.User
         id: 78
         userName: vijay.kiran
         displayName: Vijay Kiran
         accountActive: true
-        password: none
 
     - !!models.User
         id: 41
         userName: vincent.buzzano
         displayName: Vincent Buzzano
         accountActive: true
-        password: none
 
     - !!models.User
         id: 56
         userName: wang.yizhuo
         displayName: Wang Yizhuo
         accountActive: true
-        password: none
 
     - !!models.User
         id: 16
         userName: wayson.clown
         displayName: Wayson Clown
         accountActive: true
-        password: none
 
     - !!models.User
         id: 66
         userName: zenexity
         displayName: Zenexity
         accountActive: true
-        password: none
 
     # Play 2 module owners
 
@@ -695,105 +609,90 @@ users:
         userName: t2v
         displayName: t2v
         accountActive: true
-        password: none
 
     - !!models.User
         id: 202
         userName: manuelbernhardt
         displayName: manuelbernhardt
         accountActive: true
-        password: none
 
     - !!models.User
         id: 203
         userName: loicdescotte
         displayName: loicdescotte
         accountActive: true
-        password: none
 
     - !!models.User
         id: 204
         userName: branaway
         displayName: branaway
         accountActive: true
-        password: none
 
     - !!models.User
         id: 205
         userName: vznet
         displayName: vznet
         accountActive: true
-        password: none
 
     - !!models.User
         id: 206
         userName: leon
         displayName: leon
         accountActive: true
-        password: none
 
     - !!models.User
         id: 207
         userName: dontcare4free
         displayName: dontcare4free
         accountActive: true
-        password: none
 
     - !!models.User
         id: 208
         userName: pufuwozu
         displayName: pufuwozu
         accountActive: true
-        password: none
 
     - !!models.User
         id: 209
         userName: jlitola
         displayName: jlitola
         accountActive: true
-        password: none
 
     - !!models.User
         id: 210
         userName: dlecan
         displayName: dlecan
         accountActive: true
-        password: none
 
     - !!models.User
         id: 211
         userName: wsargent
         displayName: wsargent
         accountActive: true
-        password: none
 
     - !!models.User
         id: 212
         userName: mumoshu
         displayName: mumoshu
         accountActive: true
-        password: none
 
     - !!models.User
         id: 213
         userName: knuton
         displayName: knuton
         accountActive: true
-        password: none
 
     - !!models.User
         id: 214
         userName: seratch
         displayName: seratch
         accountActive: true
-        password: none
 
     - !!models.User
         id: 215
         userName: typesafe
         displayName: Typesafe
         accountActive: true
-        password: none
 
 modules:
 

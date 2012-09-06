@@ -21,10 +21,13 @@ import be.objectify.deadbolt.DynamicResourceHandler;
 import be.objectify.deadbolt.models.RoleHolder;
 import controllers.Application;
 import controllers.routes;
+import models.ss.ExternalAccount;
 import play.core.Router;
 import play.mvc.Http;
 import play.mvc.Result;
 import play.mvc.Results;
+import securesocial.core.java.SecureSocial;
+import securesocial.core.java.SocialUser;
 
 /**
  * @author Steve Chaloner
@@ -34,7 +37,17 @@ public class RepoDeadboltHandler extends Results implements DeadboltHandler
     @Override
     public Result beforeRoleCheck(Http.Context context)
     {
-        return null;
+        Result result;
+        try
+        {
+            result = new SecureSocial.SecuredAction().call(context);
+        }
+        catch (Throwable t)
+        {
+            result = onAccessFailure(context,
+                                     t.getMessage());
+        }
+        return result;
     }
 
     @Override

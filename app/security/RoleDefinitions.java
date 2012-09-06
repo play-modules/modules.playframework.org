@@ -21,6 +21,7 @@ package security;
 public class RoleDefinitions
 {
     public static final String ADMIN = "admin";
+    public static final String USER = "user";
 
     private RoleDefinitions()
     {

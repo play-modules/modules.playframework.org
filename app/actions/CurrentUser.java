@@ -17,9 +17,12 @@ package actions;
 
 import com.avaje.ebean.Ebean;
 import models.User;
+import models.ss.ExternalAccount;
 import play.mvc.Action;
 import play.mvc.Http;
 import play.mvc.Result;
+import securesocial.core.java.SecureSocial;
+import securesocial.core.java.SocialUser;
 import utils.StringUtils;
 
 /**
@@ -36,18 +39,18 @@ public class CurrentUser extends Action.Simple
 
     private static User accessUser(Http.Context ctx)
     {
-        User user = (User)ctx.args.get("user");
-        if (user == null)
+        Http.Context.current.set(ctx);
+
+        User user = null;
+        SocialUser socialUser = SecureSocial.currentUser();
+        if (socialUser != null)
         {
-            String userName = ctx.session().get("userName");
-            if (!StringUtils.isEmpty(userName))
+            ExternalAccount externalAccount = ExternalAccount.findByUserIdAndProvider(socialUser.id.id,
+                                                                                      socialUser.id.provider);
+            if (externalAccount != null)
             {
-                user = User.findByUserName(userName);
-                if (user != null)
-                {
-                    ctx.args.put("user",
-                                 user);
-                }
+                user = externalAccount.user;
+                Ebean.refresh(externalAccount.user);
             }
         }
 

@@ -10,9 +10,9 @@
     @restrict(la(as("admin"))) {
         <li id="menuAdmin"><a href="@routes.PlayVersions.showPlayVersions">Admin</a></li>
     }
-    <li><a href="@routes.Application.logout">Log out</a></li>
+    <li><a href="@securesocial.controllers.LoginPage.logout">Log out</a></li>
 } else {
-    <li><a href="@routes.Application.login">Log in</a></li>
+    <li><a href="@securesocial.controllers.LoginPage.login">Log in</a></li>
 }
 
 

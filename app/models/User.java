@@ -30,24 +30,17 @@ import java.util.List;
 @Table(name = "MPO_USER")
 public class User extends AbstractModel implements RoleHolder
 {
-
     @Column(nullable = false, length = 40, unique = true)
     public String userName;
 
     @Column(nullable = false, length = 100)
     public String displayName;
 
-    @Column(name = "passwd", nullable = false, length = 64)
-    public String password;
-
     @Column(nullable = true, length = 2500)
     public String avatarUrl;
 
     @Column(nullable = false)
     public Boolean accountActive;
-
-    @Column(nullable = true, length = 36)
-    public String confirmationCode;
 
     @ManyToMany(cascade = {CascadeType.DETACH, CascadeType.REFRESH})
     public List<UserRole> roles;
@@ -63,20 +56,6 @@ public class User extends AbstractModel implements RoleHolder
 
     public static int count() {
         return FIND.findRowCount();
-    }
-
-    public static User findByUserName(String userName) {
-        return FIND.where()
-                .eq("userName", userName)
-                .findUnique();
-    }
-
-    public static User authenticate(String userName,
-                                    String password) {
-        return FIND.where()
-                .eq("userName", userName)
-                .eq("password", password)
-                .findUnique();
     }
 
     @Override

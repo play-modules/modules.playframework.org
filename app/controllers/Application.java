@@ -16,24 +16,16 @@
 package controllers;
 
 import actions.CurrentUser;
-import forms.login.Login;
-import forms.login.Register;
 import models.FeaturedModule;
 import models.Module;
 import models.PlayVersion;
 import models.memory.Sitemap;
-import play.data.Form;
-import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.With;
 import services.SitemapServices;
-import services.UserServices;
 import views.html.index;
-import views.html.login;
-import views.html.register;
 import views.html.sitemap;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -60,63 +52,19 @@ public class Application extends AbstractController
                                Module.count()));
     }
 
-    public static Result login()
-    {
-        return ok(login.render(form(Login.class)));
-    }
-
-    public static Result authenticate()
-    {
-        Form<Login> loginForm = form(Login.class).bindFromRequest();
-        Result result;
-        if (loginForm.hasErrors())
-        {
-            result = badRequest(login.render(loginForm));
-        }
-        else
-        {
-            session("userName", loginForm.get().userName);
-            result = redirect(routes.Application.index());
-        }
-
-        return result;
-    }
-
-    public static Result register()
-    {
-        return ok(register.render(form(Register.class)));
-    }
-
-    public static Result createAccount()
-    {
-        Form<Register> registerForm = form(Register.class).bindFromRequest();
-        Result result;
-        if (registerForm.hasErrors())
-        {
-            result = badRequest(register.render(registerForm));
-        }
-        else
-        {
-            Register register = registerForm.get();
-            new UserServices().createUser(register.userName, register.displayName, register.password);
-            session("userName", register.userName);
-            result = redirect(routes.Application.index());
-        }
-        return result;
-    }
-
-    public static Result logout()
-    {
-        session().clear();
-        return redirect(routes.Application.index());
-    }
-
     /**
      * Returns the sitemap of the application
      */
     public static Result sitemap()
     {
+        // todo - steve - 04/09 - do we need to repeatedly generate this?  Couldn't we have it generated once
+        // a day for catch-all updates, and every time a new module is added?
         List<Sitemap> list = SitemapServices.generateSitemap(request());
         return ok(sitemap.render(list)).as("application/xml");
+    }
+
+    public static Result createAccount()
+    {
+        return redirect(routes.Application.index());
     }
 }

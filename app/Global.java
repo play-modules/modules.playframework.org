@@ -20,18 +20,23 @@ import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.util.Duration;
 import com.avaje.ebean.Ebean;
-import models.*;
+import models.BinaryContent;
+import models.Module;
+import models.ModuleVersion;
+import models.PlayVersion;
+import models.Rate;
+import models.Rating;
+import models.User;
+import models.UserRole;
 import play.Application;
 import play.GlobalSettings;
 import play.Logger;
 import play.libs.Akka;
 import play.libs.Yaml;
 import security.RoleDefinitions;
-import services.UserServices;
 import utils.CollectionUtils;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -62,13 +67,12 @@ public class Global extends GlobalSettings
             role.description = "MPO administrator";
             role.save();
         }
-
-        if (User.findByUserName("admin") == null)
+        if (UserRole.findByRoleName(RoleDefinitions.USER) == null)
         {
-            new UserServices().createUser("admin",
-                                          "MPO Admin",
-                                          "password",
-                                          Arrays.asList(UserRole.findByRoleName(RoleDefinitions.ADMIN)));
+            UserRole role = new UserRole();
+            role.roleName = RoleDefinitions.USER;
+            role.description = "MPO user";
+            role.save();
         }
 
         loadInitialData();
