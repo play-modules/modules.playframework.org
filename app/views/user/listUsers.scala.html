@@ -1,0 +1,27 @@
+@(currentUser: User,
+  allUsers: List[User])
+
+@import tags._
+
+@main("My account", currentUser) {
+<header>
+    <h1 class="introduction">All users</h1>
+</header>
+
+<div class="row">
+    <div class="span12">
+        <ul>
+            @for(user <- allUsers) {
+            <li><a href="@routes.Application.viewAccount(user.userName)">@user.displayName</a></li>
+            }
+        </ul>
+    </div>
+</div>
+
+<script>
+    $(function(){
+        setNavbar("Users");
+    });
+</script>
+
+}

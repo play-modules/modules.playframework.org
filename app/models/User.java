@@ -58,6 +58,20 @@ public class User extends AbstractModel implements RoleHolder
         return FIND.findRowCount();
     }
 
+    public static List<User> all()
+    {
+        return FIND.where()
+                   .order().asc("userName")
+                   .findList();
+    }
+
+    public static User getByUserName(String userName)
+    {
+        return FIND.where()
+                   .eq("userName", userName)
+                   .findUnique();
+    }
+
     @Override
     public List<? extends Role> getRoles()
     {

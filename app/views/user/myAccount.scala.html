@@ -1,0 +1,38 @@
+@(currentUser: User,
+  externalAccounts: List[models.ss.ExternalAccount],
+  otherProviders: List[securesocial.core.IdentityProvider])
+
+@import tags._
+
+@main("My account", currentUser) {
+<header>
+    <h1 class="introduction">@if(currentUser.avatarUrl != null) {<img src="@currentUser.avatarUrl"/>} @currentUser.displayName</h1>
+</header>
+
+<div class="row">
+    <div class="span6">
+        Various details here
+    </div>
+    <div class="span6">
+        <h3>Linked accounts</h3>
+        @for(externalAccount <- externalAccounts) {
+        @defining( "images/providers/%s.png".format(externalAccount.provider) ) { imageUrl =>
+        <img src="@routes.Assets.at(imageUrl)" title="@externalAccount.provider" alt="@externalAccount.provider"/>
+        }
+        }
+        <h3>Link more accounts</h3>
+        @for(otherProvider <- otherProviders) {
+        @defining( "images/providers/%s.png".format(otherProvider.providerId) ) { imageUrl =>
+        <img src="@routes.Assets.at(imageUrl)" title="@otherProvider.providerId" alt="@otherProvider.providerId"/>
+        }
+        }
+    </div>
+</div>
+
+<script>
+    $(function(){
+        setNavbar("MyAccount");
+    });
+</script>
+
+}

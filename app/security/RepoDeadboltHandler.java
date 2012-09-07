@@ -37,17 +37,7 @@ public class RepoDeadboltHandler extends Results implements DeadboltHandler
     @Override
     public Result beforeRoleCheck(Http.Context context)
     {
-        Result result;
-        try
-        {
-            result = new SecureSocial.SecuredAction().call(context);
-        }
-        catch (Throwable t)
-        {
-            result = onAccessFailure(context,
-                                     t.getMessage());
-        }
-        return result;
+        return null;
     }
 
     @Override
@@ -61,7 +51,7 @@ public class RepoDeadboltHandler extends Results implements DeadboltHandler
                                   String s)
     {
         Http.Context.current.set(context);
-        return redirect(routes.Application.index());
+        return redirect(securesocial.controllers.routes.LoginPage.login());
     }
 
     @Override

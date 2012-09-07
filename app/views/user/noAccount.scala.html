@@ -1,0 +1,16 @@
+@(currentUser: User)
+
+@import tags._
+
+@main("No such account", currentUser) {
+<header>
+    <h1 class="introduction">Sorry, that user doesn't exist!</h1>
+</header>
+
+<script>
+    $(function(){
+        setNavbar("Users");
+    });
+</script>
+
+}

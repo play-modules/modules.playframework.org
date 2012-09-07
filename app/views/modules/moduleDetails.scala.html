@@ -115,7 +115,7 @@ val appDependencies = Seq(
         }
 
         <h3>Owner</h3>
-        <p>@module.owner.displayName</p>
+        <p><a href="@routes.Application.viewAccount(module.owner.userName)">@module.owner.displayName</a></p>
 
          @if(!isEmpty(module.contributors)){
             <h3>Contributors</h3>

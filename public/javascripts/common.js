@@ -14,6 +14,7 @@ function setNavbar(id) {
     $('#menuHome').removeClass('active');
     $('#menuPlay1').removeClass('active');
     $('#menuPlay2').removeClass('active');
+    $('#menuMyAccount').removeClass('active');
     $('#menuMyModules').removeClass('active');
     $('#menuSubmitModules').removeClass('active');
     $('#menuAdmin').removeClass('active');

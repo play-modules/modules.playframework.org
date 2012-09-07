@@ -4,7 +4,7 @@
 @import be.objectify.deadbolt.utils.TemplateUtils._
 
 @if(currentUser != null) {
-    <li><a href="@routes.Modules.myModules"><img id="userAvatar" src="@currentUser.avatarUrl"/> @currentUser.displayName</a></li>
+    <li id="menuMyAccount"><a href="@routes.Application.viewAccount(currentUser.userName)">@if(currentUser.avatarUrl != null){<img id="userAvatar" src="@currentUser.avatarUrl"/> }@currentUser.displayName</a></li>
     <li id="menuMyModules"><a href="@routes.Modules.myModules">My modules</a></li>
     <li id="menuSubmitModules"><a href="@routes.Modules.showModuleRegistrationForm">Submit a new module</a></li>
     @restrict(la(as("admin"))) {

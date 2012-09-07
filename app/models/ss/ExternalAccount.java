@@ -15,12 +15,12 @@
  */
 package models.ss;
 
-import com.avaje.ebean.Ebean;
 import models.AbstractModel;
 import models.User;
 import securesocial.core.java.AuthenticationMethod;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * @author Steve Chaloner (steve@objectify.be)
@@ -65,5 +65,13 @@ public class ExternalAccount extends AbstractModel
                    .eq("externalId", id)
                    .eq("provider", provider)
                    .findUnique();
+    }
+
+    public static List<ExternalAccount> findByUser(User currentUser)
+    {
+        return FIND.where()
+                .eq("user", currentUser)
+                .order().asc("provider")
+                .findList();
     }
 }
