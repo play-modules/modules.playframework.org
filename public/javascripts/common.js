@@ -11,13 +11,7 @@ window.$.noConflict();window.$ = window.$.attachReady(jQuery);
 */
 function setNavbar(id) {
     //remove all selectors
-    $('#menuHome').removeClass('active');
-    $('#menuPlay1').removeClass('active');
-    $('#menuPlay2').removeClass('active');
-    $('#menuMyAccount').removeClass('active');
-    $('#menuMyModules').removeClass('active');
-    $('#menuSubmitModules').removeClass('active');
-    $('#menuAdmin').removeClass('active');
+    $('#mpoNavBar').find('.menuItem').removeClass('active');
 
     //set given one
     $("#menu"+id).addClass('active');

@@ -60,11 +60,11 @@
                     <!-- Everything you want hidden at 940px or less, place within here -->
                     <div class="nav-collapse">
                         <!-- .nav, .navbar-search, .navbar-form, etc -->
-                        <ul class="nav">
-                            <li id="menuHome"><a href="@routes.Application.index()">Home</a></li>
-                            <li id="menuUsers"><a href="@routes.Application.listUsers()">Users</a></li>
-                            <li id="menuPlay1"><a href="@routes.Modules.getModulesByPlayVersion("1")">Play 1.x</a></li>
-                            <li id="menuPlay2"><a href="@routes.Modules.getModulesByPlayVersion("2")">Play 2.x</a></li>
+                        <ul class="nav" id="mpoNavBar">
+                            <li id="menuHome" class="menuItem"><a href="@routes.Application.index()">Home</a></li>
+                            <li id="menuUsers" class="menuItem"><a href="@routes.Application.listUsers()">Users</a></li>
+                            <li id="menuPlay1" class="menuItem"><a href="@routes.Modules.getModulesByPlayVersion("1")">Play 1.x</a></li>
+                            <li id="menuPlay2" class="menuItem"><a href="@routes.Modules.getModulesByPlayVersion("2")">Play 2.x</a></li>
                             <li class="divider-vertical"></li>
                             <li><a href='@routes.Assets.at("feeds/mpo.atom.xml")'><img src="@routes.Assets.at("images/feed-icon-14x14.png")">&nbsp;Atom 1.0</a></li>
                             <li><a href='@routes.Assets.at("feeds/mpo.rss1.xml")'><img src="@routes.Assets.at("images/feed-icon-14x14.png")">&nbsp;RSS 1.0</a></li>
