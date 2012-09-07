@@ -2,4 +2,6 @@
 
 11000:ss.db.ExternalUserAccountService
 11001:securesocial.core.providers.TwitterProvider
-11002:securesocial.core.providers.FacebookProvider
+11002:securesocial.core.providers.GoogleProvider
+11003:securesocial.core.providers.FacebookProvider
+11004:securesocial.core.providers.LinkedInProvider
