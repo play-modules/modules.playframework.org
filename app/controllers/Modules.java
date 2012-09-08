@@ -37,7 +37,6 @@ import play.mvc.With;
 import utils.CollectionUtils;
 import utils.Filter;
 import utils.RequestUtils;
-import utils.Transformer;
 import views.html.modules.genericModuleList;
 import views.html.modules.manageVersionsForm;
 import views.html.modules.moduleDetails;

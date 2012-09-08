@@ -15,12 +15,19 @@
  */
 package models;
 
+import com.google.common.base.Function;
 import play.data.validation.Constraints;
-import utils.CollectionUtils;
-import utils.Transformer;
 
 import javax.persistence.*;
-import java.util.*;
+import java.util.Date;
+import java.util.List;
+import java.util.Set;
+
+import static com.google.common.collect.Lists.newArrayList;
+import static com.google.common.collect.Lists.transform;
+import static com.google.common.collect.Sets.newHashSet;
+import static models.PlayVersion.MajorVersion;
+import static models.PlayVersion.findVersionsByMajorVersion;
 
 /**
  * @author Steve Chaloner (steve@objectify.be)
@@ -55,20 +62,14 @@ public class ModuleVersion extends AbstractModel {
     @OneToOne(optional = true, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     public BinaryContent documentFile;
 
-    public static final Finder<Long, ModuleVersion> FIND = new Finder<Long, ModuleVersion>(Long.class,
-            ModuleVersion.class);
+    public static final Finder<Long, ModuleVersion> FIND = new Finder<Long, ModuleVersion>(Long.class, ModuleVersion.class);
 
     public static int count() {
         return FIND.findRowCount();
     }
 
-    public Set<PlayVersion.MajorVersion> getMajorVersions()
-    {
-        Set<PlayVersion.MajorVersion> majorVersions = new HashSet<PlayVersion.MajorVersion>();
-        Transformer<PlayVersion, PlayVersion.MajorVersion> transformer = new MajorVersionExtractor();
-        majorVersions.addAll(CollectionUtils.transform(compatibility,
-                                                       transformer));
-        return majorVersions;
+    public Set<PlayVersion.MajorVersion> getMajorVersions() {
+        return newHashSet(transform(compatibility, toMajorVersions()));
     }
 
     public static List<ModuleVersion> findByModule(Module module) {
@@ -78,25 +79,36 @@ public class ModuleVersion extends AbstractModel {
                 .findList();
     }
 
+    public static List<Module> findModulesByMajorVersion(MajorVersion majorVersion){
+        return findModulesByPlayVersion(findVersionsByMajorVersion(majorVersion));
+    }
+
     public static List<Module> findModulesByPlayVersion(List<PlayVersion> playVersions) {
-        List<ModuleVersion> matches = FIND.where()
+        List<ModuleVersion> moduleVersions = FIND
+                .where()
                 .in("compatibility", playVersions)
-                .query().fetch("playModule").fetch("playModule.owner")
+                .query()
+                .fetch("playModule")
+                .fetch("playModule.owner")
                 .findList();
-        SortedSet<Module> modules = new TreeSet<Module>();
-        for (ModuleVersion match : matches) {
-            modules.add(match.playModule);
-        }
-
-        return new ArrayList<Module>(modules);
+        return newArrayList(newHashSet(transform(moduleVersions, toModules())));
     }
 
-    private class MajorVersionExtractor implements Transformer<PlayVersion, PlayVersion.MajorVersion>
-    {
-        @Override
-        public PlayVersion.MajorVersion transform(PlayVersion playVersion)
-        {
-            return playVersion.majorVersion;
-        }
+    private static Function<ModuleVersion, Module> toModules() {
+        return new Function<ModuleVersion, Module>() {
+            public Module apply(ModuleVersion moduleVersion) {
+                return moduleVersion.playModule;
+            }
+        };
     }
+
+    private Function<PlayVersion, PlayVersion.MajorVersion> toMajorVersions() {
+        return new Function<PlayVersion, MajorVersion>() {
+            public MajorVersion apply(PlayVersion playVersion) {
+                return playVersion.majorVersion;
+            }
+        };
+    }
+
+
 }

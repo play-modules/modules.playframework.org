@@ -52,7 +52,7 @@ public class PlayVersion extends AbstractModel {
     @Column(nullable = false)
     @Constraints.Required
     public String documentationUrl;
-    
+
     public static final Finder<Long, PlayVersion> FIND = new Finder<Long, PlayVersion>(Long.class,
             PlayVersion.class);
 
@@ -84,7 +84,7 @@ public class PlayVersion extends AbstractModel {
                 .findList();
     }
 
-    public static List<PlayVersion> findByMajorVersion(MajorVersion majorVersion) {
+    public static List<PlayVersion> findVersionsByMajorVersion(MajorVersion majorVersion) {
         return FIND.where()
                 .eq("majorVersion", majorVersion)
                 .findList();

@@ -20,7 +20,6 @@ import be.objectify.deadbolt.actions.Restrict;
 import models.PlayVersion;
 import play.data.Form;
 import play.libs.Json;
-import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.With;
 import security.RoleDefinitions;
@@ -38,8 +37,8 @@ public class PlayVersions extends AbstractController
     public static Result showPlayVersions()
     {
         return ok(playVersions.render(CurrentUser.currentUser(),
-                                      PlayVersion.findByMajorVersion(PlayVersion.MajorVersion.ONE),
-                                      PlayVersion.findByMajorVersion(PlayVersion.MajorVersion.TWO),
+                                      PlayVersion.findVersionsByMajorVersion(PlayVersion.MajorVersion.ONE),
+                                      PlayVersion.findVersionsByMajorVersion(PlayVersion.MajorVersion.TWO),
                                       form(PlayVersion.class)));
     }
 
@@ -50,8 +49,8 @@ public class PlayVersions extends AbstractController
         if (form.hasErrors())
         {
             result = badRequest(playVersions.render(currentUser(),
-                                                    PlayVersion.findByMajorVersion(PlayVersion.MajorVersion.ONE),
-                                                    PlayVersion.findByMajorVersion(PlayVersion.MajorVersion.TWO),
+                                                    PlayVersion.findVersionsByMajorVersion(PlayVersion.MajorVersion.ONE),
+                                                    PlayVersion.findVersionsByMajorVersion(PlayVersion.MajorVersion.TWO),
                                                     form));
         }
         else

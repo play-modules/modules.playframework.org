@@ -1,5 +1,6 @@
 @(currentUser: User,
-  mostRecentModules: List[Module],
+  mostRecentModules1: List[Module],
+  mostRecentModules2: List[Module],
   highestRatedModules: List[Module],
   featuredModules: List[FeaturedModule],
   playVersions: List[PlayVersion],
@@ -59,7 +60,7 @@
 <hr/>
 <div class="row">
     <div class="span4">
-        @featureList("Latest 2.x modules", mostRecentModules)
+        @featureList("Latest 2.x modules", mostRecentModules2)
     </div>
     <div class="span4">
         @featureList("Featured 2.x modules", featuredModules)
@@ -71,7 +72,7 @@
 
 <div class="row">
     <div class="span4">
-        @featureList("Latest 1.x modules", mostRecentModules)
+        @featureList("Latest 1.x modules", mostRecentModules1)
     </div>
     <div class="span4">
         @featureList("Featured 1.x modules", featuredModules)
