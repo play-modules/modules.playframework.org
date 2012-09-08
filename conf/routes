@@ -3,6 +3,10 @@ GET  /                       controllers.Application.index()
 # Sitemap
 GET  /sitemap.xml           controllers.Application.sitemap()
 
+# User accounts
+GET /user/all                 controllers.Application.listUsers()
+GET /user/i/:userName         controllers.Application.viewAccount(userName)
+
 # Browse (use query string for tags, text search ‘q’ and sorting on top of these)
 GET  /modules/mine                      controllers.Modules.myModules()
 # Note that featured/popular/rating are just sort params - the three entries below need revising for this

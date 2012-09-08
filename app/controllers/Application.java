@@ -19,15 +19,26 @@ import actions.CurrentUser;
 import models.FeaturedModule;
 import models.Module;
 import models.PlayVersion;
+import models.User;
 import models.memory.Sitemap;
+import models.ss.ExternalAccount;
 import play.mvc.Result;
 import play.mvc.With;
+import scala.collection.JavaConversions;
+import securesocial.core.IdentityProvider;
+import securesocial.core.ProviderRegistry;
 import services.SitemapServices;
 import views.html.index;
+import views.html.user.account;
+import views.html.user.listUsers;
+import views.html.user.myAccount;
+import views.html.user.noAccount;
 import views.html.sitemap;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 import static actions.CurrentUser.currentUser;
 import static models.Module.findMostRecentModules;
@@ -66,8 +77,57 @@ public class Application extends AbstractController
         return ok(sitemap.render(list)).as("application/xml");
     }
 
-    public static Result createAccount()
+    public static Result listUsers()
     {
-        return redirect(routes.Application.index());
+        return ok(listUsers.render(currentUser(),
+                                   User.all()));
+    }
+
+    public static Result viewAccount(String userName)
+    {
+        User currentUser = currentUser();
+        Result result;
+        if (currentUser != null && currentUser.userName.equals(userName))
+        {
+            // todo - steve 07/09/2012 - this is pretty clumsy
+            List<ExternalAccount> externalAccounts = ExternalAccount.findByUser(currentUser);
+            List<String> existingAccounts = new ArrayList<String>(externalAccounts.size());
+            for (ExternalAccount externalAccount : externalAccounts)
+            {
+                existingAccounts.add(externalAccount.provider);
+            }
+
+            Map<String,IdentityProvider> allProviders = JavaConversions.asMap(ProviderRegistry.all());
+            List<IdentityProvider> otherProviders = new ArrayList<IdentityProvider>();
+            if (externalAccounts.size() < allProviders.size())
+            {
+                for (Map.Entry<String, IdentityProvider> entry : allProviders.entrySet())
+                {
+                    if (!existingAccounts.contains(entry.getKey()))
+                    {
+                        otherProviders.add(entry.getValue());
+                    }
+                }
+            }
+            result = ok(myAccount.render(currentUser,
+                                         externalAccounts,
+                                         otherProviders));
+        }
+        else
+        {
+            User user = User.getByUserName(userName);
+            if (user == null)
+            {
+                result = ok(noAccount.render(currentUser));
+            }
+            else
+            {
+                List<Module> modules = Module.ownedBy(user);
+                result = ok(account.render(currentUser,
+                                           user,
+                                           modules));
+            }
+        }
+        return result;
     }
 }
