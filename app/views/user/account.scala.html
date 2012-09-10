@@ -17,9 +17,13 @@
     <div class="span4">
         <h4>@{targetUser.displayName}'s modules</h4>
         <ul>
-        @for(module <- modules) {
-        <li><a href="@routes.Modules.details(module.key)">@module.name</a></li>
-        }
+            @if(modules.isEmpty()) {
+            <li>This user doesn't have any modules.</li>
+            } else {
+            @for(module <- modules) {
+            <li><a href="@routes.Modules.details(module.key)">@module.name</a></li>
+            }
+            }
         </ul>
     </div>
     <div class="span4">
