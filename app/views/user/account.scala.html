@@ -4,14 +4,14 @@
 
 @import tags._
 
-@main(currentUser.displayName, currentUser) {
+@main(targetUser.displayName, currentUser) {
 <header>
-    <h1 class="introduction">@if(targetUser.avatarUrl != null) {<img src="@targetUser.avatarUrl"/>} @targetUser.displayName</h1>
+    <h1 class="introduction">@targetUser.displayName</h1>
 </header>
 
 <div class="row">
-    <div class="span4">
-        Various details here
+    <div class="span4 center">
+        <img src='@if(targetUser.avatarUrl != null){@targetUser.avatarUrl}else{@routes.Assets.at("images/missing-user.png")}'/>
     </div>
     <div class="span4">
         <h4>@{targetUser.displayName}'s modules</h4>
@@ -22,7 +22,7 @@
         </ul>
     </div>
     <div class="span4">
-        User's votes, comments, etc, here
+        @targetUser.votes
     </div>
 </div>
 

@@ -20,6 +20,7 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.OneToOne;
+import java.util.Date;
 
 /**
  * @author Steve Chaloner (steve@objectify.be)
@@ -38,6 +39,9 @@ public class Vote extends AbstractModel
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     public VoteType voteType;
+
+    @Column(nullable = false)
+    public Date lastChangeDate;
 
     public boolean isUpVote()
     {

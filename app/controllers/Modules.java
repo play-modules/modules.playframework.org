@@ -37,7 +37,6 @@ import play.mvc.With;
 import utils.CollectionUtils;
 import utils.Filter;
 import utils.RequestUtils;
-import utils.Transformer;
 import views.html.modules.genericModuleList;
 import views.html.modules.manageVersionsForm;
 import views.html.modules.moduleDetails;
@@ -266,6 +265,7 @@ public class Modules extends AbstractController
                     --module.downVoteCount;
                     ++module.upVoteCount;
                     vote.voteType = Vote.VoteType.UP;
+                    vote.lastChangeDate = new Date();
                     vote.save();
                     module.save();
                 }
@@ -281,6 +281,7 @@ public class Modules extends AbstractController
                 vote = new Vote();
                 vote.playModule = module;
                 vote.voteType = Vote.VoteType.UP;
+                vote.lastChangeDate = new Date();
                 // support for public voting comes later
                 vote.publicVote = false;
                 user.votes.add(vote);
@@ -341,6 +342,7 @@ public class Modules extends AbstractController
                 vote = new Vote();
                 vote.playModule = module;
                 vote.voteType = Vote.VoteType.DOWN;
+                vote.lastChangeDate = new Date();
                 // support for public voting comes later
                 vote.publicVote = false;
                 user.votes.add(vote);
@@ -406,6 +408,7 @@ public class Modules extends AbstractController
                         user.rates.add(rate);
                     }
                     rate.rating = ratingForm.rating;
+                    rate.lastChangeDate = new Date();
                     module.rating.add(rate);
                     module.rating.calculateAverage();
 

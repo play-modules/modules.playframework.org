@@ -6,12 +6,16 @@
 
 @main("My account", currentUser) {
 <header>
-    <h1 class="introduction">@if(currentUser.avatarUrl != null) {<img src="@currentUser.avatarUrl"/>} @currentUser.displayName</h1>
+    <h1 class="introduction">@currentUser.displayName</h1>
 </header>
 
 <div class="row">
-    <div class="span6">
-        Various details here
+    <div class="span6 center">
+        @if(currentUser.avatarUrl != null) {
+        <img src="@currentUser.avatarUrl"/>
+        } else {
+        <img src='@routes.Assets.at("images/missing-user.png")'/>
+        }
     </div>
     <div class="span6">
         <h3>Linked accounts</h3>
@@ -29,10 +33,9 @@
     </div>
 </div>
 
-<script>
+<script type="text/javascript">
     $(function(){
         setNavbar("MyAccount");
     });
 </script>
-
 }

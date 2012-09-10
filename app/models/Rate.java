@@ -18,6 +18,7 @@ package models;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
+import java.util.Date;
 
 /**
  * @author Steve Chaloner (steve@objectify.be)
@@ -30,4 +31,7 @@ public class Rate extends AbstractModel {
 
     @Column(nullable = false)
     public Integer rating;
+
+    @Column(nullable = false)
+    public Date lastChangeDate;
 }
