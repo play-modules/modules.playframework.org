@@ -41,6 +41,7 @@ import java.util.List;
 import java.util.Map;
 
 import static actions.CurrentUser.currentUser;
+import static models.Module.findMostRecentModules;
 
 /**
  * @author Steve Chaloner (steve@objectify.be)
@@ -50,13 +51,15 @@ public class Application extends AbstractController
 {
     public static Result index()
     {
-        final List<Module> mostRecentModules = Module.findMostRecent(5);
+        final List<Module> mostRecentModules1 = findMostRecentModules(5, PlayVersion.MajorVersion.ONE);
+        final List<Module> mostRecentModules2 = findMostRecentModules(5, PlayVersion.MajorVersion.TWO);
         final List<Module> highestRatedModules = Collections.emptyList(); // best way to use the rating algorithm for the db call?  pre-calculate before storing?
         final List<FeaturedModule> featuredModules = FeaturedModule.getAll();
         final List<PlayVersion> playVersions = PlayVersion.getAll();
 
         return ok(index.render(currentUser(),
-                               mostRecentModules,
+                               mostRecentModules1,
+                               mostRecentModules2,
                                highestRatedModules,
                                featuredModules,
                                playVersions,

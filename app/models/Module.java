@@ -15,6 +15,7 @@
  */
 package models;
 
+import com.avaje.ebean.Ebean;
 import com.petebevin.markdown.MarkdownProcessor;
 import play.data.validation.Constraints;
 import utils.CollectionUtils;
@@ -24,10 +25,12 @@ import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
+import static com.avaje.ebean.Ebean.sort;
 import static javax.persistence.CascadeType.*;
 import static javax.persistence.FetchType.LAZY;
+import static models.ModuleVersion.findModulesByMajorVersion;
+import static models.PlayVersion.MajorVersion;
 import static play.data.validation.Constraints.MaxLength;
 import static play.data.validation.Constraints.Required;
 
@@ -36,8 +39,7 @@ import static play.data.validation.Constraints.Required;
  */
 @Entity
 @Table(name = "MPO_MODULE")
-public class Module extends AbstractModel implements Comparable<Module>, ModuleAccessor
-{
+public class Module extends AbstractModel implements Comparable<Module>, ModuleAccessor {
     @ManyToOne(optional = false)
     public User owner;
 
@@ -132,13 +134,12 @@ public class Module extends AbstractModel implements Comparable<Module>, ModuleA
         return FIND.fetch("owner").where().eq("key", moduleKey).findUnique();
     }
 
-    public static Map<String, String> options()
-    {
+    public static Map<String, String> options() {
         Map<String, String> options = new LinkedHashMap<String, String>();
 
         for (Module module : all()) {
             options.put(module.id.toString(),
-                        module.name);
+                    module.name);
         }
 
         return options;
@@ -169,15 +170,18 @@ public class Module extends AbstractModel implements Comparable<Module>, ModuleA
         return FIND.where().orderBy("updatedOn DESC").setMaxRows(count).findList();
     }
 
+    public static List<Module> findMostRecentModules(int count, MajorVersion version) {
+        List<Module> modules = findModulesByMajorVersion(version);
+        sort(modules, "updatedOn DESC");
+        return modules.size() <= count ? modules : modules.subList(0, count);
+    }
+
     public static List<Module> ownedBy(User user) {
-        return FIND.where()
-                .eq("owner", user)
-                .findList();
+        return FIND.where().eq("owner", user).findList();
     }
 
     public static Module findById(Long id) {
-        return FIND.where()
-                .eq("id", id)
-                .findUnique();
+        return FIND.where().eq("id", id).findUnique();
     }
+
 }
