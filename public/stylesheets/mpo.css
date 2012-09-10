@@ -1,4 +1,9 @@
-#userAvatar {
+img.userAvatarSmall {
     width: 24px;
     height: 24px;
 }
+
+div.center {
+    text-align: center;
+}
+

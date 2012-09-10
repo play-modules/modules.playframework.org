@@ -20,12 +20,13 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.OneToOne;
+import java.util.Date;
 
 /**
  * @author Steve Chaloner (steve@objectify.be)
  */
 @Entity
-public class Vote extends AbstractModel
+public class Vote extends AbstractModel implements SocialActivity
 {
     public enum VoteType { UP, DOWN }
 
@@ -33,15 +34,34 @@ public class Vote extends AbstractModel
     public Module playModule;
 
     @Column(nullable = false)
-    public Boolean publicVote;
-
-    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     public VoteType voteType;
+
+    @Column(nullable = false)
+    public Date lastChangeDate;
 
     public boolean isUpVote()
     {
         return voteType == VoteType.UP;
     }
 
+    @Override
+    public String getDescription()
+    {
+        return String.format("%s-voted %s",
+                             isUpVote() ? "up" : "down",
+                             playModule.name);
+    }
+
+    @Override
+    public Date getDate()
+    {
+        return lastChangeDate;
+    }
+
+    @Override
+    public String getType()
+    {
+        return isUpVote() ? "upvote" : "downvote";
+    }
 }

@@ -18,16 +18,39 @@ package models;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
+import java.util.Date;
 
 /**
  * @author Steve Chaloner (steve@objectify.be)
  */
 @Entity
-public class Rate extends AbstractModel {
+public class Rate extends AbstractModel implements SocialActivity
+{
 
     @OneToOne(optional = false)
     public Module playModule;
 
     @Column(nullable = false)
     public Integer rating;
+
+    @Column(nullable = false)
+    public Date lastChangeDate;
+
+    @Override
+    public String getDescription()
+    {
+        return "rated " + playModule.name;
+    }
+
+    @Override
+    public Date getDate()
+    {
+        return lastChangeDate;
+    }
+
+    @Override
+    public String getType()
+    {
+        return "rate";
+    }
 }

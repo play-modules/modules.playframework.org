@@ -1,0 +1,15 @@
+@(userName: String, socialActivities: List[_ <: SocialActivity])
+
+
+<h4>Social activity</h4>
+<table class="table">
+    @if(socialActivities.isEmpty()) {
+    <tr><td>No social activity</td></tr>
+    }else{
+    @for(socialActivity <- socialActivities) {
+    @defining("%s %s %s".format(socialActivity.getDate().format("dd/MM/yyyy"), userName, socialActivity.getDescription())) { description =>
+    <tr><td><img src='@routes.Assets.at("images/social/type/" + socialActivity.getType() + ".png")'/> @description</td></tr>
+    }
+    }
+    }
+</table>

@@ -265,6 +265,7 @@ public class Modules extends AbstractController
                     --module.downVoteCount;
                     ++module.upVoteCount;
                     vote.voteType = Vote.VoteType.UP;
+                    vote.lastChangeDate = new Date();
                     vote.save();
                     module.save();
                 }
@@ -280,8 +281,7 @@ public class Modules extends AbstractController
                 vote = new Vote();
                 vote.playModule = module;
                 vote.voteType = Vote.VoteType.UP;
-                // support for public voting comes later
-                vote.publicVote = false;
+                vote.lastChangeDate = new Date();
                 user.votes.add(vote);
                 user.save();
 
@@ -340,8 +340,7 @@ public class Modules extends AbstractController
                 vote = new Vote();
                 vote.playModule = module;
                 vote.voteType = Vote.VoteType.DOWN;
-                // support for public voting comes later
-                vote.publicVote = false;
+                vote.lastChangeDate = new Date();
                 user.votes.add(vote);
                 user.save();
 
@@ -405,6 +404,7 @@ public class Modules extends AbstractController
                         user.rates.add(rate);
                     }
                     rate.rating = ratingForm.rating;
+                    rate.lastChangeDate = new Date();
                     module.rating.add(rate);
                     module.rating.calculateAverage();
 
