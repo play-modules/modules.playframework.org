@@ -282,8 +282,6 @@ public class Modules extends AbstractController
                 vote.playModule = module;
                 vote.voteType = Vote.VoteType.UP;
                 vote.lastChangeDate = new Date();
-                // support for public voting comes later
-                vote.publicVote = false;
                 user.votes.add(vote);
                 user.save();
 
@@ -343,8 +341,6 @@ public class Modules extends AbstractController
                 vote.playModule = module;
                 vote.voteType = Vote.VoteType.DOWN;
                 vote.lastChangeDate = new Date();
-                // support for public voting comes later
-                vote.publicVote = false;
                 user.votes.add(vote);
                 user.save();
 

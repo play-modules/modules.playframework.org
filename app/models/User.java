@@ -61,7 +61,7 @@ public class User extends AbstractModel implements RoleHolder
     public static List<User> all()
     {
         return FIND.where()
-                   .order().asc("userName")
+                   .order().asc("displayName")
                    .findList();
     }
 

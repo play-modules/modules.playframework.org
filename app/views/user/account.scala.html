@@ -1,6 +1,7 @@
 @(currentUser: User,
   targetUser: User,
-  modules: List[Module])
+  modules: List[Module],
+  socialActivities: List[SocialActivity])
 
 @import tags._
 
@@ -22,7 +23,7 @@
         </ul>
     </div>
     <div class="span4">
-        @targetUser.votes
+        @socialActivitySummary(targetUser.displayName, socialActivities)
     </div>
 </div>
 

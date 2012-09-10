@@ -26,15 +26,12 @@ import java.util.Date;
  * @author Steve Chaloner (steve@objectify.be)
  */
 @Entity
-public class Vote extends AbstractModel
+public class Vote extends AbstractModel implements SocialActivity
 {
     public enum VoteType { UP, DOWN }
 
     @OneToOne(optional = false)
     public Module playModule;
-
-    @Column(nullable = false)
-    public Boolean publicVote;
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
@@ -48,4 +45,23 @@ public class Vote extends AbstractModel
         return voteType == VoteType.UP;
     }
 
+    @Override
+    public String getDescription()
+    {
+        return String.format("%s-voted %s",
+                             isUpVote() ? "up" : "down",
+                             playModule.name);
+    }
+
+    @Override
+    public Date getDate()
+    {
+        return lastChangeDate;
+    }
+
+    @Override
+    public String getType()
+    {
+        return isUpVote() ? "upvote" : "downvote";
+    }
 }

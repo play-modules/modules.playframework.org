@@ -19,6 +19,7 @@ import actions.CurrentUser;
 import models.FeaturedModule;
 import models.Module;
 import models.PlayVersion;
+import models.SocialActivity;
 import models.User;
 import models.memory.Sitemap;
 import models.ss.ExternalAccount;
@@ -37,6 +38,7 @@ import views.html.sitemap;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
@@ -85,49 +87,71 @@ public class Application extends AbstractController
 
     public static Result viewAccount(String userName)
     {
-        User currentUser = currentUser();
         Result result;
-        if (currentUser != null && currentUser.userName.equals(userName))
+        User currentUser = currentUser();
+        User user = User.getByUserName(userName);
+        if (user == null)
         {
-            // todo - steve 07/09/2012 - this is pretty clumsy
-            List<ExternalAccount> externalAccounts = ExternalAccount.findByUser(currentUser);
-            List<String> existingAccounts = new ArrayList<String>(externalAccounts.size());
-            for (ExternalAccount externalAccount : externalAccounts)
-            {
-                existingAccounts.add(externalAccount.provider);
-            }
-
-            Map<String,IdentityProvider> allProviders = JavaConversions.asMap(ProviderRegistry.all());
-            List<IdentityProvider> otherProviders = new ArrayList<IdentityProvider>();
-            if (externalAccounts.size() < allProviders.size())
-            {
-                for (Map.Entry<String, IdentityProvider> entry : allProviders.entrySet())
-                {
-                    if (!existingAccounts.contains(entry.getKey()))
-                    {
-                        otherProviders.add(entry.getValue());
-                    }
-                }
-            }
-            result = ok(myAccount.render(currentUser,
-                                         externalAccounts,
-                                         otherProviders));
+            result = ok(noAccount.render(currentUser));
         }
         else
         {
-            User user = User.getByUserName(userName);
-            if (user == null)
+            if (currentUser != null && currentUser.userName.equals(userName))
             {
-                result = ok(noAccount.render(currentUser));
+                // todo - steve 07/09/2012 - this is pretty clumsy
+                List<ExternalAccount> externalAccounts = ExternalAccount.findByUser(currentUser);
+                List<String> existingAccounts = new ArrayList<String>(externalAccounts.size());
+                for (ExternalAccount externalAccount : externalAccounts)
+                {
+                    existingAccounts.add(externalAccount.provider);
+                }
+
+                Map<String, IdentityProvider> allProviders = JavaConversions.asMap(ProviderRegistry.all());
+                List<IdentityProvider> otherProviders = new ArrayList<IdentityProvider>();
+                if (externalAccounts.size() < allProviders.size())
+                {
+                    for (Map.Entry<String, IdentityProvider> entry : allProviders.entrySet())
+                    {
+                        if (!existingAccounts.contains(entry.getKey()))
+                        {
+                            otherProviders.add(entry.getValue());
+                        }
+                    }
+                }
+                result = ok(myAccount.render(currentUser,
+                                             externalAccounts,
+                                             otherProviders,
+                                             Module.ownedBy(currentUser),
+                                             getSocialActivities(currentUser, 10)));
             }
             else
             {
-                List<Module> modules = Module.ownedBy(user);
                 result = ok(account.render(currentUser,
                                            user,
-                                           modules));
+                                           Module.ownedBy(user),
+                                           getSocialActivities(user, 10)));
             }
         }
+
         return result;
+    }
+
+    private static List<SocialActivity> getSocialActivities(User user,
+                                                            int limitTo)
+    {
+        List<SocialActivity> socialActivities = new ArrayList<SocialActivity>();
+        socialActivities.addAll(user.rates);
+        socialActivities.addAll(user.votes);
+        Collections.sort(socialActivities,
+                         new Comparator<SocialActivity>()
+                         {
+                             @Override
+                             public int compare(SocialActivity a,
+                                                SocialActivity b)
+                             {
+                                 return a.getDate().after(b.getDate()) ? -1 : 1;
+                             }
+                         });
+        return socialActivities.size() > limitTo ? socialActivities.subList(0, limitTo) : socialActivities;
     }
 }

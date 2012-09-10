@@ -168,7 +168,6 @@ create table vote (
   id                        bigint not null,
   user_id                   bigint not null,
   play_module_id            bigint not null,
-  public_vote               boolean not null,
   vote_type                 varchar(4) not null,
   last_change_date          timestamp not null,
   constraint ck_vote_vote_type check (vote_type in ('UP','DOWN')),

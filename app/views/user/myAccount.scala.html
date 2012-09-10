@@ -1,6 +1,8 @@
 @(currentUser: User,
   externalAccounts: List[models.ss.ExternalAccount],
-  otherProviders: List[securesocial.core.IdentityProvider])
+  otherProviders: List[securesocial.core.IdentityProvider],
+  modules: List[Module],
+  socialActivities: List[SocialActivity])
 
 @import tags._
 
@@ -10,26 +12,44 @@
 </header>
 
 <div class="row">
-    <div class="span6 center">
+    <div class="span4 center">
         @if(currentUser.avatarUrl != null) {
         <img src="@currentUser.avatarUrl"/>
         } else {
         <img src='@routes.Assets.at("images/missing-user.png")'/>
         }
     </div>
-    <div class="span6">
-        <h3>Linked accounts</h3>
+    <div class="span4">
+        <h4>Your modules</h4>
+        <ul>
+            @if(modules.isEmpty()) {
+            <li>You don't have any modules.  Want to <a href="@routes.Modules.showModuleRegistrationForm">create</a> one?</li>
+            } else {
+            @for(module <- modules) {
+            <li><a href="@routes.Modules.details(module.key)">@module.name</a></li>
+            }
+            }
+        </ul>
+    </div>
+    <div class="span4">
+        @socialActivitySummary("You", socialActivities)
+
+        <h4>Linked accounts</h4>
         @for(externalAccount <- externalAccounts) {
         @defining( "images/providers/%s.png".format(externalAccount.provider) ) { imageUrl =>
         <img src="@routes.Assets.at(imageUrl)" title="@externalAccount.provider" alt="@externalAccount.provider"/>
         }
         }
-        <h3>Link more accounts</h3>
+        @*
+        @if(!otherProviders.isEmpty()) {
+        <h4>Link more accounts</h4>
         @for(otherProvider <- otherProviders) {
         @defining( "images/providers/%s.png".format(otherProvider.providerId) ) { imageUrl =>
         <img src="@routes.Assets.at(imageUrl)" title="@otherProvider.providerId" alt="@otherProvider.providerId"/>
         }
         }
+        }
+        *@
     </div>
 </div>
 
