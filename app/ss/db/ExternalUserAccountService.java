@@ -24,13 +24,18 @@ import models.ss.ExternalAccount;
 import models.ss.MPOOAuth1Info;
 import models.ss.MPOOAuth2Info;
 import play.Application;
+import play.Configuration;
+import play.Logger;
+import play.Play;
 import securesocial.core.java.BaseUserService;
 import securesocial.core.java.SocialUser;
 import securesocial.core.java.UserId;
 import security.RoleDefinitions;
+import utils.StringUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author Steve Chaloner (steve@objectify.be)
@@ -77,18 +82,14 @@ public class ExternalUserAccountService extends BaseUserService
         if (externalAccount == null)
         {
             externalAccount = new ExternalAccount();
-            User user = new User();
             // todo - steve - 04/09/2012 - remove user name
-            user.userName = "" + System.nanoTime();
-            user.displayName = socialUser.displayName;
-            user.avatarUrl = socialUser.avatarUrl;
-            user.roles = new ArrayList<UserRole>(Arrays.asList(UserRole.findByRoleName(RoleDefinitions.USER)));
-            user.rates = new ArrayList<Rate>();
-            user.votes = new ArrayList<Vote>();
-            user.accountActive = true;
-            user.save();
-
-            externalAccount.user = user;
+            List<UserRole> roles = new ArrayList<UserRole>(Arrays.asList(UserRole.findByRoleName(RoleDefinitions.USER)));
+            checkForAdminRights(socialUser,
+                                roles);
+            externalAccount.user = createUser("" + System.nanoTime(),
+                                              socialUser.displayName,
+                                              socialUser.avatarUrl,
+                                              roles);
         }
 
         externalAccount.externalId = socialUser.id.id;
@@ -131,5 +132,42 @@ public class ExternalUserAccountService extends BaseUserService
         }
 
         externalAccount.save();
+    }
+
+    private void checkForAdminRights(SocialUser socialUser, List<UserRole> roles)
+    {
+        // steve - this is a bit of a hack
+        Configuration configuration = Play.application().configuration();
+        String initialAdmin = configuration.getString("admin.initial");
+        if (!StringUtils.isEmpty(initialAdmin))
+        {
+            List<String> adminIds = new ArrayList<String>(Arrays.asList(initialAdmin.split(",")));
+            if (User.getAdmins().size() < adminIds.size())
+            {
+                if (adminIds.contains(socialUser.id.id))
+                {
+                    roles.clear();
+                    roles.add(UserRole.findByRoleName(RoleDefinitions.ADMIN));
+                }
+            }
+        }
+    }
+
+    private User createUser(String userName,
+                            String displayName,
+                            String avatarUrl,
+                            List<UserRole> roles)
+    {
+        User user = new User();
+        user.userName = userName;
+        user.displayName = displayName;
+        user.avatarUrl = avatarUrl;
+        user.accountActive = true;
+        user.roles = new ArrayList<UserRole>(roles);
+        user.rates = new ArrayList<Rate>();
+        user.votes = new ArrayList<Vote>();
+        user.save();
+        user.saveManyToManyAssociations("roles");
+        return user;
     }
 }

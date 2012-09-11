@@ -15,6 +15,8 @@
  */
 package utils;
 
+import java.util.List;
+
 /**
  * A few handy string helpers.
  *
@@ -33,7 +35,7 @@ public class StringUtils
     {
         return s == null || s.trim().length() == 0;
     }
-    
+
     public static String summarize(String s)
     {
         String result = "";

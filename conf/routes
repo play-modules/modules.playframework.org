@@ -38,6 +38,7 @@ GET  /admin/featured                    controllers.FeaturedModules.showFeatured
 POST /admin/featured                    controllers.FeaturedModules.addNewFeaturedModule()
 POST /admin/featured/update             controllers.FeaturedModules.update()
 POST /admin/featured/delete             controllers.FeaturedModules.delete()
+GET  /admin/users                       controllers.Users.getUsers()
 
 # Authentication
 

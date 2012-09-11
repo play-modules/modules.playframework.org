@@ -1,12 +1,15 @@
-<ul class="nav nav-tabs">
-    <li id="adminMenuVersion" class="active">
+<ul class="nav nav-tabs" id="adminNavBar">
+    <li id="adminMenuVersion" class="active adminMenuItem">
         <a href="@routes.PlayVersions.showPlayVersions()">Play versions</a>
     </li>
-    <li id="adminMenuCategories">
+    <li id="adminMenuCategories" class="adminMenuItem">
         <a href="@routes.Categories.showCategories()">Categories</a>
     </li>
-    <li id="adminMenuFeatured">
+    <li id="adminMenuFeatured" class="adminMenuItem">
         <a href="@routes.FeaturedModules.showFeaturedModules()">Featured modules</a>
+    </li>
+    <li id="adminMenuUsers" class="adminMenuItem">
+        <a href="@routes.Users.getUsers()">Users</a>
     </li>
 </ul>
 

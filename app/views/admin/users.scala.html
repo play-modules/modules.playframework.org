@@ -1,0 +1,34 @@
+@(currentUser: User,
+  users: List[User])
+
+@import helper._
+@import helper.twitterBootstrap._
+
+@admin.adminTemplate("Users", currentUser) {
+
+
+<div class="row">
+    <div class="span12">
+        <h4>Users</h4>
+        <table class="table table-striped" id="userTable">
+            <tbody id="userTableBody">
+            @for(user <- users) {
+                <tr>
+                    <td>
+                        @if(user.isAdmin()){<i class="icon-asterisk" title="Administrator"></i>}
+                        @if(!user.accountActive){<i class="icon-exclamation-sign" title="Account inactive"></i>}
+                    </td>
+                    <td><a href="@routes.Application.viewAccount(user.userName)">@user.displayName</a></td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        setAdminNavbar("Users");
+    });
+</script>
+}

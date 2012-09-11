@@ -41,6 +41,10 @@ public class HistoricalEvent extends AbstractModel
 
     public static List<HistoricalEvent> findMostRecent(int count)
     {
-        return FIND.where().orderBy("creationDate DESC").setMaxRows(count).findList();
+        return FIND.where()
+                   .order()
+                   .desc("creationDate")
+                   .setMaxRows(count)
+                   .findList();
     }
 }

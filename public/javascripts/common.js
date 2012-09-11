@@ -22,9 +22,7 @@ function setNavbar(id) {
 */
 function setAdminNavbar(id) {
     //remove all selectors
-    $("#adminMenuVersion").removeClass("active");
-    $("#adminMenuCategories").removeClass("active");
-    $("#adminMenuFeatured").removeClass("active");
+    $('#adminNavBar').find(".adminMenuItem").removeClass("active");
 
     //set given one
     $("#adminMenu"+id).addClass("active");

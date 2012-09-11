@@ -58,8 +58,6 @@ public class Global extends GlobalSettings
         // I'll add this to the wiki later
         // this space for rent
 
-        // TODO remove this!  It's a development convenience
-        Logger.info("Adding admin user...");
         if (UserRole.findByRoleName(RoleDefinitions.ADMIN) == null)
         {
             UserRole role = new UserRole();

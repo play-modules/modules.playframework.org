@@ -18,9 +18,11 @@ package models;
 import be.objectify.deadbolt.models.Permission;
 import be.objectify.deadbolt.models.Role;
 import be.objectify.deadbolt.models.RoleHolder;
+import security.RoleDefinitions;
 
 import javax.persistence.*;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -72,10 +74,30 @@ public class User extends AbstractModel implements RoleHolder
                    .findUnique();
     }
 
+    public static List<User> getAdmins()
+    {
+        UserRole adminRole = UserRole.findByRoleName(RoleDefinitions.ADMIN);
+        return FIND.where()
+                   .in("roles", adminRole)
+                   .findList();
+    }
+
     @Override
     public List<? extends Role> getRoles()
     {
         return roles;
+    }
+
+    public boolean isAdmin()
+    {
+        boolean result = false;
+
+        for (Iterator<UserRole> iterator = roles.iterator(); !result && iterator.hasNext(); )
+        {
+            result = RoleDefinitions.ADMIN.equals(iterator.next().roleName);
+        }
+
+        return result;
     }
 
     @Override
