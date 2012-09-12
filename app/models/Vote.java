@@ -62,6 +62,6 @@ public class Vote extends AbstractModel implements SocialActivity
     @Override
     public String getType()
     {
-        return isUpVote() ? "upvote" : "downvote";
+        return isUpVote() ? "upVote" : "downVote";
     }
 }
