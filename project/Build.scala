@@ -22,7 +22,8 @@ object ApplicationBuild extends Build {
   val appDependencies = Seq(
     "be.objectify" %% "deadbolt-2" % "1.1.2",
     "rome" % "rome" % "1.0",
-    "org.markdownj" % "markdownj" % "0.3.0-1.0.2b4"
+    "org.markdownj" % "markdownj" % "0.3.0-1.0.2b4",
+    "postgresql" % "postgresql" % "9.1-901-1.jdbc4"
   )
 
   val main = PlayProject(appName, appVersion, appDependencies, mainLang = JAVA).settings (
