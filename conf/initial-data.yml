@@ -3313,7 +3313,7 @@ versions:
                 id: 12
         versionCode: 0.9
         releaseDate: 2011-03-05
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -3324,7 +3324,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2011-03-12
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -3335,7 +3335,7 @@ versions:
                 id: 12
         versionCode: 1.1
         releaseDate: 2011-05-16
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -3346,7 +3346,7 @@ versions:
                 id: 12
         versionCode: 1.1.1
         releaseDate: 2011-08-11
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -3357,7 +3357,7 @@ versions:
                 id: 12
         versionCode: 1.2
         releaseDate: 2011-12-23
-        releaseNotes: frameworkMatch=1.2.2
+        releaseNotes: 1.2.2
 
     - !!models.ModuleVersion
         playModule:
@@ -3368,7 +3368,7 @@ versions:
                 id: 12
         versionCode: 1.3
         releaseDate: 2012-02-09
-        releaseNotes: frameworkMatch=1.2.2
+        releaseNotes: 1.2.2
 
     - !!models.ModuleVersion
         playModule:
@@ -3390,7 +3390,7 @@ versions:
                 id: 12
         versionCode: 1.1
         releaseDate: 2011-11-16
-        releaseNotes: frameworkMatch=1.2.x
+        releaseNotes: 1.2.x
 
     - !!models.ModuleVersion
         playModule:
@@ -3401,7 +3401,7 @@ versions:
                 id: 12
         versionCode: 1.2
         releaseDate: 2011-12-19
-        releaseNotes: frameworkMatch=1.2.x
+        releaseNotes: 1.2.x
 
     - !!models.ModuleVersion
         playModule:
@@ -3412,7 +3412,7 @@ versions:
                 id: 12
         versionCode: head
         releaseDate: 2010-07-10
-        releaseNotes: frameworkMatch=r921
+        releaseNotes: r921
 
     - !!models.ModuleVersion
         playModule:
@@ -3445,7 +3445,7 @@ versions:
                 id: 12
         versionCode: 1.0.1
         releaseDate: 2010-01-13
-        releaseNotes: frameworkMatch=1.0
+        releaseNotes: 1.0
 
     - !!models.ModuleVersion
         playModule:
@@ -3456,7 +3456,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2011-05-17
-        releaseNotes: frameworkMatch=1.0 1.1 1.2
+        releaseNotes: 1.0 1.1 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -3467,7 +3467,7 @@ versions:
                 id: 12
         versionCode: 0.7
         releaseDate: 2012-03-08
-        releaseNotes: frameworkMatch=1.2.4
+        releaseNotes: 1.2.4
 
     - !!models.ModuleVersion
         playModule:
@@ -3478,7 +3478,7 @@ versions:
                 id: 12
         versionCode: head
         releaseDate: 2012-03-11
-        releaseNotes: frameworkMatch=1.2.4
+        releaseNotes: 1.2.4
 
     - !!models.ModuleVersion
         playModule:
@@ -3489,7 +3489,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2012-03-08
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -3500,7 +3500,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2011-07-19
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -3511,7 +3511,7 @@ versions:
                 id: 12
         versionCode: 1.0.0
         releaseDate: 2011-10-03
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -3522,7 +3522,7 @@ versions:
                 id: 12
         versionCode: 1.0.1
         releaseDate: 2011-11-19
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -3533,7 +3533,7 @@ versions:
                 id: 12
         versionCode: 0.8
         releaseDate: 2011-04-06
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -3544,7 +3544,7 @@ versions:
                 id: 12
         versionCode: 0.9
         releaseDate: 2011-06-19
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -3555,7 +3555,7 @@ versions:
                 id: 12
         versionCode: 0.9.1
         releaseDate: 2011-10-19
-        releaseNotes: frameworkMatch=1.2.2
+        releaseNotes: 1.2.2
 
     - !!models.ModuleVersion
         playModule:
@@ -3566,7 +3566,7 @@ versions:
                 id: 12
         versionCode: 0.9.2
         releaseDate: 2011-11-29
-        releaseNotes: frameworkMatch=1.2.2
+        releaseNotes: 1.2.2
 
     - !!models.ModuleVersion
         playModule:
@@ -3588,7 +3588,7 @@ versions:
                 id: 12
         versionCode: head
         releaseDate: 2011-12-20
-        releaseNotes: frameworkMatch=1.x
+        releaseNotes: 1.x
 
     - !!models.ModuleVersion
         playModule:
@@ -3599,7 +3599,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2011-10-11
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -3610,7 +3610,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2011-04-07
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -3621,7 +3621,7 @@ versions:
                 id: 12
         versionCode: 0.2
         releaseDate: 2011-05-30
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -3632,7 +3632,7 @@ versions:
                 id: 12
         versionCode: 0.2.1
         releaseDate: 2011-06-21
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -3643,7 +3643,7 @@ versions:
                 id: 12
         versionCode: 0.2.2
         releaseDate: 2011-07-04
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -3654,7 +3654,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2011-09-07
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -3665,7 +3665,7 @@ versions:
                 id: 12
         versionCode: 0.2
         releaseDate: 2011-09-07
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -3676,7 +3676,7 @@ versions:
                 id: 12
         versionCode: 0.3
         releaseDate: 2011-09-07
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -3687,7 +3687,7 @@ versions:
                 id: 12
         versionCode: 0.4
         releaseDate: 2011-11-06
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -3698,7 +3698,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2010-01-14
-        releaseNotes: frameworkMatch=1.0
+        releaseNotes: 1.0
 
     - !!models.ModuleVersion
         playModule:
@@ -3709,7 +3709,7 @@ versions:
                 id: 12
         versionCode: 1.1
         releaseDate: 2010-03-15
-        releaseNotes: frameworkMatch=1.0
+        releaseNotes: 1.0
 
     - !!models.ModuleVersion
         playModule:
@@ -3720,7 +3720,7 @@ versions:
                 id: 12
         versionCode: 1.2
         releaseDate: 2010-04-11
-        releaseNotes: frameworkMatch=1.0.2
+        releaseNotes: 1.0.2
 
     - !!models.ModuleVersion
         playModule:
@@ -3731,7 +3731,7 @@ versions:
                 id: 12
         versionCode: 2.0
         releaseDate: 2010-05-13
-        releaseNotes: frameworkMatch=1.0.2
+        releaseNotes: 1.0.2
 
     - !!models.ModuleVersion
         playModule:
@@ -3753,7 +3753,7 @@ versions:
                 id: 12
         versionCode: 2.2
         releaseDate: 2011-08-30
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -3764,7 +3764,7 @@ versions:
                 id: 12
         versionCode: 2.3
         releaseDate: 2011-09-21
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -3775,7 +3775,7 @@ versions:
                 id: 12
         versionCode: 2.4
         releaseDate: 2011-10-06
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -3786,7 +3786,7 @@ versions:
                 id: 12
         versionCode: 2.5
         releaseDate: 2012-03-11
-        releaseNotes: frameworkMatch=master
+        releaseNotes: master
 
     - !!models.ModuleVersion
         playModule:
@@ -3797,7 +3797,7 @@ versions:
                 id: 12
         versionCode: 0.9
         releaseDate: 2011-04-10
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -3808,7 +3808,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2011-07-18
-        releaseNotes: frameworkMatch=1.1,1.2
+        releaseNotes: 1.1,1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -3819,7 +3819,7 @@ versions:
                 id: 12
         versionCode: 0.1.1
         releaseDate: 2012-02-07
-        releaseNotes: frameworkMatch=1.2.X
+        releaseNotes: 1.2.X
 
     - !!models.ModuleVersion
         playModule:
@@ -3830,7 +3830,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2010-08-04
-        releaseNotes: frameworkMatch=1.0
+        releaseNotes: 1.0
 
     - !!models.ModuleVersion
         playModule:
@@ -3841,7 +3841,7 @@ versions:
                 id: 12
         versionCode: 1.1
         releaseDate: 2010-10-11
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -3852,7 +3852,7 @@ versions:
                 id: 12
         versionCode: 2.0
         releaseDate: 2011-04-10
-        releaseNotes: frameworkMatch=1.1.1
+        releaseNotes: 1.1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -3863,7 +3863,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2010-08-26
-        releaseNotes: frameworkMatch=1.0.3.x
+        releaseNotes: 1.0.3.x
 
     - !!models.ModuleVersion
         playModule:
@@ -3874,7 +3874,7 @@ versions:
                 id: 12
         versionCode: 1.01
         releaseDate: 2010-10-21
-        releaseNotes: frameworkMatch=1.0.3.2
+        releaseNotes: 1.0.3.2
 
     - !!models.ModuleVersion
         playModule:
@@ -3885,7 +3885,7 @@ versions:
                 id: 12
         versionCode: 1.1
         releaseDate: 2010-11-09
-        releaseNotes: frameworkMatch=Play1.1
+        releaseNotes: Play1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -3896,7 +3896,7 @@ versions:
                 id: 12
         versionCode: 1.2
         releaseDate: 2010-11-13
-        releaseNotes: frameworkMatch=Play1.1
+        releaseNotes: Play1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -3907,7 +3907,7 @@ versions:
                 id: 12
         versionCode: 1.3
         releaseDate: 2010-12-14
-        releaseNotes: frameworkMatch=Play1.1
+        releaseNotes: Play1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -3918,7 +3918,7 @@ versions:
                 id: 12
         versionCode: 1.4
         releaseDate: 2011-01-10
-        releaseNotes: frameworkMatch=Play1.1
+        releaseNotes: Play1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -3929,7 +3929,7 @@ versions:
                 id: 12
         versionCode: 1.5
         releaseDate: 2011-01-11
-        releaseNotes: frameworkMatch=Play1.1
+        releaseNotes: Play1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -3940,7 +3940,7 @@ versions:
                 id: 12
         versionCode: 1.6_play1.1
         releaseDate: 2011-04-14
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -3951,7 +3951,7 @@ versions:
                 id: 12
         versionCode: 1.6_play1.2
         releaseDate: 2011-04-14
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -3962,7 +3962,7 @@ versions:
                 id: 12
         versionCode: 2.0.0
         releaseDate: 2011-06-01
-        releaseNotes: frameworkMatch=[1.2.1,)
+        releaseNotes: 1.2.1+
 
     - !!models.ModuleVersion
         playModule:
@@ -3973,7 +3973,7 @@ versions:
                 id: 12
         versionCode: 2.0.1
         releaseDate: 2011-06-24
-        releaseNotes: frameworkMatch=[1.2.1,)
+        releaseNotes: 1.2.1+
 
     - !!models.ModuleVersion
         playModule:
@@ -3984,7 +3984,7 @@ versions:
                 id: 12
         versionCode: 2.0.2
         releaseDate: 2011-08-10
-        releaseNotes: frameworkMatch=[1.2.1,)
+        releaseNotes: 1.2.1+
 
     - !!models.ModuleVersion
         playModule:
@@ -3995,7 +3995,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2010-02-28
-        releaseNotes: frameworkMatch=1.0.1
+        releaseNotes: 1.0.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4006,7 +4006,7 @@ versions:
                 id: 12
         versionCode: 1.1
         releaseDate: 2010-04-16
-        releaseNotes: frameworkMatch=1.0.1
+        releaseNotes: 1.0.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4017,7 +4017,7 @@ versions:
                 id: 12
         versionCode: 1.2
         releaseDate: 2010-06-22
-        releaseNotes: frameworkMatch=1.0.1
+        releaseNotes: 1.0.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4028,7 +4028,7 @@ versions:
                 id: 12
         versionCode: 1.3
         releaseDate: 2010-07-20
-        releaseNotes: frameworkMatch=1.0.1
+        releaseNotes: 1.0.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4039,7 +4039,7 @@ versions:
                 id: 12
         versionCode: 1.3.1
         releaseDate: 2010-08-10
-        releaseNotes: frameworkMatch=1.0.1
+        releaseNotes: 1.0.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4050,7 +4050,7 @@ versions:
                 id: 12
         versionCode: 1.3.2
         releaseDate: 2010-09-02
-        releaseNotes: frameworkMatch=1.0.2
+        releaseNotes: 1.0.2
 
     - !!models.ModuleVersion
         playModule:
@@ -4061,7 +4061,7 @@ versions:
                 id: 12
         versionCode: 1.4
         releaseDate: 2011-02-02
-        releaseNotes: frameworkMatch=1.0.1 or higher
+        releaseNotes: 1.0.1 or higher
 
     - !!models.ModuleVersion
         playModule:
@@ -4072,7 +4072,7 @@ versions:
                 id: 12
         versionCode: 1.1
         releaseDate: 2010-05-16
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4083,7 +4083,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2010-05-16
-        releaseNotes: frameworkMatch=1.0.2.1
+        releaseNotes: 1.0.2.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4094,7 +4094,7 @@ versions:
                 id: 12
         versionCode: 1.0.1
         releaseDate: 2010-07-24
-        releaseNotes: frameworkMatch=1.0.2
+        releaseNotes: 1.0.2
 
     - !!models.ModuleVersion
         playModule:
@@ -4105,7 +4105,7 @@ versions:
                 id: 12
         versionCode: 1.1.1
         releaseDate: 2010-07-24
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4116,7 +4116,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2010-12-29
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4127,7 +4127,7 @@ versions:
                 id: 12
         versionCode: 1.0.1
         releaseDate: 2011-02-02
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4138,7 +4138,7 @@ versions:
                 id: 12
         versionCode: 1.1
         releaseDate: 2011-02-10
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4149,7 +4149,7 @@ versions:
                 id: 12
         versionCode: 1.2
         releaseDate: 2011-02-11
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4160,7 +4160,7 @@ versions:
                 id: 12
         versionCode: 1.2.1
         releaseDate: 2011-02-15
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4171,7 +4171,7 @@ versions:
                 id: 12
         versionCode: 1.3
         releaseDate: 2011-03-10
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4182,7 +4182,7 @@ versions:
                 id: 12
         versionCode: 1.3.1
         releaseDate: 2011-03-24
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4193,7 +4193,7 @@ versions:
                 id: 12
         versionCode: 1.4
         releaseDate: 2011-04-01
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4204,7 +4204,7 @@ versions:
                 id: 12
         versionCode: 1.4.1
         releaseDate: 2011-05-25
-        releaseNotes: frameworkMatch=1.1.1
+        releaseNotes: 1.1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4215,7 +4215,7 @@ versions:
                 id: 12
         versionCode: 1.4.2
         releaseDate: 2011-08-25
-        releaseNotes: frameworkMatch=1.1.1
+        releaseNotes: 1.1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4226,7 +4226,7 @@ versions:
                 id: 12
         versionCode: 1.4.3
         releaseDate: 2011-11-05
-        releaseNotes: frameworkMatch=1.1.1
+        releaseNotes: 1.1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4237,7 +4237,7 @@ versions:
                 id: 12
         versionCode: 1.4.4
         releaseDate: 2012-01-04
-        releaseNotes: frameworkMatch=1.1.1
+        releaseNotes: 1.1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4248,7 +4248,7 @@ versions:
                 id: 12
         versionCode: 1.4.5
         releaseDate: 2012-02-14
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4259,7 +4259,7 @@ versions:
                 id: 12
         versionCode: 1.5
         releaseDate: 2012-02-19
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4270,7 +4270,7 @@ versions:
                 id: 12
         versionCode: 1.5.1
         releaseDate: 2012-02-21
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4281,7 +4281,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2011-05-06
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -4292,7 +4292,7 @@ versions:
                 id: 12
         versionCode: 0.2
         releaseDate: 2011-08-01
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -4303,7 +4303,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2010-04-20
-        releaseNotes: frameworkMatch=1.0
+        releaseNotes: 1.0
 
     - !!models.ModuleVersion
         playModule:
@@ -4314,7 +4314,7 @@ versions:
                 id: 12
         versionCode: 1.0.1
         releaseDate: 2010-04-29
-        releaseNotes: frameworkMatch=1.0
+        releaseNotes: 1.0
 
     - !!models.ModuleVersion
         playModule:
@@ -4325,7 +4325,7 @@ versions:
                 id: 12
         versionCode: 1.0.2
         releaseDate: 2010-06-01
-        releaseNotes: frameworkMatch=1.0
+        releaseNotes: 1.0
 
     - !!models.ModuleVersion
         playModule:
@@ -4336,7 +4336,7 @@ versions:
                 id: 12
         versionCode: 1.0.4
         releaseDate: 2011-03-23
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4347,7 +4347,7 @@ versions:
                 id: 12
         versionCode: 1.0.5
         releaseDate: 2011-10-27
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4358,7 +4358,7 @@ versions:
                 id: 12
         versionCode: 1.0.6
         releaseDate: 2012-01-12
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -4369,7 +4369,7 @@ versions:
                 id: 12
         versionCode: 0.0.1
         releaseDate: 2011-03-18
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4380,7 +4380,7 @@ versions:
                 id: 12
         versionCode: 0.0.2
         releaseDate: 2011-03-20
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4391,7 +4391,7 @@ versions:
                 id: 12
         versionCode: 0.0.3
         releaseDate: 2011-03-21
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4402,7 +4402,7 @@ versions:
                 id: 12
         versionCode: 0.0.4
         releaseDate: 2011-03-23
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4413,7 +4413,7 @@ versions:
                 id: 12
         versionCode: 0.0.5
         releaseDate: 2011-03-27
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4424,7 +4424,7 @@ versions:
                 id: 12
         versionCode: 0.0.6
         releaseDate: 2011-04-12
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4435,7 +4435,7 @@ versions:
                 id: 12
         versionCode: 0.0.7
         releaseDate: 2011-09-02
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -4446,7 +4446,7 @@ versions:
                 id: 12
         versionCode: 0.0.8
         releaseDate: 2011-09-03
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -4457,7 +4457,7 @@ versions:
                 id: 12
         versionCode: 0.0.9
         releaseDate: 2011-09-06
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -4468,7 +4468,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2011-09-06
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -4479,7 +4479,7 @@ versions:
                 id: 12
         versionCode: 0.2
         releaseDate: 2011-09-11
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -4490,7 +4490,7 @@ versions:
                 id: 12
         versionCode: 0.3
         releaseDate: 2011-11-03
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -4501,7 +4501,7 @@ versions:
                 id: 12
         versionCode: 0.4
         releaseDate: 2012-02-29
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -4512,7 +4512,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2010-03-28
-        releaseNotes: frameworkMatch=1.0.1
+        releaseNotes: 1.0.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4523,7 +4523,7 @@ versions:
                 id: 12
         versionCode: 1.0.1
         releaseDate: 2010-04-08
-        releaseNotes: frameworkMatch=1.0.1
+        releaseNotes: 1.0.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4534,7 +4534,7 @@ versions:
                 id: 12
         versionCode: 1.1
         releaseDate: 2010-10-06
-        releaseNotes: frameworkMatch=1.0
+        releaseNotes: 1.0
 
     - !!models.ModuleVersion
         playModule:
@@ -4545,7 +4545,7 @@ versions:
                 id: 12
         versionCode: 1.2
         releaseDate: 2011-06-16
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -4556,7 +4556,7 @@ versions:
                 id: 12
         versionCode: 1.2x
         releaseDate: 2011-06-16
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -4567,7 +4567,7 @@ versions:
                 id: 12
         versionCode: 1.2.1
         releaseDate: 2011-06-18
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -4578,7 +4578,7 @@ versions:
                 id: 12
         versionCode: 1.2.1x
         releaseDate: 2011-06-18
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -4589,7 +4589,7 @@ versions:
                 id: 12
         versionCode: 1.2.2
         releaseDate: 2011-06-21
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -4600,7 +4600,7 @@ versions:
                 id: 12
         versionCode: 1.2.2x
         releaseDate: 2011-06-21
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -4611,7 +4611,7 @@ versions:
                 id: 12
         versionCode: 1.2.3x
         releaseDate: 2011-07-18
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -4622,7 +4622,7 @@ versions:
                 id: 12
         versionCode: 1.2.3
         releaseDate: 2011-07-18
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -4633,7 +4633,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2010-11-18
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4644,7 +4644,7 @@ versions:
                 id: 12
         versionCode: head
         releaseDate: 2011-03-21
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4655,7 +4655,7 @@ versions:
                 id: 12
         versionCode: 0.2
         releaseDate: 2010-11-25
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4666,7 +4666,7 @@ versions:
                 id: 12
         versionCode: 0.3
         releaseDate: 2010-12-18
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4677,7 +4677,7 @@ versions:
                 id: 12
         versionCode: 0.4
         releaseDate: 2011-02-19
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4688,7 +4688,7 @@ versions:
                 id: 12
         versionCode: 0.5
         releaseDate: 2011-03-21
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4699,7 +4699,7 @@ versions:
                 id: 12
         versionCode: 0.6
         releaseDate: 2011-10-31
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -4710,7 +4710,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2011-01-28
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4721,7 +4721,7 @@ versions:
                 id: 12
         versionCode: 0.2
         releaseDate: 2011-04-15
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4732,7 +4732,7 @@ versions:
                 id: 12
         versionCode: 0.3
         releaseDate: 2011-05-17
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -4743,7 +4743,7 @@ versions:
                 id: 12
         versionCode: 0.4
         releaseDate: 2012-02-12
-        releaseNotes: frameworkMatch=1.2.4
+        releaseNotes: 1.2.4
 
     - !!models.ModuleVersion
         playModule:
@@ -4754,7 +4754,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2012-02-12
-        releaseNotes: frameworkMatch=1.2.4
+        releaseNotes: 1.2.4
 
     - !!models.ModuleVersion
         playModule:
@@ -4765,7 +4765,7 @@ versions:
                 id: 12
         versionCode: 1.1
         releaseDate: 2012-02-14
-        releaseNotes: frameworkMatch=1.2.4
+        releaseNotes: 1.2.4
 
     - !!models.ModuleVersion
         playModule:
@@ -4776,7 +4776,7 @@ versions:
                 id: 12
         versionCode: 1.2
         releaseDate: 2012-02-19
-        releaseNotes: frameworkMatch=1.2.4
+        releaseNotes: 1.2.4
 
     - !!models.ModuleVersion
         playModule:
@@ -4787,7 +4787,7 @@ versions:
                 id: 12
         versionCode: 1.3
         releaseDate: 2012-02-27
-        releaseNotes: frameworkMatch=1.2.4
+        releaseNotes: 1.2.4
 
     - !!models.ModuleVersion
         playModule:
@@ -4798,7 +4798,7 @@ versions:
                 id: 12
         versionCode: 1.4
         releaseDate: 2012-03-04
-        releaseNotes: frameworkMatch=1.2.4
+        releaseNotes: 1.2.4
 
     - !!models.ModuleVersion
         playModule:
@@ -4809,7 +4809,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2011-03-30
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4820,7 +4820,7 @@ versions:
                 id: 12
         versionCode: head
         releaseDate: 2011-03-31
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4831,7 +4831,7 @@ versions:
                 id: 12
         versionCode: 0.2
         releaseDate: 2011-12-20
-        releaseNotes: frameworkMatch=1.2.4
+        releaseNotes: 1.2.4
 
     - !!models.ModuleVersion
         playModule:
@@ -4842,7 +4842,7 @@ versions:
                 id: 12
         versionCode: 0.3
         releaseDate: 2011-12-22
-        releaseNotes: frameworkMatch=1.2.4
+        releaseNotes: 1.2.4
 
     - !!models.ModuleVersion
         playModule:
@@ -4853,7 +4853,7 @@ versions:
                 id: 12
         versionCode: 0.5
         releaseDate: 2012-01-04
-        releaseNotes: frameworkMatch=1.2.4
+        releaseNotes: 1.2.4
 
     - !!models.ModuleVersion
         playModule:
@@ -4864,7 +4864,7 @@ versions:
                 id: 12
         versionCode: 0.7
         releaseDate: 2012-01-06
-        releaseNotes: frameworkMatch=1.2.4
+        releaseNotes: 1.2.4
 
     - !!models.ModuleVersion
         playModule:
@@ -4875,7 +4875,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2012-02-09
-        releaseNotes: frameworkMatch=1.2.x
+        releaseNotes: 1.2.x
 
     - !!models.ModuleVersion
         playModule:
@@ -4886,7 +4886,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2010-01-30
-        releaseNotes: frameworkMatch=Play 1.0.*, GAE SDK 1.2.7
+        releaseNotes: Play 1.0.* GAE SDK 1.2.7
 
     - !!models.ModuleVersion
         playModule:
@@ -4897,7 +4897,7 @@ versions:
                 id: 12
         versionCode: 1.0.1
         releaseDate: 2010-02-07
-        releaseNotes: frameworkMatch=play 1.0.1, play 1.1-trunk and GAE SDK 1.3.0
+        releaseNotes: play 1.0.1 play 1.1-trunk and GAE SDK 1.3.0
 
     - !!models.ModuleVersion
         playModule:
@@ -4908,7 +4908,7 @@ versions:
                 id: 12
         versionCode: 1.0.2
         releaseDate: 2010-03-17
-        releaseNotes: frameworkMatch=Tested with GAE SDK 1.3.1 and Play 1.0-947
+        releaseNotes: Tested with GAE SDK 1.3.1 and Play 1.0-947
 
     - !!models.ModuleVersion
         playModule:
@@ -4919,7 +4919,7 @@ versions:
                 id: 12
         versionCode: 1.0.3
         releaseDate: 2010-09-05
-        releaseNotes: frameworkMatch=1.0.3.2
+        releaseNotes: 1.0.3.2
 
     - !!models.ModuleVersion
         playModule:
@@ -4930,7 +4930,7 @@ versions:
                 id: 12
         versionCode: 1.1
         releaseDate: 2010-10-29
-        releaseNotes: frameworkMatch=Play-1.1
+        releaseNotes: Play-1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4941,7 +4941,7 @@ versions:
                 id: 12
         versionCode: 1.4
         releaseDate: 2010-12-08
-        releaseNotes: frameworkMatch=1.1, and GAE 1.4.0
+        releaseNotes: 1.1 and GAE 1.4.0
 
     - !!models.ModuleVersion
         playModule:
@@ -4952,7 +4952,7 @@ versions:
                 id: 12
         versionCode: 1.6.0_b1
         releaseDate: 2011-11-28
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -4963,7 +4963,7 @@ versions:
                 id: 12
         versionCode: 1.6.0
         releaseDate: 2012-01-17
-        releaseNotes: frameworkMatch=1.2.4
+        releaseNotes: 1.2.4
 
     - !!models.ModuleVersion
         playModule:
@@ -4974,7 +4974,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2010-11-15
-        releaseNotes: frameworkMatch=Play1.1
+        releaseNotes: Play1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4985,7 +4985,7 @@ versions:
                 id: 12
         versionCode: 1.1
         releaseDate: 2010-11-30
-        releaseNotes: frameworkMatch=Play1.1
+        releaseNotes: Play1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -4996,7 +4996,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2010-01-13
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -5007,7 +5007,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2011-04-05
-        releaseNotes: frameworkMatch=1.0, 1.1, 1.2
+        releaseNotes: 1.0 1.1 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5018,7 +5018,7 @@ versions:
                 id: 12
         versionCode: 1.0.1
         releaseDate: 2011-06-23
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -5029,7 +5029,7 @@ versions:
                 id: 12
         versionCode: 1.0.2
         releaseDate: 2011-11-17
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -5040,7 +5040,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2010-01-12
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -5051,7 +5051,7 @@ versions:
                 id: 12
         versionCode: 1.1
         releaseDate: 2010-09-12
-        releaseNotes: frameworkMatch=1.1r1033
+        releaseNotes: 1.1r1033
 
     - !!models.ModuleVersion
         playModule:
@@ -5062,7 +5062,7 @@ versions:
                 id: 12
         versionCode: 1.1.1
         releaseDate: 2011-04-11
-        releaseNotes: frameworkMatch=play-core e2c434d4e1fbbccfa3357d181614fc795f8e9e90
+        releaseNotes: play-core e2c434d4e1fbbccfa3357d181614fc795f8e9e90
 
     - !!models.ModuleVersion
         playModule:
@@ -5073,7 +5073,7 @@ versions:
                 id: 12
         versionCode: 1.2
         releaseDate: 2011-05-27
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5084,7 +5084,7 @@ versions:
                 id: 12
         versionCode: 1.1
         releaseDate: 2010-05-23
-        releaseNotes: frameworkMatch=1.0.2.1
+        releaseNotes: 1.0.2.1
 
     - !!models.ModuleVersion
         playModule:
@@ -5095,7 +5095,7 @@ versions:
                 id: 12
         versionCode: 1.2
         releaseDate: 2010-06-15
-        releaseNotes: frameworkMatch=1.0.2.1
+        releaseNotes: 1.0.2.1
 
     - !!models.ModuleVersion
         playModule:
@@ -5106,7 +5106,7 @@ versions:
                 id: 12
         versionCode: 1.3
         releaseDate: 2010-10-11
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -5117,7 +5117,7 @@ versions:
                 id: 12
         versionCode: 1.5
         releaseDate: 2011-05-21
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5128,7 +5128,7 @@ versions:
                 id: 12
         versionCode: 1.6
         releaseDate: 2011-06-01
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5139,7 +5139,7 @@ versions:
                 id: 12
         versionCode: 1.7
         releaseDate: 2011-07-11
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5150,7 +5150,7 @@ versions:
                 id: 12
         versionCode: 1.8
         releaseDate: 2011-09-19
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -5161,7 +5161,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2011-05-22
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5172,7 +5172,7 @@ versions:
                 id: 12
         versionCode: 0.2
         releaseDate: 2011-05-29
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5183,7 +5183,7 @@ versions:
                 id: 12
         versionCode: 0.2.1
         releaseDate: 2011-05-30
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5194,7 +5194,7 @@ versions:
                 id: 12
         versionCode: 0.2.2
         releaseDate: 2011-06-02
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5205,7 +5205,7 @@ versions:
                 id: 12
         versionCode: 0.2.3
         releaseDate: 2011-07-12
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5216,7 +5216,7 @@ versions:
                 id: 12
         versionCode: 0.3
         releaseDate: 2011-09-07
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5227,7 +5227,7 @@ versions:
                 id: 12
         versionCode: 0.4
         releaseDate: 2011-11-13
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5238,7 +5238,7 @@ versions:
                 id: 12
         versionCode: 0.2
         releaseDate: 2012-01-29
-        releaseNotes: frameworkMatch=1.2.4
+        releaseNotes: 1.2.4
 
     - !!models.ModuleVersion
         playModule:
@@ -5249,7 +5249,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2010-12-07
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -5260,7 +5260,7 @@ versions:
                 id: 12
         versionCode: 1.1
         releaseDate: 2011-02-26
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -5271,7 +5271,7 @@ versions:
                 id: 12
         versionCode: 1.2
         releaseDate: 2011-04-09
-        releaseNotes: frameworkMatch=1.1.1
+        releaseNotes: 1.1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -5282,7 +5282,7 @@ versions:
                 id: 12
         versionCode: 1.2.2
         releaseDate: 2011-10-06
-        releaseNotes: frameworkMatch=1.2.0-1.2.X
+        releaseNotes: 1.2.0-1.2.X
 
     - !!models.ModuleVersion
         playModule:
@@ -5293,7 +5293,7 @@ versions:
                 id: 12
         versionCode: 1.1
         releaseDate: 2011-01-18
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -5304,7 +5304,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2010-10-04
-        releaseNotes: frameworkMatch=1.0
+        releaseNotes: 1.0
 
     - !!models.ModuleVersion
         playModule:
@@ -5315,7 +5315,7 @@ versions:
                 id: 12
         versionCode: 1.0.1
         releaseDate: 2010-10-08
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -5326,7 +5326,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2010-04-01
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -5337,7 +5337,7 @@ versions:
                 id: 12
         versionCode: 1.0.1
         releaseDate: 2010-09-10
-        releaseNotes: frameworkMatch=1.1r1028
+        releaseNotes: 1.1r1028
 
     - !!models.ModuleVersion
         playModule:
@@ -5348,7 +5348,7 @@ versions:
                 id: 12
         versionCode: 0.2
         releaseDate: 2010-02-15
-        releaseNotes: frameworkMatch=1.02
+        releaseNotes: 1.02
 
     - !!models.ModuleVersion
         playModule:
@@ -5359,7 +5359,7 @@ versions:
                 id: 12
         versionCode: 0.3.1
         releaseDate: 2010-02-25
-        releaseNotes: frameworkMatch=1.02
+        releaseNotes: 1.02
 
     - !!models.ModuleVersion
         playModule:
@@ -5370,7 +5370,7 @@ versions:
                 id: 12
         versionCode: 0.5.1
         releaseDate: 2010-08-18
-        releaseNotes: frameworkMatch=1.0.2
+        releaseNotes: 1.0.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5381,7 +5381,7 @@ versions:
                 id: 12
         versionCode: 0.6.0
         releaseDate: 2011-01-08
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -5392,7 +5392,7 @@ versions:
                 id: 12
         versionCode: 0.7
         releaseDate: 2011-02-17
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -5403,7 +5403,7 @@ versions:
                 id: 12
         versionCode: 0.7.1
         releaseDate: 2011-02-28
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -5414,7 +5414,7 @@ versions:
                 id: 12
         versionCode: 0.8.0
         releaseDate: 2011-03-09
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -5425,7 +5425,7 @@ versions:
                 id: 12
         versionCode: 0.8.1
         releaseDate: 2011-03-21
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -5436,7 +5436,7 @@ versions:
                 id: 12
         versionCode: 0.8.1.2
         releaseDate: 2011-04-03
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -5447,7 +5447,7 @@ versions:
                 id: 12
         versionCode: 0.8.2
         releaseDate: 2011-04-19
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5458,7 +5458,7 @@ versions:
                 id: 12
         versionCode: 0.8.3.0
         releaseDate: 2011-05-10
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -5469,7 +5469,7 @@ versions:
                 id: 12
         versionCode: 0.8.3.1
         releaseDate: 2011-05-14
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5480,7 +5480,7 @@ versions:
                 id: 12
         versionCode: 0.8.4.1
         releaseDate: 2011-06-07
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5491,7 +5491,7 @@ versions:
                 id: 12
         versionCode: 0.8.4.6
         releaseDate: 2011-06-11
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5502,7 +5502,7 @@ versions:
                 id: 12
         versionCode: 0.8.4.8
         releaseDate: 2011-06-13
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5513,7 +5513,7 @@ versions:
                 id: 12
         versionCode: 0.8.5
         releaseDate: 2011-06-14
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5524,7 +5524,7 @@ versions:
                 id: 12
         versionCode: 0.8.5.1
         releaseDate: 2011-06-15
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5535,7 +5535,7 @@ versions:
                 id: 12
         versionCode: 0.8.6
         releaseDate: 2011-06-16
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5546,7 +5546,7 @@ versions:
                 id: 12
         versionCode: 0.8.7
         releaseDate: 2011-06-17
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5557,7 +5557,7 @@ versions:
                 id: 12
         versionCode: 0.8.7.1
         releaseDate: 2011-06-18
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5568,7 +5568,7 @@ versions:
                 id: 12
         versionCode: 0.8.8
         releaseDate: 2011-06-20
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5579,7 +5579,7 @@ versions:
                 id: 12
         versionCode: 0.8.8.1
         releaseDate: 2011-06-20
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5590,7 +5590,7 @@ versions:
                 id: 12
         versionCode: 0.8.8.2
         releaseDate: 2011-06-20
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5601,7 +5601,7 @@ versions:
                 id: 12
         versionCode: 0.8.8.3
         releaseDate: 2011-06-20
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5612,7 +5612,7 @@ versions:
                 id: 12
         versionCode: 0.8.8.4
         releaseDate: 2011-06-23
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5623,7 +5623,7 @@ versions:
                 id: 12
         versionCode: 0.8.9
         releaseDate: 2011-08-11
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5634,7 +5634,7 @@ versions:
                 id: 12
         versionCode: 0.8.9.1
         releaseDate: 2011-08-17
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5645,7 +5645,7 @@ versions:
                 id: 12
         versionCode: 0.8.9.2
         releaseDate: 2011-08-18
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5656,7 +5656,7 @@ versions:
                 id: 12
         versionCode: 0.8.9.3
         releaseDate: 2011-08-21
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5667,7 +5667,7 @@ versions:
                 id: 12
         versionCode: 0.8.9.4
         releaseDate: 2011-08-22
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5678,7 +5678,7 @@ versions:
                 id: 12
         versionCode: 0.8.9.5
         releaseDate: 2011-08-24
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5689,7 +5689,7 @@ versions:
                 id: 12
         versionCode: 0.8.9.6
         releaseDate: 2011-09-11
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5700,7 +5700,7 @@ versions:
                 id: 12
         versionCode: 0.8.9.7
         releaseDate: 2011-09-24
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5711,7 +5711,7 @@ versions:
                 id: 12
         versionCode: 0.8.9.8
         releaseDate: 2011-10-01
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5722,7 +5722,7 @@ versions:
                 id: 12
         versionCode: 0.8.10
         releaseDate: 2011-10-01
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5733,7 +5733,7 @@ versions:
                 id: 12
         versionCode: 0.9.0
         releaseDate: 2011-10-09
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5744,7 +5744,7 @@ versions:
                 id: 12
         versionCode: 0.9.1
         releaseDate: 2011-10-13
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5755,7 +5755,7 @@ versions:
                 id: 12
         versionCode: 0.9.2
         releaseDate: 2011-10-24
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5766,7 +5766,7 @@ versions:
                 id: 12
         versionCode: 0.9.2.1
         releaseDate: 2011-11-26
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5777,7 +5777,7 @@ versions:
                 id: 12
         versionCode: 0.9.2.2
         releaseDate: 2011-11-27
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5788,7 +5788,7 @@ versions:
                 id: 12
         versionCode: 0.9.2.3
         releaseDate: 2011-11-29
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5799,7 +5799,7 @@ versions:
                 id: 12
         versionCode: 0.9.2.4
         releaseDate: 2011-11-30
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5810,7 +5810,7 @@ versions:
                 id: 12
         versionCode: 0.9.2.5
         releaseDate: 2011-12-01
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5821,7 +5821,7 @@ versions:
                 id: 12
         versionCode: 0.9.2.6
         releaseDate: 2012-01-17
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5832,7 +5832,7 @@ versions:
                 id: 12
         versionCode: 0.9.2.7
         releaseDate: 2012-01-18
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5843,7 +5843,7 @@ versions:
                 id: 12
         versionCode: 0.9.2.8
         releaseDate: 2012-01-19
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5854,7 +5854,7 @@ versions:
                 id: 12
         versionCode: 0.9.3.1
         releaseDate: 2012-03-09
-        releaseNotes: frameworkMatch=1.2.x
+        releaseNotes: 1.2.x
 
     - !!models.ModuleVersion
         playModule:
@@ -5865,7 +5865,7 @@ versions:
                 id: 12
         versionCode: 0.9.3.2
         releaseDate: 2012-03-11
-        releaseNotes: frameworkMatch=1.2.x
+        releaseNotes: 1.2.x
 
     - !!models.ModuleVersion
         playModule:
@@ -5876,7 +5876,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2011-09-01
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -5887,7 +5887,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2012-02-29
-        releaseNotes: frameworkMatch=1.2.4
+        releaseNotes: 1.2.4
 
     - !!models.ModuleVersion
         playModule:
@@ -5898,7 +5898,7 @@ versions:
                 id: 12
         versionCode: 0.2
         releaseDate: 2012-03-10
-        releaseNotes: frameworkMatch=1.2.4
+        releaseNotes: 1.2.4
 
     - !!models.ModuleVersion
         playModule:
@@ -5909,7 +5909,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2011-05-31
-        releaseNotes: frameworkMatch=1.2.1
+        releaseNotes: 1.2.1
 
     - !!models.ModuleVersion
         playModule:
@@ -5920,7 +5920,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2011-04-27
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5931,7 +5931,7 @@ versions:
                 id: 12
         versionCode: 1.0.2
         releaseDate: 2011-07-22
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5942,7 +5942,7 @@ versions:
                 id: 12
         versionCode: 0.9
         releaseDate: 2012-02-01
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -5953,7 +5953,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2011-10-31
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -5964,7 +5964,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2010-11-25
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -5975,7 +5975,7 @@ versions:
                 id: 12
         versionCode: 0.2
         releaseDate: 2010-11-26
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -5986,7 +5986,7 @@ versions:
                 id: 12
         versionCode: head
         releaseDate: 2010-11-26
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -5997,7 +5997,7 @@ versions:
                 id: 12
         versionCode: 0.3
         releaseDate: 2010-11-26
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -6008,7 +6008,7 @@ versions:
                 id: 12
         versionCode: 0.1.2
         releaseDate: 2011-10-12
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -6019,7 +6019,7 @@ versions:
                 id: 12
         versionCode: head
         releaseDate: 2012-01-16
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -6030,7 +6030,7 @@ versions:
                 id: 12
         versionCode: 0.1.3
         releaseDate: 2011-10-17
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -6041,7 +6041,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2011-11-03
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -6052,7 +6052,7 @@ versions:
                 id: 12
         versionCode: 1.1
         releaseDate: 2012-01-16
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -6063,7 +6063,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2011-03-03
-        releaseNotes: frameworkMatch=1.0, 1.1
+        releaseNotes: 1.0 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -6074,7 +6074,7 @@ versions:
                 id: 12
         versionCode: 0.2
         releaseDate: 2011-07-06
-        releaseNotes: frameworkMatch=1.1, 1.2
+        releaseNotes: 1.1 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -6085,7 +6085,7 @@ versions:
                 id: 12
         versionCode: 0.3
         releaseDate: 2011-07-13
-        releaseNotes: frameworkMatch=1.1, 1.2
+        releaseNotes: 1.1 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -6096,7 +6096,7 @@ versions:
                 id: 12
         versionCode: 0.3.compatibility
         releaseDate: 2011-09-02
-        releaseNotes: frameworkMatch=1.1, 1.2
+        releaseNotes: 1.1 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -6107,7 +6107,7 @@ versions:
                 id: 12
         versionCode: 0.9
         releaseDate: 2012-02-01
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -6118,7 +6118,7 @@ versions:
                 id: 12
         versionCode: 0.2.1
         releaseDate: 2011-03-08
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -6129,7 +6129,7 @@ versions:
                 id: 12
         versionCode: 1.1
         releaseDate: 2010-11-18
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -6140,7 +6140,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2010-12-02
-        releaseNotes: frameworkMatch=1.0.3.2
+        releaseNotes: 1.0.3.2
 
     - !!models.ModuleVersion
         playModule:
@@ -6151,7 +6151,7 @@ versions:
                 id: 12
         versionCode: 1.0.3
         releaseDate: 2010-12-03
-        releaseNotes: frameworkMatch=1.0.3.2
+        releaseNotes: 1.0.3.2
 
     - !!models.ModuleVersion
         playModule:
@@ -6162,7 +6162,7 @@ versions:
                 id: 12
         versionCode: 1.1.3
         releaseDate: 2010-12-03
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -6173,7 +6173,7 @@ versions:
                 id: 12
         versionCode: 2.0.3
         releaseDate: 2010-12-24
-        releaseNotes: frameworkMatch=1.0.3.2
+        releaseNotes: 1.0.3.2
 
     - !!models.ModuleVersion
         playModule:
@@ -6184,7 +6184,7 @@ versions:
                 id: 12
         versionCode: 2.1.0
         releaseDate: 2010-12-24
-        releaseNotes: frameworkMatch=2.1
+        releaseNotes: 2.1
 
     - !!models.ModuleVersion
         playModule:
@@ -6195,7 +6195,7 @@ versions:
                 id: 12
         versionCode: 2.0.4
         releaseDate: 2011-01-08
-        releaseNotes: frameworkMatch=1.0.3.2
+        releaseNotes: 1.0.3.2
 
     - !!models.ModuleVersion
         playModule:
@@ -6206,7 +6206,7 @@ versions:
                 id: 12
         versionCode: 2.1.1
         releaseDate: 2011-01-08
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -6217,7 +6217,7 @@ versions:
                 id: 12
         versionCode: 2.1.2
         releaseDate: 2011-01-26
-        releaseNotes: frameworkMatch=1.0.x,1.1.x
+        releaseNotes: 1.0.x 1.1.x
 
     - !!models.ModuleVersion
         playModule:
@@ -6228,7 +6228,7 @@ versions:
                 id: 12
         versionCode: 2.2
         releaseDate: 2011-02-20
-        releaseNotes: frameworkMatch=1.x
+        releaseNotes: 1.x
 
     - !!models.ModuleVersion
         playModule:
@@ -6239,7 +6239,7 @@ versions:
                 id: 12
         versionCode: 2.3
         releaseDate: 2011-09-27
-        releaseNotes: frameworkMatch=1.x
+        releaseNotes: 1.x
 
     - !!models.ModuleVersion
         playModule:
@@ -6250,7 +6250,7 @@ versions:
                 id: 12
         versionCode: 2.3.1
         releaseDate: 2011-10-11
-        releaseNotes: frameworkMatch=1.x
+        releaseNotes: 1.x
 
     - !!models.ModuleVersion
         playModule:
@@ -6261,7 +6261,7 @@ versions:
                 id: 12
         versionCode: 2.4
         releaseDate: 2011-11-29
-        releaseNotes: frameworkMatch=1.x
+        releaseNotes: 1.x
 
     - !!models.ModuleVersion
         playModule:
@@ -6272,7 +6272,7 @@ versions:
                 id: 12
         versionCode: 2.4.1
         releaseDate: 2012-01-16
-        releaseNotes: frameworkMatch=1.x
+        releaseNotes: 1.x
 
     - !!models.ModuleVersion
         playModule:
@@ -6283,7 +6283,7 @@ versions:
                 id: 12
         versionCode: 0.0.1
         releaseDate: 2011-05-17
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -6294,7 +6294,7 @@ versions:
                 id: 12
         versionCode: 0.0.2
         releaseDate: 2011-05-17
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -6305,7 +6305,7 @@ versions:
                 id: 12
         versionCode: 0.3
         releaseDate: 2011-05-17
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -6316,7 +6316,7 @@ versions:
                 id: 12
         versionCode: 0.4
         releaseDate: 2011-06-23
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -6327,7 +6327,7 @@ versions:
                 id: 12
         versionCode: 0.5
         releaseDate: 2011-08-16
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -6338,7 +6338,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2010-06-12
-        releaseNotes: frameworkMatch=1.*
+        releaseNotes: 1.*
 
     - !!models.ModuleVersion
         playModule:
@@ -6349,7 +6349,7 @@ versions:
                 id: 12
         versionCode: 2.0
         releaseDate: 2010-06-13
-        releaseNotes: frameworkMatch=1.*
+        releaseNotes: 1.*
 
     - !!models.ModuleVersion
         playModule:
@@ -6360,7 +6360,7 @@ versions:
                 id: 12
         versionCode: 3.0
         releaseDate: 2011-01-23
-        releaseNotes: frameworkMatch=1.*
+        releaseNotes: 1.*
 
     - !!models.ModuleVersion
         playModule:
@@ -6371,7 +6371,7 @@ versions:
                 id: 12
         versionCode: 3.1
         releaseDate: 2011-07-05
-        releaseNotes: frameworkMatch=1.1.x, 1.2.x
+        releaseNotes: 1.1.x 1.2.x
 
     - !!models.ModuleVersion
         playModule:
@@ -6382,7 +6382,7 @@ versions:
                 id: 12
         versionCode: 1.0RC1
         releaseDate: 2012-02-04
-        releaseNotes: frameworkMatch=1.2.x
+        releaseNotes: 1.2.x
 
     - !!models.ModuleVersion
         playModule:
@@ -6393,7 +6393,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2010-06-13
-        releaseNotes: frameworkMatch=1.0.*
+        releaseNotes: 1.0.*
 
     - !!models.ModuleVersion
         playModule:
@@ -6404,7 +6404,7 @@ versions:
                 id: 12
         versionCode: 1.3
         releaseDate: 2011-02-17
-        releaseNotes: frameworkMatch=1.1.*
+        releaseNotes: 1.1.*
 
     - !!models.ModuleVersion
         playModule:
@@ -6415,7 +6415,7 @@ versions:
                 id: 12
         versionCode: 1.4
         releaseDate: 2011-03-28
-        releaseNotes: frameworkMatch=1.1.*
+        releaseNotes: 1.1.*
 
     - !!models.ModuleVersion
         playModule:
@@ -6426,7 +6426,7 @@ versions:
                 id: 12
         versionCode: 1.5
         releaseDate: 2011-07-31
-        releaseNotes: frameworkMatch=1.2.*
+        releaseNotes: 1.2.*
 
     - !!models.ModuleVersion
         playModule:
@@ -6437,7 +6437,7 @@ versions:
                 id: 12
         versionCode: 1.8
         releaseDate: 2012-02-01
-        releaseNotes: frameworkMatch=1.2.x
+        releaseNotes: 1.2.x
 
     - !!models.ModuleVersion
         playModule:
@@ -6448,7 +6448,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2011-08-17
-        releaseNotes: frameworkMatch=1.2.2
+        releaseNotes: 1.2.2
 
     - !!models.ModuleVersion
         playModule:
@@ -6459,7 +6459,7 @@ versions:
                 id: 12
         versionCode: 1.1
         releaseDate: 2011-09-15
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -6470,7 +6470,7 @@ versions:
                 id: 12
         versionCode: 1.2
         releaseDate: 2011-10-03
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -6481,7 +6481,7 @@ versions:
                 id: 12
         versionCode: 1.3
         releaseDate: 2011-10-18
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -6492,7 +6492,7 @@ versions:
                 id: 12
         versionCode: 1.4
         releaseDate: 2011-10-29
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -6503,7 +6503,7 @@ versions:
                 id: 12
         versionCode: 1.5
         releaseDate: 2011-11-12
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -6514,7 +6514,7 @@ versions:
                 id: 12
         versionCode: 1.6
         releaseDate: 2012-02-06
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -6525,7 +6525,7 @@ versions:
                 id: 12
         versionCode: 1.7
         releaseDate: 2012-02-15
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -6536,7 +6536,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2010-11-15
-        releaseNotes: frameworkMatch=1.0
+        releaseNotes: 1.0
 
     - !!models.ModuleVersion
         playModule:
@@ -6547,7 +6547,7 @@ versions:
                 id: 12
         versionCode: head
         releaseDate: 2010-11-21
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -6558,7 +6558,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2010-09-17
-        releaseNotes: frameworkMatch=1.1beta2
+        releaseNotes: 1.1beta2
 
     - !!models.ModuleVersion
         playModule:
@@ -6569,7 +6569,7 @@ versions:
                 id: 12
         versionCode: 1.0b
         releaseDate: 2010-10-11
-        releaseNotes: frameworkMatch=1.0
+        releaseNotes: 1.0
 
     - !!models.ModuleVersion
         playModule:
@@ -6580,7 +6580,7 @@ versions:
                 id: 12
         versionCode: 1.0c
         releaseDate: 2010-10-24
-        releaseNotes: frameworkMatch=1.0
+        releaseNotes: 1.0
 
     - !!models.ModuleVersion
         playModule:
@@ -6591,7 +6591,7 @@ versions:
                 id: 12
         versionCode: 1.1
         releaseDate: 2011-09-13
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -6602,7 +6602,7 @@ versions:
                 id: 12
         versionCode: 1.1a
         releaseDate: 2011-10-18
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -6899,7 +6899,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2010-03-25
-        releaseNotes: frameworkMatch=1.0
+        releaseNotes: 1.0
 
     - !!models.ModuleVersion
         playModule:
@@ -6910,7 +6910,7 @@ versions:
                 id: 12
         versionCode: 1.0a
         releaseDate: 2010-09-14
-        releaseNotes: frameworkMatch=1.0.1
+        releaseNotes: 1.0.1
 
     - !!models.ModuleVersion
         playModule:
@@ -6921,7 +6921,7 @@ versions:
                 id: 12
         versionCode: 1.1d
         releaseDate: 2010-10-07
-        releaseNotes: frameworkMatch=1.0
+        releaseNotes: 1.0
 
     - !!models.ModuleVersion
         playModule:
@@ -6932,7 +6932,7 @@ versions:
                 id: 12
         versionCode: 1.2d
         releaseDate: 2011-04-18
-        releaseNotes: frameworkMatch=1.0
+        releaseNotes: 1.0
 
     - !!models.ModuleVersion
         playModule:
@@ -6943,7 +6943,7 @@ versions:
                 id: 12
         versionCode: 1.2.2
         releaseDate: 2011-07-08
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -6954,7 +6954,7 @@ versions:
                 id: 12
         versionCode: 1.2.3
         releaseDate: 2011-07-18
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -6965,7 +6965,7 @@ versions:
                 id: 12
         versionCode: 1.2.4
         releaseDate: 2011-07-20
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -6976,7 +6976,7 @@ versions:
                 id: 12
         versionCode: 1.2.5
         releaseDate: 2011-08-08
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -6987,7 +6987,7 @@ versions:
                 id: 12
         versionCode: 1.2.6g
         releaseDate: 2011-09-17
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -6998,7 +6998,7 @@ versions:
                 id: 12
         versionCode: 1.2.6h
         releaseDate: 2011-09-20
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7009,7 +7009,7 @@ versions:
                 id: 12
         versionCode: 1.2.6i
         releaseDate: 2011-09-29
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7020,7 +7020,7 @@ versions:
                 id: 12
         versionCode: 1.2.6j
         releaseDate: 2011-09-30
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7031,7 +7031,7 @@ versions:
                 id: 12
         versionCode: 1.2.6k
         releaseDate: 2011-10-20
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7042,7 +7042,7 @@ versions:
                 id: 12
         versionCode: 1.2.6l
         releaseDate: 2011-11-16
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7053,7 +7053,7 @@ versions:
                 id: 12
         versionCode: 1.2.6m
         releaseDate: 2011-11-22
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7064,7 +7064,7 @@ versions:
                 id: 12
         versionCode: 1.2.7
         releaseDate: 2012-02-10
-        releaseNotes: frameworkMatch=[1.2,)
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7075,7 +7075,7 @@ versions:
                 id: 12
         versionCode: 1.2.8
         releaseDate: 2012-02-15
-        releaseNotes: frameworkMatch=[1.2,)
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7086,7 +7086,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2011-12-01
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -7097,7 +7097,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2011-09-12
-        releaseNotes: frameworkMatch=1.0, 1.1, 1.2
+        releaseNotes: 1.0 1.1 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7108,7 +7108,7 @@ versions:
                 id: 12
         versionCode: 1.1
         releaseDate: 2010-04-15
-        releaseNotes: frameworkMatch=1.0
+        releaseNotes: 1.0
 
     - !!models.ModuleVersion
         playModule:
@@ -7119,7 +7119,7 @@ versions:
                 id: 12
         versionCode: 1.3
         releaseDate: 2010-10-15
-        releaseNotes: frameworkMatch=1.0.3.2
+        releaseNotes: 1.0.3.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7130,7 +7130,7 @@ versions:
                 id: 12
         versionCode: 1.1c
         releaseDate: 2010-10-12
-        releaseNotes: frameworkMatch=1.1beta2
+        releaseNotes: 1.1beta2
 
     - !!models.ModuleVersion
         playModule:
@@ -7141,7 +7141,7 @@ versions:
                 id: 12
         versionCode: 1.2beta
         releaseDate: 2010-12-06
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -7152,7 +7152,7 @@ versions:
                 id: 12
         versionCode: 1.1d
         releaseDate: 2010-12-12
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -7163,7 +7163,7 @@ versions:
                 id: 12
         versionCode: 1.2beta2
         releaseDate: 2010-12-12
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -7174,7 +7174,7 @@ versions:
                 id: 12
         versionCode: 1.2beta3
         releaseDate: 2011-01-18
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -7185,7 +7185,7 @@ versions:
                 id: 12
         versionCode: 1.2beta4
         releaseDate: 2011-02-16
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -7196,7 +7196,7 @@ versions:
                 id: 12
         versionCode: 1.2beta5
         releaseDate: 2011-03-26
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -7207,7 +7207,7 @@ versions:
                 id: 12
         versionCode: 1.2beta6
         releaseDate: 2011-04-01
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -7218,7 +7218,7 @@ versions:
                 id: 12
         versionCode: 1.2.1beta1
         releaseDate: 2011-04-08
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7229,7 +7229,7 @@ versions:
                 id: 12
         versionCode: 1.2.1beta2
         releaseDate: 2011-04-28
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7240,7 +7240,7 @@ versions:
                 id: 12
         versionCode: 1.2.1beta3
         releaseDate: 2011-05-24
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7251,7 +7251,7 @@ versions:
                 id: 12
         versionCode: 1.2.1beta4
         releaseDate: 2011-06-06
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7262,7 +7262,7 @@ versions:
                 id: 12
         versionCode: 1.2.1beta5
         releaseDate: 2011-06-21
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7273,7 +7273,7 @@ versions:
                 id: 12
         versionCode: 1.2.1beta6
         releaseDate: 2011-06-23
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7284,7 +7284,7 @@ versions:
                 id: 12
         versionCode: 1.2.2beta1
         releaseDate: 2011-08-27
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7295,7 +7295,7 @@ versions:
                 id: 12
         versionCode: 1.2.3beta1
         releaseDate: 2011-09-07
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7306,7 +7306,7 @@ versions:
                 id: 12
         versionCode: 1.2.3c
         releaseDate: 2011-09-23
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7317,7 +7317,7 @@ versions:
                 id: 12
         versionCode: 1.2.3d
         releaseDate: 2011-09-28
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7328,7 +7328,7 @@ versions:
                 id: 12
         versionCode: 1.2.4
         releaseDate: 2011-11-14
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7339,7 +7339,7 @@ versions:
                 id: 12
         versionCode: 1.2.4a
         releaseDate: 2011-11-15
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7350,7 +7350,7 @@ versions:
                 id: 12
         versionCode: 1.2.4b
         releaseDate: 2011-11-16
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7361,7 +7361,7 @@ versions:
                 id: 12
         versionCode: 1.2.4c
         releaseDate: 2012-01-09
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7372,7 +7372,7 @@ versions:
                 id: 12
         versionCode: 1.2.4d
         releaseDate: 2012-01-16
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7383,7 +7383,7 @@ versions:
                 id: 12
         versionCode: 1.2.5a
         releaseDate: 2012-03-10
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7394,7 +7394,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2010-07-13
-        releaseNotes: frameworkMatch=1.0.2.1
+        releaseNotes: 1.0.2.1
 
     - !!models.ModuleVersion
         playModule:
@@ -7405,7 +7405,7 @@ versions:
                 id: 12
         versionCode: 1.1
         releaseDate: 2010-08-11
-        releaseNotes: frameworkMatch=1.0.2
+        releaseNotes: 1.0.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7416,7 +7416,7 @@ versions:
                 id: 12
         versionCode: 1.2
         releaseDate: 2010-08-31
-        releaseNotes: frameworkMatch=1.0.2
+        releaseNotes: 1.0.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7427,7 +7427,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2010-11-14
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -7438,7 +7438,7 @@ versions:
                 id: 12
         versionCode: head
         releaseDate: 2011-03-21
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -7449,7 +7449,7 @@ versions:
                 id: 12
         versionCode: 0.2
         releaseDate: 2011-03-21
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -7460,7 +7460,7 @@ versions:
                 id: 12
         versionCode: 0.1.2
         releaseDate: 2012-03-08
-        releaseNotes: frameworkMatch=1.2.4
+        releaseNotes: 1.2.4
 
     - !!models.ModuleVersion
         playModule:
@@ -7471,7 +7471,7 @@ versions:
                 id: 12
         versionCode: 0.2.0
         releaseDate: 2012-03-12
-        releaseNotes: frameworkMatch=1.2.4
+        releaseNotes: 1.2.4
 
     - !!models.ModuleVersion
         playModule:
@@ -7482,7 +7482,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2011-07-07
-        releaseNotes: frameworkMatch=1.1, 1.2
+        releaseNotes: 1.1 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7493,7 +7493,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2011-10-03
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -7504,7 +7504,7 @@ versions:
                 id: 12
         versionCode: 0.2
         releaseDate: 2011-10-27
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -7537,7 +7537,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2010-03-01
-        releaseNotes: frameworkMatch=1.0.1
+        releaseNotes: 1.0.1
 
     - !!models.ModuleVersion
         playModule:
@@ -7548,7 +7548,7 @@ versions:
                 id: 12
         versionCode: 1.0.1
         releaseDate: 2010-03-04
-        releaseNotes: frameworkMatch=1.0.1
+        releaseNotes: 1.0.1
 
     - !!models.ModuleVersion
         playModule:
@@ -7559,7 +7559,7 @@ versions:
                 id: 12
         versionCode: 1.0.2
         releaseDate: 2010-04-09
-        releaseNotes: frameworkMatch=1.0.1
+        releaseNotes: 1.0.1
 
     - !!models.ModuleVersion
         playModule:
@@ -7570,7 +7570,7 @@ versions:
                 id: 12
         versionCode: 1.0.3
         releaseDate: 2010-05-16
-        releaseNotes: frameworkMatch=1.0.2
+        releaseNotes: 1.0.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7581,7 +7581,7 @@ versions:
                 id: 12
         versionCode: 1.0.4
         releaseDate: 2010-06-27
-        releaseNotes: frameworkMatch=1.0.2+
+        releaseNotes: 1.0.2+
 
     - !!models.ModuleVersion
         playModule:
@@ -7592,7 +7592,7 @@ versions:
                 id: 12
         versionCode: 1.0.5
         releaseDate: 2010-07-24
-        releaseNotes: frameworkMatch=1.0.2
+        releaseNotes: 1.0.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7603,7 +7603,7 @@ versions:
                 id: 12
         versionCode: 1.0.6
         releaseDate: 2010-08-04
-        releaseNotes: frameworkMatch=1.0
+        releaseNotes: 1.0
 
     - !!models.ModuleVersion
         playModule:
@@ -7614,7 +7614,7 @@ versions:
                 id: 12
         versionCode: 1.0.7
         releaseDate: 2010-09-05
-        releaseNotes: frameworkMatch=1.0.3
+        releaseNotes: 1.0.3
 
     - !!models.ModuleVersion
         playModule:
@@ -7625,7 +7625,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2010-02-24
-        releaseNotes: frameworkMatch=1.0
+        releaseNotes: 1.0
 
     - !!models.ModuleVersion
         playModule:
@@ -7636,7 +7636,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2010-05-18
-        releaseNotes: frameworkMatch=1.0.2.1
+        releaseNotes: 1.0.2.1
 
     - !!models.ModuleVersion
         playModule:
@@ -7647,7 +7647,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2012-03-01
-        releaseNotes: frameworkMatch=1.2.4
+        releaseNotes: 1.2.4
 
     - !!models.ModuleVersion
         playModule:
@@ -7691,7 +7691,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2011-09-08
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -7702,7 +7702,7 @@ versions:
                 id: 12
         versionCode: 0.1.1
         releaseDate: 2011-12-30
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -7713,7 +7713,7 @@ versions:
                 id: 12
         versionCode: head
         releaseDate: 2012-02-03
-        releaseNotes: frameworkMatch=1.x
+        releaseNotes: 1.x
 
     - !!models.ModuleVersion
         playModule:
@@ -7724,7 +7724,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2011-07-26
-        releaseNotes: frameworkMatch=1.0-1.2
+        releaseNotes: 1.0-1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7735,7 +7735,7 @@ versions:
                 id: 12
         versionCode: 0.11
         releaseDate: 2011-09-13
-        releaseNotes: frameworkMatch=1.0-1.2.3
+        releaseNotes: 1.0-1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -7746,7 +7746,7 @@ versions:
                 id: 12
         versionCode: 0.12
         releaseDate: 2011-11-23
-        releaseNotes: frameworkMatch=1.0-1.2.x
+        releaseNotes: 1.0-1.2.x
 
     - !!models.ModuleVersion
         playModule:
@@ -7757,7 +7757,7 @@ versions:
                 id: 12
         versionCode: 0.13
         releaseDate: 2012-01-26
-        releaseNotes: frameworkMatch=1.x
+        releaseNotes: 1.x
 
     - !!models.ModuleVersion
         playModule:
@@ -7768,7 +7768,7 @@ versions:
                 id: 12
         versionCode: 0.14
         releaseDate: 2012-02-23
-        releaseNotes: frameworkMatch=1.x
+        releaseNotes: 1.x
 
     - !!models.ModuleVersion
         playModule:
@@ -7779,7 +7779,7 @@ versions:
                 id: 12
         versionCode: 0.2
         releaseDate: 2011-03-06
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -7790,7 +7790,7 @@ versions:
                 id: 12
         versionCode: 0.6
         releaseDate: 2011-06-01
-        releaseNotes: frameworkMatch=1.1,1.2
+        releaseNotes: 1.1 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7801,7 +7801,7 @@ versions:
                 id: 12
         versionCode: 0.7
         releaseDate: 2011-08-23
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -7834,7 +7834,7 @@ versions:
                 id: 12
         versionCode: head
         releaseDate: 2011-04-19
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -7845,7 +7845,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2011-04-19
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -7856,7 +7856,7 @@ versions:
                 id: 12
         versionCode: 1.1
         releaseDate: 2011-06-22
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -7867,7 +7867,7 @@ versions:
                 id: 12
         versionCode: 1.2
         releaseDate: 2011-12-16
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7878,7 +7878,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2010-08-09
-        releaseNotes: frameworkMatch=1.0.3.2
+        releaseNotes: 1.0.3.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7889,7 +7889,7 @@ versions:
                 id: 12
         versionCode: 1.1
         releaseDate: 2010-10-29
-        releaseNotes: frameworkMatch=Play-1.1
+        releaseNotes: Play-1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -7900,7 +7900,7 @@ versions:
                 id: 12
         versionCode: 1.2
         releaseDate: 2010-12-02
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -7911,7 +7911,7 @@ versions:
                 id: 12
         versionCode: 1.3
         releaseDate: 2011-01-18
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -7922,7 +7922,7 @@ versions:
                 id: 12
         versionCode: 1.4
         releaseDate: 2011-05-20
-        releaseNotes: frameworkMatch=1.2.1
+        releaseNotes: 1.2.1
 
     - !!models.ModuleVersion
         playModule:
@@ -7955,7 +7955,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2012-02-08
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -7966,7 +7966,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2011-10-11
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7977,7 +7977,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2011-05-20
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7988,7 +7988,7 @@ versions:
                 id: 12
         versionCode: 0.0.1
         releaseDate: 2011-04-25
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -7999,7 +7999,7 @@ versions:
                 id: 12
         versionCode: 0.0.2
         releaseDate: 2011-05-01
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -8010,7 +8010,7 @@ versions:
                 id: 12
         versionCode: 0.0.3
         releaseDate: 2011-05-04
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -8021,7 +8021,7 @@ versions:
                 id: 12
         versionCode: 0.0.4
         releaseDate: 2011-05-10
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -8032,7 +8032,7 @@ versions:
                 id: 12
         versionCode: 0.0.5
         releaseDate: 2011-05-11
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -8043,7 +8043,7 @@ versions:
                 id: 12
         versionCode: 0.0.6
         releaseDate: 2011-05-20
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -8054,7 +8054,7 @@ versions:
                 id: 12
         versionCode: 0.0.7
         releaseDate: 2011-05-24
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -8065,7 +8065,7 @@ versions:
                 id: 12
         versionCode: 0.0.8
         releaseDate: 2011-05-26
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -8076,7 +8076,7 @@ versions:
                 id: 12
         versionCode: 0.0.9
         releaseDate: 2011-05-28
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -8087,7 +8087,7 @@ versions:
                 id: 12
         versionCode: 0.2
         releaseDate: 2011-09-13
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -8098,7 +8098,7 @@ versions:
                 id: 12
         versionCode: 0.3
         releaseDate: 2011-09-20
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -8109,7 +8109,7 @@ versions:
                 id: 12
         versionCode: 0.9
         releaseDate: 2010-11-13
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -8120,7 +8120,7 @@ versions:
                 id: 12
         versionCode: 1.03
         releaseDate: 2011-03-02
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -8131,7 +8131,7 @@ versions:
                 id: 12
         versionCode: 1.2
         releaseDate: 2011-07-09
-        releaseNotes: frameworkMatch=1.2.2
+        releaseNotes: 1.2.2
 
     - !!models.ModuleVersion
         playModule:
@@ -8142,7 +8142,7 @@ versions:
                 id: 12
         versionCode: 1.3
         releaseDate: 2012-01-16
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -8175,7 +8175,7 @@ versions:
                 id: 12
         versionCode: 1.1
         releaseDate: 2011-03-03
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -8186,7 +8186,7 @@ versions:
                 id: 12
         versionCode: 1.3.1
         releaseDate: 2011-03-03
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -8197,7 +8197,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2011-11-07
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -8219,7 +8219,7 @@ versions:
                 id: 12
         versionCode: 0.9.4g
         releaseDate: 2012-03-08
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -8230,7 +8230,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2012-02-14
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -8241,7 +8241,7 @@ versions:
                 id: 12
         versionCode: head
         releaseDate: 2011-04-29
-        releaseNotes: frameworkMatch=1.0-1.2
+        releaseNotes: 1.0-1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -8252,7 +8252,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2011-07-26
-        releaseNotes: frameworkMatch=1.0-1.2
+        releaseNotes: 1.0-1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -8263,7 +8263,7 @@ versions:
                 id: 12
         versionCode: 0.7
         releaseDate: 2010-07-12
-        releaseNotes: frameworkMatch=Tested with 1.1-r942
+        releaseNotes: Tested with 1.1-r942
 
     - !!models.ModuleVersion
         playModule:
@@ -8274,7 +8274,7 @@ versions:
                 id: 12
         versionCode: 0.7.1
         releaseDate: 2010-07-15
-        releaseNotes: frameworkMatch=Tested with play-1.1-r946
+        releaseNotes: Tested with play-1.1-r946
 
     - !!models.ModuleVersion
         playModule:
@@ -8285,7 +8285,7 @@ versions:
                 id: 12
         versionCode: 0.7.2
         releaseDate: 2010-07-22
-        releaseNotes: frameworkMatch=Tested with Play-1.1r956
+        releaseNotes: Tested with Play-1.1r956
 
     - !!models.ModuleVersion
         playModule:
@@ -8296,7 +8296,7 @@ versions:
                 id: 12
         versionCode: 0.7.3
         releaseDate: 2010-08-13
-        releaseNotes: frameworkMatch=1.1-beta1
+        releaseNotes: 1.1-beta1
 
     - !!models.ModuleVersion
         playModule:
@@ -8307,7 +8307,7 @@ versions:
                 id: 12
         versionCode: 0.8
         releaseDate: 2010-11-01
-        releaseNotes: frameworkMatch=Play-1.1
+        releaseNotes: Play-1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -8318,7 +8318,7 @@ versions:
                 id: 12
         versionCode: 0.9
         releaseDate: 2011-04-13
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -8329,7 +8329,7 @@ versions:
                 id: 12
         versionCode: 0.9.1
         releaseDate: 2011-05-29
-        releaseNotes: frameworkMatch=1.2.2
+        releaseNotes: 1.2.2
 
     - !!models.ModuleVersion
         playModule:
@@ -8362,7 +8362,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2010-03-08
-        releaseNotes: frameworkMatch=> 1.1 r812 +scala 0.1
+        releaseNotes: 1.1 r812 +scala 0.1
 
     - !!models.ModuleVersion
         playModule:
@@ -8373,7 +8373,7 @@ versions:
                 id: 12
         versionCode: 0.2
         releaseDate: 2010-03-13
-        releaseNotes: frameworkMatch=> 1.1r812 + scala 0.1
+        releaseNotes: 1.1r812 + scala 0.1
 
     - !!models.ModuleVersion
         playModule:
@@ -8384,7 +8384,7 @@ versions:
                 id: 12
         versionCode: 0.3
         releaseDate: 2010-04-20
-        releaseNotes: frameworkMatch=1.1r881+scala 0.3
+        releaseNotes: 1.1r881+scala 0.3
 
     - !!models.ModuleVersion
         playModule:
@@ -8395,7 +8395,7 @@ versions:
                 id: 12
         versionCode: 0.7.2
         releaseDate: 2010-07-29
-        releaseNotes: frameworkMatch= 1.1r956
+        releaseNotes:  1.1r956
 
     - !!models.ModuleVersion
         playModule:
@@ -8406,7 +8406,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2010-01-13
-        releaseNotes: frameworkMatch=1.0.1
+        releaseNotes: 1.0.1
 
     - !!models.ModuleVersion
         playModule:
@@ -8417,7 +8417,7 @@ versions:
                 id: 12
         versionCode: 1.1
         releaseDate: 2010-03-20
-        releaseNotes: frameworkMatch=1.0.1
+        releaseNotes: 1.0.1
 
     - !!models.ModuleVersion
         playModule:
@@ -8428,7 +8428,7 @@ versions:
                 id: 12
         versionCode: 1.2
         releaseDate: 2010-03-29
-        releaseNotes: frameworkMatch=1.0.1
+        releaseNotes: 1.0.1
 
     - !!models.ModuleVersion
         playModule:
@@ -8439,7 +8439,7 @@ versions:
                 id: 12
         versionCode: head
         releaseDate: 2011-12-10
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -8450,7 +8450,7 @@ versions:
                 id: 12
         versionCode: 1.3
         releaseDate: 2010-11-16
-        releaseNotes: frameworkMatch=1.0.1
+        releaseNotes: 1.0.1
 
     - !!models.ModuleVersion
         playModule:
@@ -8461,7 +8461,7 @@ versions:
                 id: 12
         versionCode: 1.4
         releaseDate: 2011-01-06
-        releaseNotes: frameworkMatch=1.0
+        releaseNotes: 1.0
 
     - !!models.ModuleVersion
         playModule:
@@ -8472,7 +8472,7 @@ versions:
                 id: 12
         versionCode: 2.0
         releaseDate: 2011-02-25
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -8483,7 +8483,7 @@ versions:
                 id: 12
         versionCode: 1.2.1
         releaseDate: 2011-03-04
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -8494,7 +8494,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2011-11-21
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -8505,7 +8505,7 @@ versions:
                 id: 12
         versionCode: 0.2
         releaseDate: 2011-11-24
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -8516,7 +8516,7 @@ versions:
                 id: 12
         versionCode: 0.2.1
         releaseDate: 2011-11-25
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -8527,7 +8527,7 @@ versions:
                 id: 12
         versionCode: 0.2.2
         releaseDate: 2011-11-27
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -8538,7 +8538,7 @@ versions:
                 id: 12
         versionCode: 0.2.3
         releaseDate: 2012-01-24
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -8549,7 +8549,7 @@ versions:
                 id: 12
         versionCode: 0.2.4
         releaseDate: 2012-02-08
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -8560,7 +8560,7 @@ versions:
                 id: 12
         versionCode: 1.1
         releaseDate: 2011-12-20
-        releaseNotes: frameworkMatch=1.2.x
+        releaseNotes: 1.2.x
 
     - !!models.ModuleVersion
         playModule:
@@ -8571,7 +8571,7 @@ versions:
                 id: 12
         versionCode: head
         releaseDate: 2012-01-23
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -8582,7 +8582,7 @@ versions:
                 id: 12
         versionCode: 1.2
         releaseDate: 2012-01-30
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -8593,7 +8593,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2010-01-11
-        releaseNotes: frameworkMatch=1.0,1.1
+        releaseNotes: 1.0 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -8604,7 +8604,7 @@ versions:
                 id: 12
         versionCode: 1.1
         releaseDate: 2010-02-23
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -8615,7 +8615,7 @@ versions:
                 id: 12
         versionCode: 1.2
         releaseDate: 2010-09-01
-        releaseNotes: frameworkMatch=1.0, 1.1
+        releaseNotes: 1.0 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -8626,7 +8626,7 @@ versions:
                 id: 12
         versionCode: 1.3
         releaseDate: 2010-10-07
-        releaseNotes: frameworkMatch=1.0
+        releaseNotes: 1.0
 
     - !!models.ModuleVersion
         playModule:
@@ -8637,7 +8637,7 @@ versions:
                 id: 12
         versionCode: 1.4
         releaseDate: 2011-01-19
-        releaseNotes: frameworkMatch=1.2,1.1
+        releaseNotes: 1.2 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -8648,7 +8648,7 @@ versions:
                 id: 12
         versionCode: 1.5
         releaseDate: 2011-02-18
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -8659,7 +8659,7 @@ versions:
                 id: 12
         versionCode: 2.0.0
         releaseDate: 2011-06-12
-        releaseNotes: frameworkMatch=[1.2.1,)
+        releaseNotes: 1.2.1
 
     - !!models.ModuleVersion
         playModule:
@@ -8670,7 +8670,7 @@ versions:
                 id: 12
         versionCode: 2.0.1
         releaseDate: 2011-06-27
-        releaseNotes: frameworkMatch=[1.2.1,)
+        releaseNotes: 1.2.1
 
     - !!models.ModuleVersion
         playModule:
@@ -8681,7 +8681,7 @@ versions:
                 id: 12
         versionCode: 2.0.2
         releaseDate: 2011-07-08
-        releaseNotes: frameworkMatch=[1.2.1,)
+        releaseNotes: 1.2.1
 
     - !!models.ModuleVersion
         playModule:
@@ -8692,7 +8692,7 @@ versions:
                 id: 12
         versionCode: 2.0.3
         releaseDate: 2011-07-26
-        releaseNotes: frameworkMatch=[1.2.1,)
+        releaseNotes: 1.2.1
 
     - !!models.ModuleVersion
         playModule:
@@ -8703,7 +8703,7 @@ versions:
                 id: 12
         versionCode: 2.0.4_work
         releaseDate: 2011-08-08
-        releaseNotes: frameworkMatch=[1.2.1,)
+        releaseNotes: 1.2.1
 
     - !!models.ModuleVersion
         playModule:
@@ -8714,7 +8714,7 @@ versions:
                 id: 12
         versionCode: 2.0.4
         releaseDate: 2011-08-10
-        releaseNotes: frameworkMatch=[1.2.1,)
+        releaseNotes: 1.2.1
 
     - !!models.ModuleVersion
         playModule:
@@ -8725,7 +8725,7 @@ versions:
                 id: 12
         versionCode: 2.0.5
         releaseDate: 2011-09-02
-        releaseNotes: frameworkMatch=[1.2.1,)
+        releaseNotes: 1.2.1
 
     - !!models.ModuleVersion
         playModule:
@@ -8736,7 +8736,7 @@ versions:
                 id: 12
         versionCode: 2.0.6
         releaseDate: 2011-11-28
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -8747,7 +8747,7 @@ versions:
                 id: 12
         versionCode: 2.0.7
         releaseDate: 2012-01-17
-        releaseNotes: frameworkMatch=[1.2.3,)
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -8758,7 +8758,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2010-03-22
-        releaseNotes: frameworkMatch=1.0.1
+        releaseNotes: 1.0.1
 
     - !!models.ModuleVersion
         playModule:
@@ -8769,7 +8769,7 @@ versions:
                 id: 12
         versionCode: 1.0.1
         releaseDate: 2011-05-18
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -8780,7 +8780,7 @@ versions:
                 id: 12
         versionCode: 1.0.2
         releaseDate: 2011-09-12
-        releaseNotes: frameworkMatch=1.2.x
+        releaseNotes: 1.2.x
 
     - !!models.ModuleVersion
         playModule:
@@ -8802,7 +8802,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2010-02-22
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -8813,7 +8813,7 @@ versions:
                 id: 12
         versionCode: 1.0.1
         releaseDate: 2010-03-26
-        releaseNotes: frameworkMatch=1.0
+        releaseNotes: 1.0
 
     - !!models.ModuleVersion
         playModule:
@@ -8824,7 +8824,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2010-07-28
-        releaseNotes: frameworkMatch=1.0.3
+        releaseNotes: 1.0.3
 
     - !!models.ModuleVersion
         playModule:
@@ -8835,7 +8835,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2010-10-29
-        releaseNotes: frameworkMatch=Play-1.1
+        releaseNotes: Play-1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -8846,7 +8846,7 @@ versions:
                 id: 12
         versionCode: 1.1
         releaseDate: 2011-09-16
-        releaseNotes: frameworkMatch=1.2.x
+        releaseNotes: 1.2.x
 
     - !!models.ModuleVersion
         playModule:
@@ -8857,7 +8857,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2011-03-27
-        releaseNotes: frameworkMatch=1.1.1
+        releaseNotes: 1.1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -8868,7 +8868,7 @@ versions:
                 id: 12
         versionCode: 1.2
         releaseDate: 2011-04-23
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -8879,7 +8879,7 @@ versions:
                 id: 12
         versionCode: 1.2.1
         releaseDate: 2011-07-06
-        releaseNotes: frameworkMatch=[1.2,)
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -8890,7 +8890,7 @@ versions:
                 id: 12
         versionCode: 1.2.2
         releaseDate: 2011-11-21
-        releaseNotes: frameworkMatch=1.2.+
+        releaseNotes: 1.2.+
 
     - !!models.ModuleVersion
         playModule:
@@ -8901,7 +8901,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2011-01-28
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -8912,7 +8912,7 @@ versions:
                 id: 12
         versionCode: 0.2
         releaseDate: 2011-03-15
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -8923,7 +8923,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2012-03-09
-        releaseNotes: frameworkMatch=1.2.4
+        releaseNotes: 1.2.4
 
     - !!models.ModuleVersion
         playModule:
@@ -8934,7 +8934,7 @@ versions:
                 id: 12
         versionCode: 0.3
         releaseDate: 2011-06-06
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -8945,7 +8945,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2011-10-03
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -8956,7 +8956,7 @@ versions:
                 id: 12
         versionCode: 0.2
         releaseDate: 2011-10-18
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -8967,7 +8967,7 @@ versions:
                 id: 12
         versionCode: 0.3
         releaseDate: 2011-11-07
-        releaseNotes: frameworkMatch=1.2.3
+        releaseNotes: 1.2.3
 
     - !!models.ModuleVersion
         playModule:
@@ -8978,7 +8978,7 @@ versions:
                 id: 12
         versionCode: 1.0
         releaseDate: 2010-04-20
-        releaseNotes: frameworkMatch=1.0
+        releaseNotes: 1.0
 
     - !!models.ModuleVersion
         playModule:
@@ -8989,7 +8989,7 @@ versions:
                 id: 12
         versionCode: 1.0.1
         releaseDate: 2010-04-26
-        releaseNotes: frameworkMatch=1.0
+        releaseNotes: 1.0
 
     - !!models.ModuleVersion
         playModule:
@@ -9000,7 +9000,7 @@ versions:
                 id: 12
         versionCode: 1.0.2
         releaseDate: 2011-03-23
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -9011,7 +9011,7 @@ versions:
                 id: 12
         versionCode: 1.0.3
         releaseDate: 2011-10-25
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -9022,7 +9022,7 @@ versions:
                 id: 12
         versionCode: 1.0.4
         releaseDate: 2011-11-30
-        releaseNotes: frameworkMatch=1.1
+        releaseNotes: 1.1
 
     - !!models.ModuleVersion
         playModule:
@@ -9033,7 +9033,7 @@ versions:
                 id: 12
         versionCode: 0.1
         releaseDate: 2011-09-02
-        releaseNotes: frameworkMatch=1.2
+        releaseNotes: 1.2
 
     - !!models.ModuleVersion
         playModule:
@@ -9044,7 +9044,7 @@ versions:
                 id: 12
         versionCode: 0.2
         releaseDate: 2011-09-13
-        releaseNotes: frameworkMatch=1.2.x
+        releaseNotes: 1.2.x
 
     # Play 2 modules
 
