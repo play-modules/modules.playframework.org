@@ -120,5 +120,16 @@
         @* our javascript *@
         <script src="@routes.Assets.at("javascripts/common.js")" type="text/javascript"></script>
         @moreScripts
+
+        <!-- Google Analytics -->
+        <script type="text/javascript">
+            @* loading value from config *@
+            var googleAnalyticsCode= '@play.api.Play.current.configuration.getString("google.analytics.code").getOrElse("")';
+
+            var _gaq=[['_setAccount', googleAnalyticsCode],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
     </body>
 </html>
