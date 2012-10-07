@@ -81,6 +81,15 @@
 
         <div id="mainContainer" class="container">
 
+            @* Remove once we are in production *@
+            <div class="alert alert-info alert-block">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <h4>Play Modules in under development!</h4>
+                This page is currently in <strong>BETA</strong>. We are working to release a fully functional version of the application.
+                Any data added while in Beta may be lost. You have been warned!
+            </div>
+            @* End of beta warning *@
+
             @content
 
             <div class="spacer">&nbsp;</div>
