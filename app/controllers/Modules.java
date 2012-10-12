@@ -194,6 +194,23 @@ public class Modules extends AbstractController
         return result;
     }
 
+    //e.g.: /modules/play-1/rating
+    public static Result getHighestRatedModulesByPlayVersion(String version) {
+        List<PlayVersion> playVersionList = PlayVersion.findByLooseName(version);
+        Result result;
+        if (playVersionList.isEmpty()){
+            result = notFound("Play version not found: " + version);
+        }
+        else
+        {
+            User currentUser = currentUser();
+            String title = String.format("Highest Rated Play %s.x modules", version);
+            List<Module> modules = Module.findHighestRatedModules(playVersionList);
+            result = ok(genericModuleList.render(currentUser, title, modules));
+        }
+        return result;
+    }
+
     public static Result getModulesByCategory(String version,
                                               String category)
     {

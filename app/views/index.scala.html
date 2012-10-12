@@ -1,7 +1,8 @@
 @(currentUser: User,
   mostRecentModules1: List[Module],
   mostRecentModules2: List[Module],
-  highestRatedModules: List[Module],
+  highestRatedModules1: List[Module],
+  highestRatedModules2: List[Module],
   featuredModules: List[FeaturedModule],
   playVersions: List[PlayVersion],
   moduleCount: Int)
@@ -38,12 +39,12 @@
     <div class="span4">
         <a href='@routes.Modules.getModulesByPlayVersion("2")' class="btn btn-large btn-block">Browse Play 2.x Modules</a>
         <br/>
-        <p>Or browse by <a href="">Featured </a>, <a href="@routes.Modules.getLatestModulesByPlayVersion("2")">Latest </a>, <a href="">Highest-rated</a></p>
+        <p>Or browse by <a href="">Featured </a>, <a href="@routes.Modules.getLatestModulesByPlayVersion("2")">Latest </a>, <a href="@routes.Modules.getHighestRatedModulesByPlayVersion("2")">Highest-rated</a></p>
     </div>
     <div class="span4">
         <a href='@routes.Modules.getModulesByPlayVersion("1")' class="btn btn-large btn-inverse btn-block">Browse Play 1.x Modules</a>
         <br/>
-        <p>Or browse by <a href="">Featured </a>, <a href="@routes.Modules.getLatestModulesByPlayVersion("1")">Latest </a>, <a href="">Highest-rated</a></p>
+        <p>Or browse by <a href="">Featured </a>, <a href="@routes.Modules.getLatestModulesByPlayVersion("1")">Latest </a>, <a href="@routes.Modules.getHighestRatedModulesByPlayVersion("1")">Highest-rated</a></p>
     </div>
     <div class="span4">
         <a href="@securesocial.controllers.routes.LoginPage.login" class="btn btn-large btn-success">Contribute your Modules</a>
@@ -66,7 +67,7 @@
         @featureList("Featured 2.x modules", featuredModules)
     </div>
     <div class="span4">
-        @featureList("Highest-rated 2.x", highestRatedModules)
+        @featureList("Highest-rated 2.x", highestRatedModules2)
     </div>
 </div>
 
@@ -78,7 +79,7 @@
         @featureList("Featured 1.x modules", featuredModules)
     </div>
     <div class="span4">
-        @featureList("Highest-rated 1.x", highestRatedModules)
+        @featureList("Highest-rated 1.x", highestRatedModules1)
     </div>
 </div>
 

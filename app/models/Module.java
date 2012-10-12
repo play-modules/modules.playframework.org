@@ -183,6 +183,18 @@ public class Module extends AbstractModel implements Comparable<Module>, ModuleA
         return modules;
     }
 
+    public static List<Module> findHighestRatedModules(int count, MajorVersion version) {
+        List<Module> modules = findModulesByMajorVersion(version);
+        sort(modules, "rating.averageRating DESC, updatedOn DESC");
+        return modules.size() <= count ? modules : modules.subList(0, count);
+    }
+
+    public static List<Module> findHighestRatedModules(List<PlayVersion> versions) {
+        List<Module> modules = findModulesByPlayVersion(versions);
+        sort(modules, "rating.averageRating DESC, updatedOn DESC");
+        return modules;
+    }
+
     public static List<Module> ownedBy(User user) {
         return FIND.where().eq("owner", user).findList();
     }
