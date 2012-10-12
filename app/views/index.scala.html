@@ -38,12 +38,12 @@
     <div class="span4">
         <a href='@routes.Modules.getModulesByPlayVersion("2")' class="btn btn-large btn-block">Browse Play 2.x Modules</a>
         <br/>
-        <p>Or browse by <a href="">Featured </a>, <a href="">Latest </a>, <a href="">Highest-rated</a></p>
+        <p>Or browse by <a href="">Featured </a>, <a href="@routes.Modules.getLatestModulesByPlayVersion("2")">Latest </a>, <a href="">Highest-rated</a></p>
     </div>
     <div class="span4">
         <a href='@routes.Modules.getModulesByPlayVersion("1")' class="btn btn-large btn-inverse btn-block">Browse Play 1.x Modules</a>
         <br/>
-        <p>Or browse by <a href="">Featured </a>, <a href="">Latest </a>, <a href="">Highest-rated</a></p>
+        <p>Or browse by <a href="">Featured </a>, <a href="@routes.Modules.getLatestModulesByPlayVersion("1")">Latest </a>, <a href="">Highest-rated</a></p>
     </div>
     <div class="span4">
         <a href="@securesocial.controllers.routes.LoginPage.login" class="btn btn-large btn-success">Contribute your Modules</a>

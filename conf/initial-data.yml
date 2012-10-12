@@ -3444,7 +3444,7 @@ versions:
             - !!models.PlayVersion
                 id: 12
         versionCode: 1.0.1
-        releaseDate: 2010-01-13
+        releaseDate: 2013-01-13
         releaseNotes: 1.0
 
     - !!models.ModuleVersion
