@@ -21,6 +21,7 @@
               <tr>
                 <th>Name &amp; description</th>
                 <th>Owner</th>
+                <th>Updated</th>
               </tr>
             </thead>
             <tbody>
@@ -32,6 +33,7 @@
                           <br>@summarize(module.summary)
                         </td>
                         <td>@module.owner.displayName</td>
+                        <td>@module.updatedOn.format("dd/MM/yyyy hh:mm")</td>
                       </tr>
                 }
             }

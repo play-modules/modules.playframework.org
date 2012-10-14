@@ -30,6 +30,7 @@ import static com.avaje.ebean.Ebean.sort;
 import static javax.persistence.CascadeType.*;
 import static javax.persistence.FetchType.LAZY;
 import static models.ModuleVersion.findModulesByMajorVersion;
+import static models.ModuleVersion.findModulesByPlayVersion;
 import static models.PlayVersion.MajorVersion;
 import static play.data.validation.Constraints.MaxLength;
 import static play.data.validation.Constraints.Required;
@@ -172,8 +173,26 @@ public class Module extends AbstractModel implements Comparable<Module>, ModuleA
 
     public static List<Module> findMostRecentModules(int count, MajorVersion version) {
         List<Module> modules = findModulesByMajorVersion(version);
-        sort(modules, "updatedOn DESC");
+        sort(modules, "updatedOn DESC, rating.averageRating DESC");
         return modules.size() <= count ? modules : modules.subList(0, count);
+    }
+
+    public static List<Module> findMostRecentModules(List<PlayVersion> versions) {
+        List<Module> modules = findModulesByPlayVersion(versions);
+        sort(modules, "updatedOn DESC, rating.averageRating DESC");
+        return modules;
+    }
+
+    public static List<Module> findHighestRatedModules(int count, MajorVersion version) {
+        List<Module> modules = findModulesByMajorVersion(version);
+        sort(modules, "rating.averageRating DESC, updatedOn DESC");
+        return modules.size() <= count ? modules : modules.subList(0, count);
+    }
+
+    public static List<Module> findHighestRatedModules(List<PlayVersion> versions) {
+        List<Module> modules = findModulesByPlayVersion(versions);
+        sort(modules, "rating.averageRating DESC, updatedOn DESC");
+        return modules;
     }
 
     public static List<Module> ownedBy(User user) {

@@ -9,12 +9,19 @@ GET /user/i/:userName         controllers.Application.viewAccount(userName)
 
 # Browse (use query string for tags, text search ‘q’ and sorting on top of these)
 GET  /modules/mine                      controllers.Modules.myModules()
+
 # Note that featured/popular/rating are just sort params - the three entries below need revising for this
 #GET  /modules/featured                  controllers.Modules.getModules(ofType = "featured")
 #GET  /modules/popular                   controllers.Modules.getModules(ofType = "popular")
 #GET  /modules/top-rated                 controllers.Modules.getModules(ofType = "top")
+
 # e.g. /modules/play-1, /modules/play-1.2, /modules/play-1.2.4
 GET  /modules/play-:version             controllers.Modules.getModulesByPlayVersion(version: String)
+# e.g. /modules/play-1/latest, /modules/play-1.2/latest
+GET   /modules/play-:version/latest     controllers.Modules.getLatestModulesByPlayVersion(version: String)
+# e.g. /modules/play-1/rating, /modules/play-1.2/rating
+GET   /modules/play-:version/rating     controllers.Modules.getHighestRatedModulesByPlayVersion(version: String)
+
 # e.g. /modules/play-1.2.4/view-templates
 #GET  /modules/play-:version/:category   controllers.Modules.getModulesByCategory(version: String, category: String)
 # e.g. /modules/view-templates

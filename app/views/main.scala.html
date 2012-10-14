@@ -81,6 +81,15 @@
 
         <div id="mainContainer" class="container">
 
+            @* Remove once we are in production *@
+            <div class="alert alert-info alert-block">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <h4>Play Modules in under development!</h4>
+                This page is currently in <strong>BETA</strong>. We are working to release a fully functional version of the application.
+                Any data added while in Beta may be lost. You have been warned!
+            </div>
+            @* End of beta warning *@
+
             @content
 
             <div class="spacer">&nbsp;</div>
@@ -111,5 +120,16 @@
         @* our javascript *@
         <script src="@routes.Assets.at("javascripts/common.js")" type="text/javascript"></script>
         @moreScripts
+
+        <!-- Google Analytics -->
+        <script type="text/javascript">
+            @* loading value from config *@
+            var googleAnalyticsCode= '@play.api.Play.current.configuration.getString("google.analytics.code").getOrElse("")';
+
+            var _gaq=[['_setAccount', googleAnalyticsCode],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
     </body>
 </html>
