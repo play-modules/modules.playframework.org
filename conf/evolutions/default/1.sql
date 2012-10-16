@@ -2,7 +2,7 @@
 
 create table binary_content (
   id                        bigint not null,
-  content                   varbinary(255) not null,
+  content                   bytea not null,
   content_length            integer not null,
   constraint pk_binary_content primary key (id))
 ;
