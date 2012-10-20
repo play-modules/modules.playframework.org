@@ -23,6 +23,8 @@ import models.SocialActivity;
 import models.User;
 import models.memory.Sitemap;
 import models.ss.ExternalAccount;
+import play.Logger;
+import play.cache.Cached;
 import play.mvc.Result;
 import play.mvc.With;
 import scala.collection.JavaConversions;
@@ -72,12 +74,14 @@ public class Application extends AbstractController
     }
 
     /**
-     * Returns the sitemap of the application
+     * Returns the sitemap of the application. This shouldn't be called too often and only by crawlers.
+     *
+     * Result is cached for 1 day (so we only regenerate the list every 1 day on request)
+     * Cache entry is wiped when a new module is added so it is included on next request
      */
+    @Cached(key=SitemapServices.SITEMAP_CACHE_KEY, duration=24*60*60)
     public static Result sitemap()
     {
-        // todo - steve - 04/09 - do we need to repeatedly generate this?  Couldn't we have it generated once
-        // a day for catch-all updates, and every time a new module is added?
         List<Sitemap> list = SitemapServices.generateSitemap(request());
         return ok(sitemap.render(list)).as("application/xml");
     }

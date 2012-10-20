@@ -30,10 +30,12 @@ import models.Rating;
 import models.User;
 import models.Vote;
 import play.Logger;
+import play.cache.Cache;
 import play.data.Form;
 import play.libs.Json;
 import play.mvc.Result;
 import play.mvc.With;
+import services.SitemapServices;
 import utils.CollectionUtils;
 import utils.Filter;
 import utils.RequestUtils;
@@ -94,6 +96,9 @@ public class Modules extends AbstractController
                                                 user.displayName,
                                                 user.userName,
                                                 module.name));
+
+            // We clean the cached result for sitemaps as we have a new entry
+            Cache.set(SitemapServices.SITEMAP_CACHE_KEY, null, 0);
 
             result = redirect(routes.Modules.myModules());
         }
