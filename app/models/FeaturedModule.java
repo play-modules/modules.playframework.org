@@ -15,13 +15,25 @@
  */
 package models;
 
+import com.avaje.ebean.Query;
+import com.google.common.base.Function;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import java.util.Date;
 import java.util.List;
 
+import static com.google.common.collect.Lists.newArrayList;
+import static com.google.common.collect.Lists.transform;
+import static com.google.common.collect.Sets.newHashSet;
+import static models.PlayVersion.findByLooseName;
+import static models.PlayVersion.findVersionsByMajorVersion;
+
 /**
+ * Represent a module listed in the "Featured Modules" list
+ * Non sticky featured modules will be removed by the FeaturedModulesSelectionActor after 24h
+ *
  * @author Steve Chaloner (steve@objectify.be)
  */
 @Entity
@@ -32,7 +44,7 @@ public class FeaturedModule extends AbstractModel implements ModuleAccessor
     public Module playModule;
 
     @Column(nullable = true, length = 1000)
-    public String description;
+    public String description;  //TODO: not used when displaying modules, really needed?
 
     @Column(nullable = false)
     public Date creationDate;
@@ -60,6 +72,29 @@ public class FeaturedModule extends AbstractModel implements ModuleAccessor
         return FIND.where()
                    .eq("sticky", Boolean.FALSE)
                    .findList();
+    }
+
+    public static List<Module> findFeaturedModulesByVersion(int count, PlayVersion.MajorVersion majorVersion) {
+        List<Module> modules = findFeaturedModulesByVersion(findVersionsByMajorVersion(majorVersion));
+        return modules.size() <= count ? modules : modules.subList(0, count);
+    }
+
+    public static List<Module> findFeaturedModulesByVersion(List<PlayVersion> versions) {
+        List<FeaturedModule> featuredModules = FIND
+                .where()
+                .in("playModule.versions.compatibility", versions)
+                .query()
+                .fetch("playModule")
+                .findList();
+        return newArrayList(newHashSet(transform(featuredModules, toModules())));
+    }
+
+    private static Function<FeaturedModule, Module> toModules() {
+        return new Function<FeaturedModule, Module>() {
+            public Module apply(FeaturedModule featuredModule) {
+                return featuredModule.playModule;
+            }
+        };
     }
 
     @Override

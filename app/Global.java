@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+import actors.FeaturedModulesSelectionActor;
 import actors.FeedCreationActor;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
@@ -50,11 +51,6 @@ public class Global extends GlobalSettings
     public void onStart(Application application)
     {
         // Add code or TODOs here for startup behaviour
-        // todo - add a scheduled job that selects a given number - maybe 2? - of modules and makes them the featured modules of the day
-        // the previous day's featured modules are removed, if they are not sticky
-        // the description of the featured module will be taken from the module summary, but may be overwritten from the admin console to something specific
-        // featured modules created in this way are not sticky.
-        // featured modules can be made sticky to have them stick around for more than 24 hours via admin console - featured modules can also be created from there
         // I'll add this to the wiki later
         // this space for rent
 
@@ -81,11 +77,19 @@ public class Global extends GlobalSettings
     public void scheduleJobs()
     {
         ActorSystem actorSystem = Akka.system();
+        // Create RSS feeds every hour
         ActorRef feedCreationActor = actorSystem.actorOf(new Props(FeedCreationActor.class));
         actorSystem.scheduler().schedule(Duration.create(0, TimeUnit.MILLISECONDS),
                                            Duration.create(1, TimeUnit.HOURS),
                                            feedCreationActor,
                                            "generate");
+
+        // Select featured modules daily
+        ActorRef featuredModulesActor = actorSystem.actorOf(new Props(FeaturedModulesSelectionActor.class));
+        actorSystem.scheduler().schedule(Duration.create(0, TimeUnit.MILLISECONDS),
+                Duration.create(24, TimeUnit.HOURS),
+                featuredModulesActor,
+                "select");
     }
 
     /**

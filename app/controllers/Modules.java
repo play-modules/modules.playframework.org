@@ -21,14 +21,7 @@ import com.avaje.ebean.Ebean;
 import forms.modules.RatingForm;
 import forms.modules.RatingResponseForm;
 import forms.modules.VoteResponseForm;
-import models.BinaryContent;
-import models.Module;
-import models.ModuleVersion;
-import models.PlayVersion;
-import models.Rate;
-import models.Rating;
-import models.User;
-import models.Vote;
+import models.*;
 import play.Logger;
 import play.cache.Cache;
 import play.data.Form;
@@ -211,6 +204,23 @@ public class Modules extends AbstractController
             User currentUser = currentUser();
             String title = String.format("Highest Rated Play %s.x modules", version);
             List<Module> modules = Module.findHighestRatedModules(playVersionList);
+            result = ok(genericModuleList.render(currentUser, title, modules));
+        }
+        return result;
+    }
+
+    //e.g: /modules/play-1.2/featured
+    public static Result getFeaturedModulesByPlayVersion(String version) {
+        List<PlayVersion> playVersionList = PlayVersion.findByLooseName(version);
+        Result result;
+        if (playVersionList.isEmpty()){
+            result = notFound("Play version not found: " + version);
+        }
+        else
+        {
+            User currentUser = currentUser();
+            String title = String.format("Featured Play %s.x modules", version);
+            List<Module> modules = FeaturedModule.findFeaturedModulesByVersion(playVersionList);
             result = ok(genericModuleList.render(currentUser, title, modules));
         }
         return result;

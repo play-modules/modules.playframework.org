@@ -15,14 +15,15 @@
  */
 package models;
 
+import com.avaje.ebean.*;
+import com.avaje.ebean.Query;
 import com.google.common.base.Function;
 import play.data.validation.Constraints;
 
 import javax.persistence.*;
-import java.util.Date;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
+import static com.avaje.ebean.Expr.*;
 import static com.google.common.collect.Lists.newArrayList;
 import static com.google.common.collect.Lists.transform;
 import static com.google.common.collect.Sets.newHashSet;

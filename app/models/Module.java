@@ -112,6 +112,9 @@ public class Module extends AbstractModel implements Comparable<Module>, ModuleA
     @ManyToMany(cascade = {DETACH, PERSIST, REFRESH})
     public List<Tag> tags;
 
+    @OneToMany(mappedBy = "playModule")
+    protected List<ModuleVersion> versions;
+
     @Override
     public int compareTo(Module module) {
         return name == null ? -1 : name.compareTo(module.name);

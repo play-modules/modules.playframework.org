@@ -60,7 +60,8 @@ public class Application extends AbstractController
         final List<Module> mostRecentModules2 = findMostRecentModules(5, PlayVersion.MajorVersion.TWO);
         final List<Module> highestRatedModules1 = findHighestRatedModules(5, PlayVersion.MajorVersion.ONE);
         final List<Module> highestRatedModules2 = findHighestRatedModules(5, PlayVersion.MajorVersion.TWO);
-        final List<FeaturedModule> featuredModules = FeaturedModule.getAll();
+        final List<Module> featuredModules1 = FeaturedModule.findFeaturedModulesByVersion(5, PlayVersion.MajorVersion.ONE);
+        final List<Module> featuredModules2 = FeaturedModule.findFeaturedModulesByVersion(5, PlayVersion.MajorVersion.TWO);
         final List<PlayVersion> playVersions = PlayVersion.getAll();
 
         return ok(index.render(currentUser(),
@@ -68,7 +69,8 @@ public class Application extends AbstractController
                                mostRecentModules2,
                                highestRatedModules1,
                                highestRatedModules2,
-                               featuredModules,
+                               featuredModules1,
+                               featuredModules2,
                                playVersions,
                                Module.count()));
     }

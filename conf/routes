@@ -21,6 +21,8 @@ GET  /modules/play-:version             controllers.Modules.getModulesByPlayVers
 GET   /modules/play-:version/latest     controllers.Modules.getLatestModulesByPlayVersion(version: String)
 # e.g. /modules/play-1/rating, /modules/play-1.2/rating
 GET   /modules/play-:version/rating     controllers.Modules.getHighestRatedModulesByPlayVersion(version: String)
+# e.g. /modules/play-1/featured, /modules/play-1.2/featured
+GET   /modules/play-:version/featured   controllers.Modules.getFeaturedModulesByPlayVersion(version: String)
 
 # e.g. /modules/play-1.2.4/view-templates
 #GET  /modules/play-:version/:category   controllers.Modules.getModulesByCategory(version: String, category: String)

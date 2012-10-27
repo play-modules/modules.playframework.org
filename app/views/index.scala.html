@@ -3,7 +3,8 @@
   mostRecentModules2: List[Module],
   highestRatedModules1: List[Module],
   highestRatedModules2: List[Module],
-  featuredModules: List[FeaturedModule],
+  featuredModules1: List[Module],
+  featuredModules2: List[Module],
   playVersions: List[PlayVersion],
   moduleCount: Int)
 
@@ -16,8 +17,11 @@
 		@for(accessor <- moduleAccessors) {
 			@defining(accessor.getModule()) { module =>
 				<tr>
-                    <td><a href="@routes.Modules.details(module.key)">@module.name</a></td>
-                    <td>@module.summary</td>
+                    <td>
+                        <a href="@routes.Modules.details(module.key)">@module.name</a>
+                        <br/>
+                        by @module.owner.displayName
+                    </td>
                 </tr>
 			}
 		}
@@ -39,12 +43,12 @@
     <div class="span4">
         <a href='@routes.Modules.getModulesByPlayVersion("2")' class="btn btn-large btn-block">Browse Play 2.x Modules</a>
         <br/>
-        <p>Or browse by <a href="">Featured </a>, <a href="@routes.Modules.getLatestModulesByPlayVersion("2")">Latest </a>, <a href="@routes.Modules.getHighestRatedModulesByPlayVersion("2")">Highest-rated</a></p>
+        <p>Or browse by <a href="@routes.Modules.getFeaturedModulesByPlayVersion("2")">Featured </a>, <a href="@routes.Modules.getLatestModulesByPlayVersion("2")">Latest </a>, <a href="@routes.Modules.getHighestRatedModulesByPlayVersion("2")">Highest-rated</a></p>
     </div>
     <div class="span4">
         <a href='@routes.Modules.getModulesByPlayVersion("1")' class="btn btn-large btn-inverse btn-block">Browse Play 1.x Modules</a>
         <br/>
-        <p>Or browse by <a href="">Featured </a>, <a href="@routes.Modules.getLatestModulesByPlayVersion("1")">Latest </a>, <a href="@routes.Modules.getHighestRatedModulesByPlayVersion("1")">Highest-rated</a></p>
+        <p>Or browse by <a href="@routes.Modules.getFeaturedModulesByPlayVersion("1")">Featured </a>, <a href="@routes.Modules.getLatestModulesByPlayVersion("1")">Latest </a>, <a href="@routes.Modules.getHighestRatedModulesByPlayVersion("1")">Highest-rated</a></p>
     </div>
     <div class="span4">
         <a href="@securesocial.controllers.routes.LoginPage.login" class="btn btn-large btn-success">Contribute your Modules</a>
@@ -64,7 +68,7 @@
         @featureList("Latest 2.x modules", mostRecentModules2)
     </div>
     <div class="span4">
-        @featureList("Featured 2.x modules", featuredModules)
+        @featureList("Featured 2.x modules", featuredModules2)
     </div>
     <div class="span4">
         @featureList("Highest-rated 2.x", highestRatedModules2)
@@ -76,7 +80,7 @@
         @featureList("Latest 1.x modules", mostRecentModules1)
     </div>
     <div class="span4">
-        @featureList("Featured 1.x modules", featuredModules)
+        @featureList("Featured 1.x modules", featuredModules1)
     </div>
     <div class="span4">
         @featureList("Highest-rated 1.x", highestRatedModules1)
