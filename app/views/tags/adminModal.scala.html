@@ -1,0 +1,21 @@
+@(modalId: String)(form : Html = Html(""))
+
+@**
+    Renders the modal panel to be used in admin pages
+    The modal is managed via javascript method "setModal" in common.js.
+    This tag receives the id of the modal plus the Html corresponding to the form to display
+*@
+<div class="modal hide fade" id="@modalId" tabindex="-1" role="dialog">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3 id="modalTitle">placeholder</h3> @*don't remove text as it causes problems due to html parsing *@
+    </div>
+    <div class="modal-body">
+        <p id="messageArea"></p>
+        @form
+    </div>
+    <div class="modal-footer">
+        <a href="#" data-dismiss="modal" class="btn">Close</a>
+        <a href="#" class="btn btn-primary" id="submitModalForm">Save changes</a>
+    </div>
+</div>

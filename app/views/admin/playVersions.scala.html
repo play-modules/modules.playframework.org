@@ -10,9 +10,23 @@
     <tr>
         <td><span id="name-@playVersion.id">@playVersion.name</span></td>
         <td><span id="documentationUrl-@playVersion.id">@playVersion.documentationUrl</span></td>
-        <td><a href="javascript:editVersion('@playVersion.id', $('#name-@playVersion.id').text(), $('#documentationUrl-@playVersion.id').text())">Edit</a></td>
+        <td><a href="#" onclick="setModal('editVersionModal', 'Edit Version', {id:'@playVersion.id', name:$('#name-@playVersion.id').text(), documentationUrl:$('#documentationUrl-@playVersion.id').text()});" role="button">Edit</a></td>
     </tr>
 }
+
+@* Sets the modal for the page *@
+@tags.adminModal("editVersionModal") {
+    @helper.form(routes.PlayVersions.update) {
+    <input type="hidden" id="id" name="id" value="1"/>
+
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" class="input-mini" value="1"/>
+
+    <label for="documentationUrl">Documentation URL</label>
+    <input type="text" id="documentationUrl" name="documentationUrl" class="input-xxlarge" value="1"/>
+    }
+}
+
 
 @admin.adminTemplate("Play versions", currentUser) {
 
@@ -54,34 +68,6 @@
     $(function(){
         setAdminNavbar("Version");
     });
-    var onError = function(form, message) {
-        editVersion(form.id, form.name, form.documentationUrl, message);
-    };
+</script>
 
-    function editVersion(id, name, documentationUrl, message) {
-        message = (typeof message == 'undefined') ? '' : message;
-        var template = _.template($('#editVersionTemplate').html(),
-                                  {id:id, name:name, documentationUrl:documentationUrl, message:message});
-        editAdminSection(template,
-                         function(form, data){},
-                         onError);
-    }
-</script>
-<script type="underscore-template" id="editVersionTemplate">
-    <form>
-        <input type="hidden" name="id" value="<%= id %>"/>
-        <input type="hidden" name="targetUrl" value="@routes.PlayVersions.update"/>
-        <p><%= message %></p>
-        <table class="formTable">
-            <tr>
-                <td><label for="name">Name</label></td>
-                <td><input type="text" id="name" name="name" value="<%= name %>"/></td>
-            </tr>
-            <tr>
-                <td><label for="documentationUrl">Documentation URL</label></td>
-                <td><input type="text" id="documentationUrl" name="documentationUrl" value="<%= documentationUrl %>"/></td>
-            </tr>
-        </table>
-    </form>
-</script>
 }

@@ -28,6 +28,75 @@ function setAdminNavbar(id) {
     $("#adminMenu"+id).addClass("active");
 }
 
+/**
+Sets the values for the modal on admin pages
+- modalId: id fo the modal, used to show/hide
+- modalTitle: the title to display
+- valuesMap: a map of {key:value} where key is the name of an input control in the modal and the value the value to set it to
+- onSuccess: an optional method to execute when the ajax call returns successfully, usually to update the UI with the new data
+- isRemoval will be true if we are doing a destructive operation
+*/
+function setModal(modalId, modalTitle, valuesMap, onSuccess, isRemoval){
+    // Check the optional parameter
+    onSuccess = typeof onSuccess !== 'undefined' ? onSuccess : function(data, textStatus, jqXHR){ };
+    isRemoval = typeof onSuccess !== 'undefined' ? isRemoval : false;
+
+    //Set modal values
+    $('#'+modalId).find('#modalTitle').text(modalTitle);
+
+    //Set values from map
+    for (var key in valuesMap) {
+        if($("#"+modalId+" input[name='"+key+"']").length > 0){
+            $("#"+modalId+" input[name='"+key+"']").val(valuesMap[key]);
+        } else if($("#"+modalId+" textarea[name='"+key+"']").length > 0){
+            $("#"+modalId+" textarea[name='"+key+"']").text(valuesMap[key]);
+        }
+    }
+
+    //set the post call for the modal
+    var form = $('#'+modalId+' form');
+    $('#'+modalId).find('#submitModalForm').on("click", function(event){
+        $.post(form.attr('action'), form.serialize())
+            .success( function(data, textStatus, jqXHR) {
+                for (var key in data) {
+                    $('#' + key + '-' + data['id']).text(data[key]);
+                }
+                onSuccess(data, textStatus, jqXHR);
+                $('#'+modalId).modal('hide');
+            })
+            .error( function(jqXHR, textStatus, errorThrown) {
+                var messageJson = JSON.parse(jqXHR.responseText);
+                var message = '<strong>Errors:</strong><br><ul>';
+                for (var key in messageJson) {
+                    message += ('<li><strong>'+key + ':</strong> ' + messageJson[key] + '</li>');
+                }
+                message += '</ul>';
+                $('#messageArea').html(message);
+            });
+    });
+
+    if(isRemoval){
+        var button = $('#'+modalId).find('#submitModalForm');
+        button.addClass('btn-danger');
+        button.text('Delete');
+    }
+
+    //Modal properly set, show data
+    $('#'+modalId).modal('show');
+}
+
+
+/**
+Sets the values for the modal to delete elements on admin pages
+- modalId: id fo the modal, used to show/hide
+- modalTitle: the title to display
+- valuesMap: a map of {key:value} where key is the name of an input control in the modal and the value the value to set it to
+- onSuccess: an optional method to execute when the ajax call returns successfully, usually to update the UI with the new data
+*/
+function setDeleteModal(modalId, modalTitle, valuesMap, onSuccess){
+    onSuccess = typeof onSuccess !== 'undefined' ? onSuccess : function(data, textStatus, jqXHR){ };
+    setModal(modalId, modalTitle, valuesMap, onSuccess, true);
+}
 
 /** END OF CUSTOM SCRIPTS */
 

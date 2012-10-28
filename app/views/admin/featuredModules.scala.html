@@ -9,13 +9,34 @@
     <div class="span8 well well-small clearfix featuredModule-@featuredModule.id">
         <div class="pull-left"><strong>@featuredModule.playModule.name</strong> (@featuredModule.creationDate.format("dd/MM/yyyy"))</div>
         <div class="pull-right">
-                <a href="javascript:editFeaturedModule('@featuredModule.id', $('#description-@featuredModule.id').text())">Edit</a> |
-                <a href="javascript:confirmDelete('@featuredModule.playModule.name', '@routes.FeaturedModules.delete()', @featuredModule.id, function(){removeElement('div.featuredModule-@featuredModule.id')})">Delete</a>
+                <a href="#" onclick="setModal('editFeaturedModulesModal', 'Edit Featured Module', {id:@featuredModule.id, description: _.string.words($('#description-@featuredModule.id').text()).join(' ') })">Edit</a> |
+                <a href="#" onclick="setDeleteModal('deleteFeaturedModulesModal', 'Delete Featured Module', {id: @featuredModule.id, name:'@featuredModule.playModule.name'}, onSuccess)">Delete</a>
         </div>
         <br/>
-        <div class="pull-left">@featuredModule.description</div>
+        <div id="description-@featuredModule.id" class="pull-left">@featuredModule.description</div>
     </div>
 }
+
+@* Sets the modal for the page *@
+@tags.adminModal("editFeaturedModulesModal") {
+    @helper.form(routes.FeaturedModules.update) {
+    <input type="hidden" id="id" name="id" value="1"/>
+    <input type="hidden" name="sticky" value="false"/>
+
+    <label for="description">Description</label>
+    <textarea id="description" name="description" rows="5"></textarea>
+    }
+}
+
+@tags.adminModal("deleteFeaturedModulesModal") {
+    @helper.form(routes.FeaturedModules.delete()) {
+    <input type="hidden" id="id" name="id" value="1"/>
+
+    <label for="description">Element to delete:</label>
+    <input id="name" name="name" value="1" readonly class="input-xlarge"/>
+    }
+}
+
 
 @admin.adminTemplate("Featured modules", currentUser) {
 
@@ -47,30 +68,11 @@
         setAdminNavbar("Featured");
     });
 
-    function editFeaturedModule(id, description, message) {
-        message = (typeof message == 'undefined') ? '' : message;
-        var template = _.template($('#editFeaturedModuleTemplate').html(),
-                                  {id:id, description:description, message:message})
-        editAdminSection(template,
-                         function(form, data){
-                             $('#description-' + data.id).text(data.description);
-                         },
-                         function(form, message) {});
+    /* Hides the deleted element */
+    var onSuccess = function(data, textStatus, jqXHR){
+        var div = $('.featuredModule-' + data['id']);
+        div.hide();
     }
 </script>
 
-<script type="underscore-template" id="editFeaturedModuleTemplate">
-    <form>
-        <input type="hidden" name="id" value="<%= id %>"/>
-        <input type="hidden" name="sticky" value="false"/>
-        <input type="hidden" name="targetUrl" value="@routes.FeaturedModules.update"/>
-        <p><%= message %></p>
-        <table class="formTable">
-            <tr>
-                <td><label for="description">Description</label></td>
-                <td><input type="text" id="description" name="description" value="<%= description %>"/></td>
-            </tr>
-        </table>
-    </form>
-</script>
 }
