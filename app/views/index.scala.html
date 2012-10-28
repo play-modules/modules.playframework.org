@@ -51,7 +51,7 @@
         <p>Or browse by <a href="@routes.Modules.getFeaturedModulesByPlayVersion("1")">Featured </a>, <a href="@routes.Modules.getLatestModulesByPlayVersion("1")">Latest </a>, <a href="@routes.Modules.getHighestRatedModulesByPlayVersion("1")">Highest-rated</a></p>
     </div>
     <div class="span4">
-        <a href="@securesocial.controllers.routes.LoginPage.login" class="btn btn-large btn-success">Contribute your Modules</a>
+        <a href="@if(currentUser == null){ @securesocial.controllers.routes.LoginPage.login } else { @routes.Modules.showModuleRegistrationForm() }" class="btn btn-large btn-success">Contribute your Modules</a>
         <br/><br/>
         <p>
         New and updated modules will be published to a syndication feed. You can subscribe here:<br/>
