@@ -4,13 +4,14 @@
 @implicitFieldConstructor = @{ FieldConstructor(securesocial.views.html.inputFieldConstructor.f) }
 
 @main(Messages("securesocial.login.title")) {
-    <div class="page-header">
+    <header>
         <h1>Login</h1>
-    </div>
+    </header>
+    <hr/>
 
     @errorMsg.map { msg =>
-        <div class="alert alert-error">
-            @Messages(msg)
+       <div class="alert alert-error">
+        @Messages(msg)
         </div>
     }
 
