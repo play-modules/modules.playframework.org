@@ -33,9 +33,7 @@
                     <th>Version</th>
                     <th>Release date</th>
 			        <th>Release notes</th>
-                    @* Commented out until actual compatibility data is available (Peter, 12 May 2012)
                     <th>Compatible with</th>
-                    *@
                     @if(majorVersions.contains(PlayVersion.MajorVersion.ONE)) {
                       <th></th>
                       <th></th>
@@ -44,17 +42,21 @@
             </thead>
             <tbody>
                 @for(version <- versions){
-                  <tr class="releaseRow" title="@version.versionCode">
-                    <td>@version.versionCode</td>
+                  <tr class="releaseRow" version="@(if(version.versionCode == "0") "head" else version.versionCode)">
+                    <td>
+                        <i class="icon-chevron-right icon-white selectedVersion"></i> @* used to show selected version for installation instructions *@
+                        @(if(version.versionCode == "0") "head" else version.versionCode)
+                    </td>
+
                     <td>@(if(version.releaseDate != null) version.releaseDate.format("dd-MM-yyyy"))</td>
 					<td>@version.releaseNotes</td>
-                    @* Commented out until actual compatibility data is available (Peter, 12 May 2012)
+
                     <td>
 		              @for(compatible <- version.compatibility) {
-		                <span class="lineList">@compatible.name,</span>
+		                <span class="lineList">@compatible.name</span>
 		              }
 		            </td>
-                    *@
+
                     @if(majorVersions.contains(PlayVersion.MajorVersion.ONE)) {
                       <td><a href='@current.configuration.getString("modules.repository")@module.key-@version.versionCode/home'>Documentation</a></td>
                       <td><a href='@current.configuration.getString("modules.repository")@module.key-@(version.versionCode).zip'>Download</a></td>
@@ -66,7 +68,7 @@
 
         <div class="subSection">
           <h2>Installation</h2>
-          <p>Select a release (above) to show the exact installation details.</p>
+          <p>Select a release (click on its row above) to show the exact installation details.</p>
           @if(majorVersions.contains(PlayVersion.MajorVersion.ONE)) {
             <h3>Play 1</h3>
             <p>To install locally this module use the install command:</p>
@@ -145,7 +147,9 @@ val appDependencies = Seq(
     $(function() {
         //Updates the installation instructions on click of a row identifying a release
         $('tr.releaseRow').click(function() {
-            $('span.exampleVersion').text($(this).attr('title'));
+            $('span.exampleVersion').text($(this).attr('version'));
+            $('i.selectedVersion').addClass('icon-white');
+            $(this).find('i.selectedVersion').removeClass('icon-white');
         });
         $('tr.releaseRow:last').trigger("click");
 
