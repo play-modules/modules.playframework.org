@@ -31,19 +31,23 @@ public class SitemapServices {
         list.add(new Sitemap(routes.Application.index().absoluteURL(request)));
 
         // users
-        list.add(new Sitemap(routes.Application.listUsers().absoluteURL(request), "daily", "0.8" ));
+        list.add(new Sitemap(routes.Application.listUsers().absoluteURL(request), "daily", "0.5" ));
 
         // modules lists
-        list.add(new Sitemap(routes.Modules.getModulesByPlayVersion("1").absoluteURL(request), "daily", "0.8" ));
-        list.add(new Sitemap(routes.Modules.getModulesByPlayVersion("2").absoluteURL(request), "daily", "0.8" ));
+        list.add(new Sitemap(routes.Modules.getModulesByPlayVersion("1").absoluteURL(request), "hourly", "0.9" ));
+        list.add(new Sitemap(routes.Modules.getModulesByPlayVersion("2").absoluteURL(request), "hourly", "0.9" ));
 
         // latest modules
-        list.add(new Sitemap(routes.Modules.getLatestModulesByPlayVersion("1").absoluteURL(request), "daily", "0.8" ));
-        list.add(new Sitemap(routes.Modules.getLatestModulesByPlayVersion("2").absoluteURL(request), "daily", "0.8" ));
+        list.add(new Sitemap(routes.Modules.getLatestModulesByPlayVersion("1").absoluteURL(request), "hourly", "0.8" ));
+        list.add(new Sitemap(routes.Modules.getLatestModulesByPlayVersion("2").absoluteURL(request), "hourly", "0.8" ));
 
         // highest rated modules
-        list.add(new Sitemap(routes.Modules.getHighestRatedModulesByPlayVersion("1").absoluteURL(request), "daily", "0.8" ));
-        list.add(new Sitemap(routes.Modules.getHighestRatedModulesByPlayVersion("2").absoluteURL(request), "daily", "0.8" ));
+        list.add(new Sitemap(routes.Modules.getHighestRatedModulesByPlayVersion("1").absoluteURL(request), "hourly", "0.8" ));
+        list.add(new Sitemap(routes.Modules.getHighestRatedModulesByPlayVersion("2").absoluteURL(request), "hourly", "0.8" ));
+
+        // featured rated modules
+        list.add(new Sitemap(routes.Modules.getFeaturedModulesByPlayVersion("1").absoluteURL(request), "daily", "0.8" ));
+        list.add(new Sitemap(routes.Modules.getFeaturedModulesByPlayVersion("2").absoluteURL(request), "daily", "0.8" ));
 
         // modules details
         List<Module> modules = Module.all();
