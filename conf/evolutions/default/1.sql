@@ -30,14 +30,27 @@ create table external_account (
   user_id                   bigint not null,
   external_id               varchar(255) not null,
   provider                  varchar(255) not null,
-  display_name              varchar(255) not null,
+  first_name                varchar(255),
+  last_name                 varchar(255),
+  full_name                 varchar(255),
   email                     varchar(255),
   avatar_url                varchar(255),
   o_auth1info_id            bigint,
   o_auth2info_id            bigint,
+  password_info_id          bigint,
   authentication_method     varchar(17),
   constraint ck_external_account_authentication_method check (authentication_method in ('OAUTH1','OAUTH2','OPENID','USERNAME_PASSWORD')),
   constraint pk_external_account primary key (id))
+;
+
+create table external_token (
+  id                        bigint not null,
+  uuid                      varchar(255),
+  email                     varchar(255),
+  creation_time             timestamp not null,
+  expiration_time           timestamp not null,
+  is_sign_up                boolean not null,
+  constraint pk_external_token primary key (id))
 ;
 
 create table featured_module (
@@ -71,6 +84,13 @@ create table mpooauth2info (
   expires_in                integer,
   refresh_token             varchar(255),
   constraint pk_mpooauth2info primary key (id))
+;
+
+create table mpopassword_info(
+  id                        bigint not null,
+  password                  varchar(255),
+  salt                      varchar(255),
+  constraint pk_mpopasswordinfo primary key (id))
 ;
 
 create table MPO_MODULE (
@@ -200,6 +220,8 @@ create sequence comment_seq;
 
 create sequence external_account_seq;
 
+create sequence external_token_seq;
+
 create sequence featured_module_seq;
 
 create sequence historical_event_seq;
@@ -207,6 +229,8 @@ create sequence historical_event_seq;
 create sequence mpooauth1info_seq;
 
 create sequence mpooauth2info_seq;
+
+create sequence mpopassword_info_seq;
 
 create sequence MPO_MODULE_seq;
 
@@ -317,6 +341,8 @@ drop table if exists comment;
 
 drop table if exists external_account;
 
+drop table if exists external_account;
+
 drop table if exists featured_module;
 
 drop table if exists historical_event;
@@ -324,6 +350,8 @@ drop table if exists historical_event;
 drop table if exists mpooauth1info;
 
 drop table if exists mpooauth2info;
+
+drop table if exists mpopassword_info
 
 drop table if exists MPO_MODULE;
 
@@ -366,6 +394,8 @@ drop sequence if exists historical_event_seq;
 drop sequence if exists mpooauth1info_seq;
 
 drop sequence if exists mpooauth2info_seq;
+
+drop sequence if exists mpopassword_info_seq;
 
 drop sequence if exists MPO_MODULE_seq;
 

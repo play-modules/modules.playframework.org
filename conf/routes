@@ -49,18 +49,38 @@ POST /admin/featured/update             controllers.FeaturedModules.update()
 POST /admin/featured/delete             controllers.FeaturedModules.delete()
 GET  /admin/users                       controllers.Users.getUsers()
 
-# Authentication
 
-GET  /ss/login                          securesocial.controllers.LoginPage.login
-GET  /ss/logout                         securesocial.controllers.LoginPage.logout
-GET  /ss/authenticate/:provider         securesocial.controllers.LoginPage.authenticate(provider)
-POST /ss/authenticate/:provider         securesocial.controllers.LoginPage.authenticateByPost(provider)
+# SecureSocial
+# NOTE: Don't put paths below Module details or there is a conflict
+# ~~~~~
+# Login page
+GET     /login                      securesocial.controllers.LoginPage.login
+GET     /logout                     securesocial.controllers.LoginPage.logout
 
-# Module details (the only path not containing a slash, to make the most published URL cleanest)
-GET  /:moduleKey                        controllers.Modules.details(moduleKey: String)
-POST /:moduleKey/voteUp                 controllers.Modules.voteUp(moduleKey: String)
-POST /:moduleKey/voteDown               controllers.Modules.voteDown(moduleKey: String)
-POST /:moduleKey/ratings                controllers.Modules.rate(moduleKey: String)
+# User Registration and password handling (only needed if you are using UsernamePasswordProvider)
+GET     /signup                     securesocial.controllers.Registration.startSignUp
+POST    /signup                     securesocial.controllers.Registration.handleStartSignUp
+GET     /signup/:token              securesocial.controllers.Registration.signUp(token)
+POST    /signup/:token              securesocial.controllers.Registration.handleSignUp(token)
+GET     /reset                      securesocial.controllers.Registration.startResetPassword
+POST    /reset                      securesocial.controllers.Registration.handleStartResetPassword
+GET     /reset/:token               securesocial.controllers.Registration.resetPassword(token)
+POST    /reset/:token               securesocial.controllers.Registration.handleResetPassword(token)
+GET     /password                   securesocial.controllers.PasswordChange.page
+POST    /password                   securesocial.controllers.PasswordChange.handlePasswordChange
+
+# Providers entry points
+GET     /authenticate/:provider     securesocial.controllers.ProviderController.authenticate(provider)
+POST    /authenticate/:provider     securesocial.controllers.ProviderController.authenticateByPost(provider)
+
+# ~~~~~
+
+
+# Module details (the /module/ part is mandatory or we have issues with other components of the app)
+GET  /module/:moduleKey                        controllers.Modules.details(moduleKey: String)
+POST /module/:moduleKey/voteUp                 controllers.Modules.voteUp(moduleKey: String)
+POST /module/:moduleKey/voteDown               controllers.Modules.voteDown(moduleKey: String)
+POST /module/:moduleKey/ratings                controllers.Modules.rate(moduleKey: String)
 
 # Map static resources from the /public folder to the /assets URL path
 GET  /assets/*file           controllers.Assets.at(path="/public", file)
@@ -68,3 +88,4 @@ GET  /assets/*file           controllers.Assets.at(path="/public", file)
 # Bootstrap files
 GET     /img/glyphicons-halflings-white.png         controllers.Assets.at(path="/public", file="/images/glyphicons-halflings-white.png")
 GET     /img/glyphicons-halflings.png               controllers.Assets.at(path="/public", file="/images/glyphicons-halflings.png")
+

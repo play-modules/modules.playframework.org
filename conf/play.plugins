@@ -1,8 +1,13 @@
-10000:be.objectify.deadbolt.DeadboltPlugin
+1000:be.objectify.deadbolt.DeadboltPlugin
 
-11000:ss.db.ExternalUserAccountService
-11001:securesocial.core.providers.TwitterProvider
-11002:securesocial.core.providers.GoogleProvider
-11003:securesocial.core.providers.FacebookProvider
-11004:securesocial.core.providers.LinkedInProvider
-11005:securesocial.core.providers.GitHubProvider
+1500:com.typesafe.plugin.CommonsMailerPlugin
+9996:securesocial.core.providers.utils.DefaultPasswordValidator
+9997:securesocial.controllers.DefaultTemplatesPlugin
+9998:ss.db.ExternalUserAccountService
+9999:securesocial.core.providers.utils.BCryptPasswordHasher
+10000:securesocial.core.providers.TwitterProvider
+10001:securesocial.core.providers.FacebookProvider
+10002:securesocial.core.providers.GoogleProvider
+10003:securesocial.core.providers.LinkedInProvider
+10004:securesocial.core.providers.UsernamePasswordProvider
+10005:securesocial.core.providers.GitHubProvider

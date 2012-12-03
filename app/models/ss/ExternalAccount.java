@@ -37,8 +37,14 @@ public class ExternalAccount extends AbstractModel
     @Column(nullable = false)
     public String provider;
 
-    @Column(nullable = false)
-    public String displayName;
+    @Column(nullable = true)
+    public String firstName;
+
+    @Column(nullable = true)
+    public String lastName;
+
+    @Column(nullable = true)
+    public String fullName;
 
     @Column(nullable = true)
     public String email;
@@ -52,19 +58,28 @@ public class ExternalAccount extends AbstractModel
     @OneToOne(optional = true, cascade = CascadeType.ALL)
     public MPOOAuth2Info oAuth2Info;
 
+    @OneToOne(optional = true, cascade = CascadeType.ALL)
+    public MPOPasswordInfo passwordInfo;
+
     @Enumerated(EnumType.STRING)
     public AuthenticationMethod authenticationMethod;
 
-    public static final Finder<Long, ExternalAccount> FIND = new Finder<Long, ExternalAccount>(Long.class,
-                                                                                               ExternalAccount.class);
+    public static final Finder<Long, ExternalAccount> FIND = new Finder<Long, ExternalAccount>(Long.class, ExternalAccount.class);
 
-    public static ExternalAccount findByUserIdAndProvider(String id,
-                                                          String provider)
+    public static ExternalAccount findByUserIdAndProvider(String id, String provider)
     {
         return FIND.where()
                    .eq("externalId", id)
                    .eq("provider", provider)
                    .findUnique();
+    }
+
+    public static ExternalAccount findByEmailAndProvider(String email, String provider)
+    {
+        return FIND.where()
+                .eq("email", email)
+                .eq("provider", provider)
+                .findUnique();
     }
 
     public static List<ExternalAccount> findByUser(User currentUser)
