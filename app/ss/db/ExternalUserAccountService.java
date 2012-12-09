@@ -103,6 +103,7 @@ public class ExternalUserAccountService extends BaseUserService
             }
             externalAccount.oAuth1Info.secret = socialUser.oAuth1Info.secret;
             externalAccount.oAuth1Info.token = socialUser.oAuth1Info.token;
+            externalAccount.oAuth1Info.save();
             Ebean.saveAssociation(externalAccount, "oAuth1Info");
         }
         else
@@ -120,6 +121,7 @@ public class ExternalUserAccountService extends BaseUserService
             externalAccount.oAuth2Info.expiresIn = socialUser.oAuth2Info.expiresIn;
             externalAccount.oAuth2Info.refreshToken = socialUser.oAuth2Info.refreshToken;
             externalAccount.oAuth2Info.tokenType = socialUser.oAuth2Info.tokenType;
+            externalAccount.oAuth2Info.save();
             Ebean.saveAssociation(externalAccount, "oAuth2Info");
 
         }
@@ -136,6 +138,7 @@ public class ExternalUserAccountService extends BaseUserService
             }
             externalAccount.passwordInfo.password = socialUser.passwordInfo.password;
             externalAccount.passwordInfo.salt = socialUser.passwordInfo.salt;
+            externalAccount.passwordInfo.save();
             Ebean.saveAssociation(externalAccount, "passwordInfo");
 
         }
@@ -223,7 +226,7 @@ public class ExternalUserAccountService extends BaseUserService
             socialUser = new SocialUser();
             socialUser.id = new UserId();
             socialUser.id.setId(externalAccount.externalId);
-            socialUser.id.setProvider(externalAccount.externalId);
+            socialUser.id.setProvider(externalAccount.provider);
             socialUser.firstName = externalAccount.firstName;
             socialUser.lastName = externalAccount.lastName;
             socialUser.fullName = externalAccount.fullName;
