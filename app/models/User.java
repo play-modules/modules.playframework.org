@@ -18,6 +18,7 @@ package models;
 import be.objectify.deadbolt.models.Permission;
 import be.objectify.deadbolt.models.Role;
 import be.objectify.deadbolt.models.RoleHolder;
+import com.avaje.ebean.Ebean;
 import security.RoleDefinitions;
 
 import javax.persistence.*;
@@ -105,5 +106,24 @@ public class User extends AbstractModel implements RoleHolder
     {
         // for now, let's go with role-based security.  I don't think we need any fine-grained control.
         return Collections.emptyList();
+    }
+
+    public void giveAdminRights()
+    {
+        UserRole adminRole = UserRole.findByRoleName(RoleDefinitions.ADMIN);
+        roles.add(adminRole);
+        save();
+        Ebean.saveAssociation(this, "roles");
+    }
+
+    public void removeAdminRights()
+    {
+        if(isAdmin())
+        {
+            UserRole adminRole = UserRole.findByRoleName(RoleDefinitions.ADMIN);
+            roles.remove(adminRole);
+            save();
+            Ebean.saveAssociation(this, "roles");
+        }
     }
 }

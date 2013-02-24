@@ -20,6 +20,7 @@ import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
 import models.HistoricalEvent;
+import play.Logger;
 import play.libs.Akka;
 import play.mvc.Controller;
 
@@ -33,6 +34,8 @@ public class AbstractController extends Controller
     public static void createHistoricalEvent(String category,
                                              String message)
     {
+        Logger.info("[%s] %s".format(category, message));
+
         HistoricalEvent historicalEvent = new HistoricalEvent();
         historicalEvent.creationDate = new Date();
         historicalEvent.category = category;

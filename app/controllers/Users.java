@@ -17,11 +17,19 @@ package controllers;
 
 import actions.CurrentUser;
 import be.objectify.deadbolt.actions.Restrict;
+import models.Module;
 import models.User;
+import play.Logger;
+import play.cache.Cache;
+import play.data.Form;
 import play.mvc.Result;
 import play.mvc.With;
 import security.RoleDefinitions;
+import services.SitemapServices;
 import views.html.admin.users;
+import views.html.modules.moduleEditForm;
+
+import static actions.CurrentUser.currentUser;
 
 /**
  * @author Steve Chaloner (steve@objectify.be)
@@ -36,9 +44,38 @@ public class Users extends AbstractController
                                User.all()));
     }
 
-    public static Result makeAdmin()
+    public static Result switchAdmin(Long id)
     {
-        return TODO;
+        User currentUser = CurrentUser.currentUser();
+        User user = User.FIND.byId(id);
+        if(user != null)
+        {
+            if(user.isAdmin())
+            {
+                user.removeAdminRights();
+
+                createHistoricalEvent("Admin rights revoked - " + user.userName,
+                        String.format("%s (%s) revoked admin rights to user %s (%s)",
+                                currentUser.displayName,
+                                currentUser.userName,
+                                user.displayName,
+                                user.userName));
+
+            }
+            else
+            {
+                user.giveAdminRights();
+
+                createHistoricalEvent("Admin rights given - " + user.userName,
+                        String.format("%s (%s) gave admin rights to user %s (%s)",
+                                currentUser.displayName,
+                                currentUser.userName,
+                                user.displayName,
+                                user.userName));
+            }
+        }
+
+        return redirect(routes.Users.getUsers());
     }
 
     public static Result mergeAccounts()

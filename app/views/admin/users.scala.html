@@ -19,6 +19,11 @@
                         @if(!user.accountActive){<i class="icon-exclamation-sign" title="Account inactive"></i>}
                     </td>
                     <td><a href="@routes.Application.viewAccount(user.userName)">@user.displayName</a></td>
+                    <td>
+                        @helper.form(routes.Users.switchAdmin(user.id), 'id -> ("form"+user.id.toString) ) {
+                            <a href="#" onclick="$('#form@user.id').submit();">@if(!user.isAdmin()){Give Admin Rights} else {Remove Admin Rights}</a>
+                        }
+                    </td>
                 </tr>
             }
             </tbody>

@@ -50,6 +50,7 @@ POST /admin/featured                    controllers.FeaturedModules.addNewFeatur
 POST /admin/featured/update             controllers.FeaturedModules.update()
 POST /admin/featured/delete             controllers.FeaturedModules.delete()
 GET  /admin/users                       controllers.Users.getUsers()
+POST /admin/users/switchAdmin             controllers.Users.switchAdmin(id: Long)
 
 
 # SecureSocial
