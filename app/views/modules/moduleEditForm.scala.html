@@ -1,0 +1,69 @@
+@(currentUser: User, moduleKey: String, module: Form[models.Module])
+
+@import tags._
+@import helper._
+@implicitField = @{ FieldConstructor(tags.horizontalFormLayout.f) }
+
+@main("Edit your module", currentUser) {
+
+
+<header>
+    <h1>Edit your module</h1>
+</header>
+
+<div class="row">
+    <div class="span12">
+		@helper.form(routes.Modules.submitModuleEditForm(moduleKey), 'class->"form-horizontal") {
+
+        <input type="hidden" name="key" id="key" value="@moduleKey" />
+
+		@helper.inputText(module("name"),
+            'size  -> 50,
+            '_label -> "Module Name"
+        )
+
+        @helper.inputText(module("organisation"),
+            'size -> 50,
+            'maxLength -> 255
+        )
+
+        @helper.inputText(module("summary"),
+            'size  -> 50,
+            '_label -> "Describe your module in a single line"
+        )
+
+        @helper.textarea(module("description"),
+            'rows -> 10,
+            'cols -> 80,
+            '_label -> "Describe your module in a couple of lines"
+        )
+
+        @helper.select(module("category.id"), helper.options(Category.options()))
+
+        @helper.inputText(module("projectUrl"),
+            'size  -> 50,
+            '_label -> "Project URL",
+            'placeholder -> "http://..."
+        )
+
+        @helper.inputText(module("licenseType"),
+            'size  -> 50,
+            '_label -> "License"
+        )
+
+        <div class="control-group">
+            <div class="controls">
+			    <button type="submit" class="btn">Submit!</button>
+            </div>
+        </div>
+		}
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+    setNavbar("SubmitModules");
+    });
+</script>
+
+}

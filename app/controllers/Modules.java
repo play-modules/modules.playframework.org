@@ -36,6 +36,7 @@ import views.html.modules.genericModuleList;
 import views.html.modules.manageVersionsForm;
 import views.html.modules.moduleDetails;
 import views.html.modules.moduleRegistrationForm;
+import views.html.modules.moduleEditForm;
 import views.html.modules.myModules;
 
 import java.util.Date;
@@ -89,6 +90,52 @@ public class Modules extends AbstractController
                                                 user.displayName,
                                                 user.userName,
                                                 module.name));
+
+            // We clean the cached result for sitemaps as we have a new entry
+            Cache.set(SitemapServices.SITEMAP_CACHE_KEY, null, 0);
+
+            result = redirect(routes.Modules.myModules());
+        }
+
+        return result;
+    }
+
+    @RoleHolderPresent
+    public static Result showModuleEditForm(String moduleKey)
+    {
+        Module module = Module.findByModuleKey(moduleKey);
+        Form<Module> form = form(Module.class).fill(module);
+        return ok(moduleEditForm.render(currentUser(), moduleKey, form));
+    }
+
+    @RoleHolderPresent
+    public static Result submitModuleEditForm(String moduleKey)
+    {
+        Form<Module> form = form(Module.class).bindFromRequest();
+        Result result;
+        User user = currentUser();
+        if (form.hasErrors())
+        {
+            result = badRequest(moduleEditForm.render(user, moduleKey, form));
+        }
+        else
+        {
+            Module module = form.get();
+            Module original = Module.findByModuleKey(moduleKey);
+            original.name = module.name;
+            original.organisation = module.organisation;
+            original.summary = module.summary;
+            original.description = module.description;
+            original.category = module.category;
+            original.projectUrl = module.projectUrl;
+            original.licenseType = module.licenseType;
+            original.save();
+
+            createHistoricalEvent("Updated module - " + module.name,
+                    String.format("%s (%s) updated module - %s",
+                            user.displayName,
+                            user.userName,
+                            module.name));
 
             // We clean the cached result for sitemaps as we have a new entry
             Cache.set(SitemapServices.SITEMAP_CACHE_KEY, null, 0);

@@ -32,6 +32,8 @@ GET   /modules/play-:version/featured   controllers.Modules.getFeaturedModulesBy
 # Submit module - changed the URL slightly because the showModuleRegistrationForm was conflicting with modules/:category
 GET  /modules/my/register               controllers.Modules.showModuleRegistrationForm()
 POST /modules/my/register               controllers.Modules.submitModuleRegistrationForm()
+GET  /modules/my/:moduleKey             controllers.Modules.showModuleEditForm(moduleKey: String)
+POST /modules/my/:moduleKey             controllers.Modules.submitModuleEditForm(moduleKey: String)
 GET  /modules/my/versions/:moduleKey    controllers.Modules.showVersionManagement(moduleKey: String)
 POST /modules/my/versions/:moduleKey    controllers.Modules.uploadNewVersion(moduleKey: String)
 
