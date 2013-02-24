@@ -19,6 +19,7 @@ dist
 
 play.h2.db
 play.trace.db
+play.lock.db
 
 .DS_Store
 public/feeds/mpo.atom.xml
