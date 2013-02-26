@@ -1,6 +1,5 @@
 @(currentUser: User,
   externalAccounts: List[models.ss.ExternalAccount],
-  otherProviders: List[securesocial.core.IdentityProvider],
   modules: List[Module],
   socialActivities: List[SocialActivity])
 
@@ -36,20 +35,10 @@
 
         <h4>Linked accounts</h4>
         @for(externalAccount <- externalAccounts) {
-        @defining( "images/providers/%s.png".format(externalAccount.provider) ) { imageUrl =>
+        @defining( "securesocial/images/providers/%s.png".format(externalAccount.provider) ) { imageUrl =>
         <img src="@routes.Assets.at(imageUrl)" title="@externalAccount.provider" alt="@externalAccount.provider"/>
         }
         }
-        @*
-        @if(!otherProviders.isEmpty()) {
-        <h4>Link more accounts</h4>
-        @for(otherProvider <- otherProviders) {
-        @defining( "images/providers/%s.png".format(otherProvider.providerId) ) { imageUrl =>
-        <img src="@routes.Assets.at(imageUrl)" title="@otherProvider.providerId" alt="@otherProvider.providerId"/>
-        }
-        }
-        }
-        *@
     </div>
 </div>
 

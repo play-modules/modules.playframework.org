@@ -107,29 +107,10 @@ public class Application extends AbstractController
         {
             if (currentUser != null && currentUser.userName.equals(userName))
             {
-                // todo - steve 07/09/2012 - this is pretty clumsy
                 List<ExternalAccount> externalAccounts = ExternalAccount.findByUser(currentUser);
-                List<String> existingAccounts = new ArrayList<String>(externalAccounts.size());
-                for (ExternalAccount externalAccount : externalAccounts)
-                {
-                    existingAccounts.add(externalAccount.provider);
-                }
 
-                Map<String, IdentityProvider> allProviders = JavaConversions.asMap(ProviderRegistry.all());
-                List<IdentityProvider> otherProviders = new ArrayList<IdentityProvider>();
-                if (externalAccounts.size() < allProviders.size())
-                {
-                    for (Map.Entry<String, IdentityProvider> entry : allProviders.entrySet())
-                    {
-                        if (!existingAccounts.contains(entry.getKey()))
-                        {
-                            otherProviders.add(entry.getValue());
-                        }
-                    }
-                }
                 result = ok(myAccount.render(currentUser,
                                              externalAccounts,
-                                             otherProviders,
                                              Module.ownedBy(currentUser),
                                              getSocialActivities(currentUser, 10)));
             }

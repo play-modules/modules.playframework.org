@@ -78,8 +78,4 @@ public class Users extends AbstractController
         return redirect(routes.Users.getUsers());
     }
 
-    public static Result mergeAccounts()
-    {
-        return TODO;
-    }
 }
