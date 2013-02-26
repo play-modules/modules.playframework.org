@@ -7,6 +7,16 @@
 @import helper._
 @implicitField = @{ FieldConstructor(tags.horizontalFormLayout.f) }
 
+@tags.adminModal("deleteVersionModal") {
+    @helper.form(routes.Modules.deleteVersion()) {
+        <input type="hidden" id="id" name="id" value="0"/>
+        <input type="hidden" id="moduleKey" name="moduleKey" value="0"/>
+
+        <p>Are you sure you want to remove this version?</p>
+    }
+}
+
+
 @main("Manage " + module.name + " versions", currentUser) {
 
 
@@ -15,28 +25,70 @@
 </header>
 
 <div class="row">
-    <div class="span12">
-		@helper.form(routes.Modules.uploadNewVersion(module.key), 'class->"form-horizontal") {
+    <div class="span3">
+        <div class="adminBadge">
+            <h4>Add new version</h4>
+            @helper.form(routes.Modules.uploadNewVersion(module.key)) {
 
-		@helper.inputText(versions("versionCode"))
-		@helper.textarea(versions("releaseNotes"))
+                @helper.inputText(versions("versionCode"))
+                @helper.textarea(versions("releaseNotes"))
 
-        <div class="control-group">
-            <label class="control-label">Compatibility</label>
-            <div class="controls">
-                @for(playVersion <- playVersions) {
-                    <input type="checkbox" name="compatibility.id" value="@playVersion.id"/>@playVersion.name &nbsp;&nbsp;
+                <div class="control-group">
+                    <label class="control-label"><strong>Compatibility</strong></label>
+                    <div class="controls">
+                        @for(playVersion <- playVersions) {
+                            <label class="checkbox inline">
+                                <input type="checkbox" name="compatibility.id" value="@playVersion.id"/>@playVersion.name
+                            </label>
+                        }
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="controls">
+                        <a href="@routes.Modules.myModules()" class="btn">Cancel</a>
+                        <button type="submit" class="btn btn-success">Add</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="span8">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Version</th>
+                    <th>Release date</th>
+                    <th>Release notes</th>
+                    <th>Compatible with</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(version <- module.getVersions()){
+                    <tr class="releaseRow versionItem-@version.id">
+                        <td>@(if(version.versionCode == "0") "head" else version.versionCode)</td>
+                        <td>@(if(version.releaseDate != null) version.releaseDate.format("dd-MM-yyyy"))</td>
+                        <td>@version.releaseNotes</td>
+                        <td>
+                            @for(compatible <- version.compatibility) {
+                                <span class="lineList">[@compatible.name]&nbsp;</span>
+                            }
+                        </td>
+                        <td>
+                            <a href="#" onclick="setDeleteModal('deleteVersionModal', 'Delete', {id: '@version.id', moduleKey:'@module.key'}, onSuccess);" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
                 }
-            </div>
-        </div>
-
-        @* best way to handle to handle the file upload? *@
-        <div class="control-group">
-            <div class="controls">
-		    	<button type="submit" class="btn">Upload</button>
-            </div>
-        </div>
-		}
+            </tbody>
+        </table>
     </div>
 </div>
+
+<script type="text/javascript">
+        /* Hides the deleted element */
+        var onSuccess = function(data, textStatus, jqXHR){
+            var tr = $('.versionItem-' + data['id']);
+            tr.hide();
+        }
+</script>
 }

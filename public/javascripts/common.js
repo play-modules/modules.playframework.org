@@ -39,7 +39,7 @@ Sets the values for the modal on admin pages
 function setModal(modalId, modalTitle, valuesMap, onSuccess, isRemoval){
     // Check the optional parameter
     onSuccess = typeof onSuccess !== 'undefined' ? onSuccess : function(data, textStatus, jqXHR){ };
-    isRemoval = typeof onSuccess !== 'undefined' ? isRemoval : false;
+    isRemoval = typeof isRemoval !== 'undefined' ? isRemoval : false;
 
     //Set modal values
     $('#'+modalId).find('#modalTitle').text(modalTitle);

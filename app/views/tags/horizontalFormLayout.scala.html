@@ -8,7 +8,7 @@
 **************************************************@
 
 <div class="control-group @elements.args.get('_class) @if(elements.hasErrors) {error}" id="@elements.args.get('_id).getOrElse(elements.id + "_field")">
-    <label class="control-label" for="@elements.id">@elements.label(elements.lang)</label>
+    <label class="control-label" for="@elements.id"><strong>@elements.label(elements.lang)</strong></label>
     <div class="controls">
         @elements.input
         <span class="help-inline">@elements.errors(elements.lang).mkString(", ")</span>

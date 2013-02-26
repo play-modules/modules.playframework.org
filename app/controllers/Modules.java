@@ -22,6 +22,7 @@ import forms.modules.RatingForm;
 import forms.modules.RatingResponseForm;
 import forms.modules.VoteResponseForm;
 import models.*;
+import org.codehaus.jackson.node.ObjectNode;
 import play.Logger;
 import play.cache.Cache;
 import play.data.Form;
@@ -39,10 +40,7 @@ import views.html.modules.moduleRegistrationForm;
 import views.html.modules.moduleEditForm;
 import views.html.modules.myModules;
 
-import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import static actions.CurrentUser.currentUser;
 
@@ -194,8 +192,65 @@ public class Modules extends AbstractController
                                                 moduleVersion.versionCode,
                                                 moduleVersion.playModule.name));
 
-            result = redirect(routes.Modules.myModules());
+            result = redirect(routes.Modules.showVersionManagement(moduleKey));
         }
+        return result;
+    }
+
+    /**
+     * Deletes the given version from the chosen module
+     * Checks that the current user owns the module and that the version id belongs to that module.
+     * If the user can't delete the module or the data is wrong it fails silently, to avoid users trying to exploit it
+     * @return ok()
+     */
+    @RoleHolderPresent
+    public static Result deleteVersion()
+    {
+        Result result = ok();
+        // get params from body
+        Map<String,String[]> postParams = request().body().asFormUrlEncoded();
+        String[] ids = postParams.get("id");
+        String[] modKeys = postParams.get("moduleKey");
+
+        // check we have params to avoid array out of bounds/etc
+        if(ids != null && ids.length > 0 && modKeys != null && modKeys.length > 0) {
+            Long id = Long.valueOf(ids[0]);
+            String moduleKey = modKeys[0];
+            User user = currentUser();
+            Module playModule = Module.findByModuleKey(moduleKey);
+            Logger.debug("Received "+playModule);
+            // check that we own the module
+            if(playModule.owner.equals(user))
+            {
+                //search for the given id in the versions linked to the module, to validate input
+                ModuleVersion version = ModuleVersion.FIND.byId(id);
+
+                // only remove if the id belongs to the module the user owns
+                if(version != null && version.playModule.equals(playModule))
+                {
+                    // we need to remove m-m rel before deleting. Clear doesn't work, not sure why
+                    List<PlayVersion> all = new ArrayList(version.compatibility);
+                    version.compatibility.removeAll(all);
+                    version.save();
+                    version.saveManyToManyAssociations("compatibility");
+
+                    version.delete();
+
+                    createHistoricalEvent("Module updated - " + version.playModule.name,
+                            String.format("%s (%s) removed version %s of %s",
+                                    user.displayName,
+                                    user.userName,
+                                    version.versionCode,
+                                    version.playModule.name));
+
+                    // return id to hide row
+                    ObjectNode node = Json.newObject();
+                    node.put("id", id);
+                    result = ok(node);
+                }
+            }
+        }
+
         return result;
     }
 

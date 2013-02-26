@@ -36,6 +36,7 @@ GET  /modules/my/:moduleKey             controllers.Modules.showModuleEditForm(m
 POST /modules/my/:moduleKey             controllers.Modules.submitModuleEditForm(moduleKey: String)
 GET  /modules/my/versions/:moduleKey    controllers.Modules.showVersionManagement(moduleKey: String)
 POST /modules/my/versions/:moduleKey    controllers.Modules.uploadNewVersion(moduleKey: String)
+POST /modules/my/versions/i/delete      controllers.Modules.deleteVersion()
 
 # Administrators’ interface
 GET  /admin/versions                    controllers.PlayVersions.showPlayVersions()
