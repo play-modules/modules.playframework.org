@@ -140,9 +140,21 @@ val appDependencies = Seq(
     </div>
 </div>
 
-       
-  </aside>
+<div class="row">
+    <div class="span12">
+        <h3>Need help?</h3>
+        <p>
+            If you need help with the module you may ask a question at
+            <a href="http://stackoverflow.com/questions/tagged/playframework" class="link">StackOverflow</a>,
+            the <a href="https://groups.google.com/forum/?fromgroups#!forum/play-framework" class="link">Play! Mailing List</a>
+            @if(module.projectUrl != null){
+                or you may try to contact the author on the <a href="@module.projectUrl" class="link">Project Page</a>.
+            }
+        </p>
+    </div>
 </div>
+
+
 <script type="text/javascript">
     $(function() {
         //Updates the installation instructions on click of a row identifying a release
