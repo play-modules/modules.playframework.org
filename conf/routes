@@ -51,7 +51,7 @@ POST /admin/featured                    controllers.FeaturedModules.addNewFeatur
 POST /admin/featured/update             controllers.FeaturedModules.update()
 POST /admin/featured/delete             controllers.FeaturedModules.delete()
 GET  /admin/users                       controllers.Users.getUsers()
-POST /admin/users/switchAdmin           controllers.Users.switchAdmin(id: Long)
+POST /admin/users/:id/switchAdmin           controllers.Users.switchAdmin(id: Long)
 
 
 # SecureSocial
@@ -61,7 +61,7 @@ POST /admin/users/switchAdmin           controllers.Users.switchAdmin(id: Long)
 GET     /login                      securesocial.controllers.LoginPage.login
 GET     /logout                     securesocial.controllers.LoginPage.logout
 
-# User Registration and password handling (only needed if you are using UsernamePasswordProvider)
+# User Registration and password handling
 GET     /signup                     securesocial.controllers.Registration.startSignUp
 POST    /signup                     securesocial.controllers.Registration.handleStartSignUp
 GET     /signup/:token              securesocial.controllers.Registration.signUp(token)
@@ -76,6 +76,7 @@ POST    /password                   securesocial.controllers.PasswordChange.hand
 # Providers entry points
 GET     /authenticate/:provider     securesocial.controllers.ProviderController.authenticate(provider)
 POST    /authenticate/:provider     securesocial.controllers.ProviderController.authenticateByPost(provider)
+GET     /not-authorized             securesocial.controllers.ProviderController.notAuthorized
 
 # ~~~~~
 
@@ -88,8 +89,4 @@ POST /module/:moduleKey/ratings                controllers.Modules.rate(moduleKe
 
 # Map static resources from the /public folder to the /assets URL path
 GET  /assets/*file           controllers.Assets.at(path="/public", file)
-
-# Bootstrap files
-GET     /img/glyphicons-halflings-white.png         controllers.Assets.at(path="/public", file="/images/glyphicons-halflings-white.png")
-GET     /img/glyphicons-halflings.png               controllers.Assets.at(path="/public", file="/images/glyphicons-halflings.png")
 

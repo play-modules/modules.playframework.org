@@ -16,39 +16,37 @@
 package models.ss;
 
 import models.AbstractModel;
-import securesocial.core.java.PasswordInfo;
+import scala.Option;
+import scala.Some;
+import securesocial.core.PasswordInfo;
 
 import javax.persistence.Entity;
 
 /**
  * Persistence wrapper for SecureSocial's {@link PasswordInfo} class.
- *
+ * <p/>
  * User: pvillega
  */
 @Entity
-public class MPOPasswordInfo extends AbstractModel
-{
+public class MPOPasswordInfo extends AbstractModel {
+    public String hasher;
 
     public String password;
 
     public String salt;
 
-    public MPOPasswordInfo()
-    {
+    public MPOPasswordInfo() {
         //no-op
     }
 
-    public MPOPasswordInfo(PasswordInfo pwdInfo)
-    {
-        this.password = pwdInfo.getPassword();
-        this.salt = pwdInfo.getSalt();
+    public MPOPasswordInfo(PasswordInfo pwdInfo) {
+        this.hasher = pwdInfo.hasher();
+        this.password = pwdInfo.password();
+        this.salt = pwdInfo.salt().isEmpty() ? null : pwdInfo.salt().get();
     }
 
-    public PasswordInfo toPasswordInfo()
-    {
-        PasswordInfo pwdInfo = new PasswordInfo();
-        pwdInfo.setPassword(password);
-        pwdInfo.setSalt(salt);
+    public PasswordInfo toPasswordInfo() {
+        PasswordInfo pwdInfo = new PasswordInfo(hasher, password, salt != null ? new Some(salt) : Option.<String>empty());
 
         return pwdInfo;
     }

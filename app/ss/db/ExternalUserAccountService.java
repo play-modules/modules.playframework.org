@@ -23,12 +23,12 @@ import models.Vote;
 import models.ss.*;
 import play.Application;
 import play.Configuration;
-import play.Logger;
 import play.Play;
+import scala.Option;
+import scala.Some;
+import securesocial.core.*;
 import securesocial.core.java.BaseUserService;
-import securesocial.core.java.SocialUser;
 import securesocial.core.java.Token;
-import securesocial.core.java.UserId;
 import security.RoleDefinitions;
 import utils.StringUtils;
 
@@ -39,134 +39,118 @@ import java.util.List;
 /**
  * @author Steve Chaloner (steve@objectify.be)
  */
-public class ExternalUserAccountService extends BaseUserService
-{
+public class ExternalUserAccountService extends BaseUserService {
 
-    public ExternalUserAccountService(Application application)
-    {
+    public ExternalUserAccountService(Application application) {
         super(application);
     }
 
     @Override
-    public SocialUser doFind(UserId userId)
-    {
+    public SocialUser doFind(UserId userId) {
         ExternalAccount externalAccount = ExternalAccount.FIND.where()
-                .eq("externalId", userId.id)
-                .eq("provider", userId.provider)
+                .eq("externalId", userId.id())
+                .eq("provider", userId.providerId())
                 .findUnique();
 
         return externalAccountToSocialUser(externalAccount);
     }
 
     @Override
-    public SocialUser doFindByEmailAndProvider(String email, String providerId)
-    {
-        ExternalAccount externalAccount =  ExternalAccount.findByEmailAndProvider(email, providerId);
+    public SocialUser doFindByEmailAndProvider(String email, String providerId) {
+        ExternalAccount externalAccount = ExternalAccount.findByEmailAndProvider(email, providerId);
 
         return externalAccountToSocialUser(externalAccount);
     }
 
     @Override
-    public void doSave(SocialUser socialUser)
-    {
+    public Identity doSave(Identity socialUser) {
         ExternalAccount externalAccount = ExternalAccount.FIND.where()
-                                                         .eq("externalId", socialUser.id.id)
-                                                         .eq("provider", socialUser.id.provider)
-                                                         .findUnique();
-        if (externalAccount == null)
-        {
+                .eq("externalId", socialUser.id().id())
+                .eq("provider", socialUser.id().providerId())
+                .findUnique();
+        if (externalAccount == null) {
             externalAccount = new ExternalAccount();
             List<UserRole> roles = new ArrayList<UserRole>(Arrays.asList(UserRole.findByRoleName(RoleDefinitions.USER)));
             checkForAdminRights(socialUser, roles);
-            String name = socialUser.getFullName() != null ? socialUser.getFullName() :
-                            socialUser.getFirstName() != null ? socialUser.getFirstName() :
-                            socialUser.getLastName() != null ? socialUser.getLastName() :
-                            socialUser.getEmail() != null ? socialUser.getEmail() : "";
-            externalAccount.user = createUser("" + System.nanoTime(), name, socialUser.avatarUrl, roles);
+            String name = socialUser.fullName() != null ? socialUser.fullName() :
+                    socialUser.firstName() != null ? socialUser.firstName() :
+                            socialUser.lastName() != null ? socialUser.lastName() :
+                                    !socialUser.email().isEmpty() ? socialUser.email().get() : "";
+            externalAccount.user = createUser("" + System.nanoTime(),
+                    name,
+                    socialUser.avatarUrl().isEmpty() ? "" : socialUser.avatarUrl().get(),
+                    roles);
         }
 
-        externalAccount.externalId = socialUser.id.id;
-        externalAccount.provider = socialUser.id.provider;
-        externalAccount.firstName = socialUser.firstName;
-        externalAccount.lastName = socialUser.lastName;
-        externalAccount.fullName = socialUser.fullName;
-        externalAccount.email = socialUser.email;
-        externalAccount.avatarUrl = socialUser.avatarUrl;
+        externalAccount.externalId = socialUser.id().id();
+        externalAccount.provider = socialUser.id().providerId();
+        externalAccount.firstName = socialUser.firstName();
+        externalAccount.lastName = socialUser.lastName();
+        externalAccount.fullName = socialUser.fullName();
+        externalAccount.email = socialUser.email().isEmpty() ? "" : socialUser.email().get();
+        externalAccount.avatarUrl = socialUser.avatarUrl().isEmpty() ? "" : socialUser.avatarUrl().get();
 
-        externalAccount.authenticationMethod = socialUser.authMethod;
+        externalAccount.setAuthenticationMethod(socialUser.authMethod());
 
-        if (socialUser.oAuth1Info != null)
-        {
-            if (externalAccount.oAuth1Info == null)
-            {
+        if (!socialUser.oAuth1Info().isEmpty()) {
+            if (externalAccount.oAuth1Info == null) {
                 externalAccount.oAuth1Info = new MPOOAuth1Info();
             }
-            externalAccount.oAuth1Info.secret = socialUser.oAuth1Info.secret;
-            externalAccount.oAuth1Info.token = socialUser.oAuth1Info.token;
+            externalAccount.oAuth1Info.secret = socialUser.oAuth1Info().get().secret();
+            externalAccount.oAuth1Info.token = socialUser.oAuth1Info().get().token();
             externalAccount.oAuth1Info.save();
             Ebean.saveAssociation(externalAccount, "oAuth1Info");
-        }
-        else
-        {
+        } else {
             externalAccount.oAuth1Info = null;
         }
 
-        if (socialUser.oAuth2Info != null)
-        {
-            if (externalAccount.oAuth2Info == null)
-            {
+        if (!socialUser.oAuth2Info().isEmpty()) {
+            if (externalAccount.oAuth2Info == null) {
                 externalAccount.oAuth2Info = new MPOOAuth2Info();
             }
-            externalAccount.oAuth2Info.accessToken = socialUser.oAuth2Info.accessToken;
-            externalAccount.oAuth2Info.expiresIn = socialUser.oAuth2Info.expiresIn;
-            externalAccount.oAuth2Info.refreshToken = socialUser.oAuth2Info.refreshToken;
-            externalAccount.oAuth2Info.tokenType = socialUser.oAuth2Info.tokenType;
+            externalAccount.oAuth2Info.accessToken = socialUser.oAuth2Info().get().accessToken();
+            externalAccount.oAuth2Info.expiresIn = (Integer) (socialUser.oAuth2Info().get().expiresIn().isEmpty() ? null : socialUser.oAuth2Info().get().expiresIn().get());
+            externalAccount.oAuth2Info.refreshToken = socialUser.oAuth2Info().get().refreshToken().isEmpty() ? null : socialUser.oAuth2Info().get().refreshToken().get();
+            externalAccount.oAuth2Info.tokenType = socialUser.oAuth2Info().get().tokenType().isEmpty() ? null : socialUser.oAuth2Info().get().tokenType().get();
             externalAccount.oAuth2Info.save();
             Ebean.saveAssociation(externalAccount, "oAuth2Info");
 
-        }
-        else
-        {
+        } else {
             externalAccount.oAuth2Info = null;
         }
 
-        if (socialUser.passwordInfo != null)
-        {
-            if (externalAccount.passwordInfo == null)
-            {
+        if (!socialUser.passwordInfo().isEmpty()) {
+            if (externalAccount.passwordInfo == null) {
                 externalAccount.passwordInfo = new MPOPasswordInfo();
             }
-            externalAccount.passwordInfo.password = socialUser.passwordInfo.password;
-            externalAccount.passwordInfo.salt = socialUser.passwordInfo.salt;
+            externalAccount.passwordInfo.hasher = socialUser.passwordInfo().get().hasher();
+            externalAccount.passwordInfo.password = socialUser.passwordInfo().get().password();
+            externalAccount.passwordInfo.salt = socialUser.passwordInfo().get().salt().isEmpty() ? null : socialUser.passwordInfo().get().salt().get();
             externalAccount.passwordInfo.save();
             Ebean.saveAssociation(externalAccount, "passwordInfo");
 
-        }
-        else
-        {
+        } else {
             externalAccount.passwordInfo = null;
         }
 
         externalAccount.save();
+        return socialUser;
     }
 
     @Override
-    public void doSave(Token token)
-    {
+    public void doSave(Token token) {
         ExternalToken externalToken = new ExternalToken(token);
         externalToken.save();
     }
 
     @Override
-    public Token doFindToken(String uuid)
-    {
+    public Token doFindToken(String uuid) {
         Token token = null;
         ExternalToken externalToken = ExternalToken.FIND.where()
                 .eq("uuid", uuid)
                 .findUnique();
 
-        if(externalToken != null)
-        {
+        if (externalToken != null) {
             token = externalToken.toToken();
         }
 
@@ -174,43 +158,34 @@ public class ExternalUserAccountService extends BaseUserService
     }
 
     @Override
-    public void doDeleteToken(String uuid)
-    {
+    public void doDeleteToken(String uuid) {
         ExternalToken externalToken = ExternalToken.FIND.where()
                 .eq("uuid", uuid)
                 .findUnique();
 
-        if(externalToken != null)
-        {
+        if (externalToken != null) {
             externalToken.delete();
         }
     }
 
     @Override
-    public void doDeleteExpiredTokens()
-    {
+    public void doDeleteExpiredTokens() {
         List<ExternalToken> tokens = ExternalToken.FIND.all();
-        for(ExternalToken t: tokens)
-        {
-            if(t.isExpired())
-            {
+        for (ExternalToken t : tokens) {
+            if (t.isExpired()) {
                 t.delete();
             }
         }
     }
 
-    private void checkForAdminRights(SocialUser socialUser, List<UserRole> roles)
-    {
+    private void checkForAdminRights(Identity socialUser, List<UserRole> roles) {
         // steve - this is a bit of a hack
         Configuration configuration = Play.application().configuration();
         String initialAdmin = configuration.getString("admin.initial");
-        if (!StringUtils.isEmpty(initialAdmin))
-        {
+        if (!StringUtils.isEmpty(initialAdmin)) {
             List<String> adminIds = new ArrayList<String>(Arrays.asList(initialAdmin.split(",")));
-            if (User.getAdmins().size() < adminIds.size())
-            {
-                if (adminIds.contains(socialUser.id.id))
-                {
+            if (User.getAdmins().size() < adminIds.size()) {
+                if (adminIds.contains(socialUser.id().id())) {
                     roles.clear();
                     roles.add(UserRole.findByRoleName(RoleDefinitions.ADMIN));
                 }
@@ -218,25 +193,21 @@ public class ExternalUserAccountService extends BaseUserService
         }
     }
 
-    private SocialUser externalAccountToSocialUser(ExternalAccount externalAccount)
-    {
+    private SocialUser externalAccountToSocialUser(ExternalAccount externalAccount) {
         SocialUser socialUser = null;
-        if (externalAccount != null)
-        {
-            socialUser = new SocialUser();
-            socialUser.id = new UserId();
-            socialUser.id.setId(externalAccount.externalId);
-            socialUser.id.setProvider(externalAccount.provider);
-            socialUser.firstName = externalAccount.firstName;
-            socialUser.lastName = externalAccount.lastName;
-            socialUser.fullName = externalAccount.fullName;
-            socialUser.email = externalAccount.email;
-            socialUser.avatarUrl = externalAccount.avatarUrl;
-
-            socialUser.authMethod = externalAccount.authenticationMethod;
-            socialUser.oAuth1Info = externalAccount.oAuth1Info == null ? null : externalAccount.oAuth1Info.toOAuth1Info();
-            socialUser.oAuth2Info = externalAccount.oAuth2Info == null ? null : externalAccount.oAuth2Info.toOAuth2Info();
-            socialUser.passwordInfo = externalAccount.passwordInfo == null ? null : externalAccount.passwordInfo.toPasswordInfo();
+        if (externalAccount != null) {
+            socialUser = new SocialUser(
+                    new UserId(externalAccount.externalId, externalAccount.provider),
+                    externalAccount.firstName,
+                    externalAccount.lastName,
+                    externalAccount.fullName,
+                    externalAccount.email != null ? new Some(externalAccount.email) : Option.<String>empty(),
+                    externalAccount.avatarUrl != null ? new Some(externalAccount.avatarUrl) : Option.<String>empty(),
+                    externalAccount.getAuthenticationMethod(),
+                    externalAccount.oAuth1Info != null ? new Some(externalAccount.oAuth1Info.toOAuth1Info()) : Option.<OAuth1Info>empty(),
+                    externalAccount.oAuth2Info != null ? new Some(externalAccount.oAuth2Info.toOAuth2Info()) : Option.<OAuth2Info>empty(),
+                    externalAccount.passwordInfo != null ? new Some(externalAccount.passwordInfo.toPasswordInfo()) : Option.<PasswordInfo>empty()
+            );
         }
         return socialUser;
     }
@@ -244,8 +215,7 @@ public class ExternalUserAccountService extends BaseUserService
     private User createUser(String userName,
                             String displayName,
                             String avatarUrl,
-                            List<UserRole> roles)
-    {
+                            List<UserRole> roles) {
         User user = new User();
         user.userName = userName;
         user.displayName = displayName;

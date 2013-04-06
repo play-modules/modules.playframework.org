@@ -21,34 +21,28 @@ import models.ss.ExternalAccount;
 import play.mvc.Action;
 import play.mvc.Http;
 import play.mvc.Result;
+import securesocial.core.Identity;
 import securesocial.core.java.SecureSocial;
-import securesocial.core.java.SocialUser;
-import utils.StringUtils;
 
 /**
  * @author Steve Chaloner (steve@objectify.be)
  */
-public class CurrentUser extends Action.Simple
-{
+public class CurrentUser extends Action.Simple {
     @Override
-    public Result call(Http.Context ctx) throws Throwable
-    {
+    public Result call(Http.Context ctx) throws Throwable {
         accessUser(ctx);
         return delegate.call(ctx);
     }
 
-    private static User accessUser(Http.Context ctx)
-    {
+    private static User accessUser(Http.Context ctx) {
         Http.Context.current.set(ctx);
 
         User user = null;
-        SocialUser socialUser = SecureSocial.currentUser();
-        if (socialUser != null)
-        {
-            ExternalAccount externalAccount = ExternalAccount.findByUserIdAndProvider(socialUser.id.id,
-                                                                                      socialUser.id.provider);
-            if (externalAccount != null)
-            {
+        Identity socialUser = SecureSocial.currentUser();
+        if (socialUser != null) {
+            ExternalAccount externalAccount = ExternalAccount.findByUserIdAndProvider(socialUser.id().id(),
+                    socialUser.id().providerId());
+            if (externalAccount != null) {
                 user = externalAccount.user;
                 Ebean.refresh(externalAccount.user);
             }
@@ -57,13 +51,11 @@ public class CurrentUser extends Action.Simple
         return user;
     }
 
-    public static User currentUser()
-    {
+    public static User currentUser() {
         return currentUser(Http.Context.current());
     }
 
-    public static User currentUser(Http.Context context)
-    {
+    public static User currentUser(Http.Context context) {
         return accessUser(context);
     }
 }

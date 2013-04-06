@@ -1,18 +1,22 @@
 @(title: String, currentUser: User)(content: Html)
 
 @main("Admin :: " + title, currentUser) {
-<div class="row">
-    <div class="span12">
-        @tags.admin.adminMenu()
+    <header>
+        <h1 class="introduction"> @title </h1>
+    </header>
+
+    <div class="row">
+        <div class="span12">
+            @tags.admin.adminMenu()
+        </div>
     </div>
-</div>
 
-@content
+    @content
 
-<script type="text/javascript">
-    $(function(){
-        setNavbar("Admin");
-    });
-</script>
+    <script type="text/javascript">
+            $(function(){
+            setNavbar("Admin");
+            });
+    </script>
 
 }

@@ -16,40 +16,32 @@
 package models.ss;
 
 import models.AbstractModel;
-import securesocial.core.java.OAuth1Info;
-import securesocial.core.java.OAuth2Info;
+import securesocial.core.OAuth1Info;
 
 import javax.persistence.Entity;
 
 /**
- * Persistence wrapper for SecureSocial's {@link securesocial.core.java.OAuth2Info} class.
+ * Persistence wrapper for SecureSocial's {@link securesocial.core.OAuth2Info} class.
  *
  * @author Steve Chaloner (steve@objectify.be)
  */
 @Entity
-public class MPOOAuth1Info extends AbstractModel
-{
+public class MPOOAuth1Info extends AbstractModel {
     public String token;
 
     public String secret;
 
-    public MPOOAuth1Info()
-    {
+    public MPOOAuth1Info() {
         // no-op
     }
 
-    public MPOOAuth1Info(OAuth1Info oAuth1Info)
-    {
-        this.token = oAuth1Info.token;
-        this.secret = oAuth1Info.secret;
+    public MPOOAuth1Info(OAuth1Info oAuth1Info) {
+        this.token = oAuth1Info.token();
+        this.secret = oAuth1Info.secret();
     }
 
-    public OAuth1Info toOAuth1Info()
-    {
-        OAuth1Info oAuth1Info = new OAuth1Info();
-
-        oAuth1Info.token = this.token;
-        oAuth1Info.secret = this.secret;
+    public OAuth1Info toOAuth1Info() {
+        OAuth1Info oAuth1Info = new OAuth1Info(this.token, this.secret);
 
         return oAuth1Info;
     }

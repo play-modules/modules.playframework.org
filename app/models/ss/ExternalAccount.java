@@ -17,17 +17,19 @@ package models.ss;
 
 import models.AbstractModel;
 import models.User;
-import securesocial.core.java.AuthenticationMethod;
+import securesocial.core.AuthenticationMethod;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import java.util.List;
 
 /**
  * @author Steve Chaloner (steve@objectify.be)
  */
 @Entity
-public class ExternalAccount extends AbstractModel
-{
+public class ExternalAccount extends AbstractModel {
     @OneToOne(optional = false, cascade = CascadeType.ALL)
     public User user;
 
@@ -61,29 +63,34 @@ public class ExternalAccount extends AbstractModel
     @OneToOne(optional = true, cascade = CascadeType.ALL)
     public MPOPasswordInfo passwordInfo;
 
-    @Enumerated(EnumType.STRING)
-    public AuthenticationMethod authenticationMethod;
+    @Column(nullable = false)
+    private String authenticationMethod;
+
+    public AuthenticationMethod getAuthenticationMethod() {
+        return new AuthenticationMethod(authenticationMethod);
+    }
+
+    public void setAuthenticationMethod(AuthenticationMethod authMethod) {
+        authenticationMethod = authMethod.method();
+    }
 
     public static final Finder<Long, ExternalAccount> FIND = new Finder<Long, ExternalAccount>(Long.class, ExternalAccount.class);
 
-    public static ExternalAccount findByUserIdAndProvider(String id, String provider)
-    {
+    public static ExternalAccount findByUserIdAndProvider(String id, String provider) {
         return FIND.where()
-                   .eq("externalId", id)
-                   .eq("provider", provider)
-                   .findUnique();
+                .eq("externalId", id)
+                .eq("provider", provider)
+                .findUnique();
     }
 
-    public static ExternalAccount findByEmailAndProvider(String email, String provider)
-    {
+    public static ExternalAccount findByEmailAndProvider(String email, String provider) {
         return FIND.where()
                 .eq("email", email)
                 .eq("provider", provider)
                 .findUnique();
     }
 
-    public static List<ExternalAccount> findByUser(User currentUser)
-    {
+    public static List<ExternalAccount> findByUser(User currentUser) {
         return FIND.where()
                 .eq("user", currentUser)
                 .order().asc("provider")

@@ -38,8 +38,7 @@ create table external_account (
   o_auth1info_id            bigint,
   o_auth2info_id            bigint,
   password_info_id          bigint,
-  authentication_method     varchar(17),
-  constraint ck_external_account_authentication_method check (authentication_method in ('OAUTH1','OAUTH2','OPENID','USERNAME_PASSWORD')),
+  authentication_method     varchar(25),
   constraint pk_external_account primary key (id))
 ;
 

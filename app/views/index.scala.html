@@ -1,97 +1,175 @@
 @(currentUser: User,
-  mostRecentModules1: List[Module],
-  mostRecentModules2: List[Module],
-  highestRatedModules1: List[Module],
-  highestRatedModules2: List[Module],
-  featuredModules1: List[Module],
-  featuredModules2: List[Module],
-  playVersions: List[PlayVersion],
-  moduleCount: Int)
+mostRecentModules1: List[Module],
+mostRecentModules2: List[Module],
+highestRatedModules1: List[Module],
+highestRatedModules2: List[Module],
+featuredModules1: List[Module],
+featuredModules2: List[Module],
+playVersions: List[PlayVersion],
+moduleCount: Int)
 
-@import tags._
+
+@moreStyles = {
+    <style type="text/css">
+            .stripe {
+            height: 340px;
+            }
+            #mainContainer {
+            margin-top: -310px;
+            }
+
+            @@
+            media all and (max-width: 465px) {
+            header {
+            display: none;
+            }
+            .landingDetails {
+            display: none;
+            }
+            }
+
+            @@
+            media all and (max-width: 768px) {
+            header {
+            display: none;
+            }
+            .landingDetails {
+            display: none;
+            }
+            .stripe {
+            height: 320px !important;
+            }
+            #mainContainer {
+            margin-top: -280px !important;
+            }
+            }
+
+            @@
+            media all and (min-width: 768px) and (max-width: 980px) {
+            .stripe {
+            height: 390px !important;
+            }
+            #mainContainer {
+            margin-top: -360px !important;
+            }
+            }
+
+            @@
+            media all and (min-width: 1200px) {
+            .stripe {
+            height: 300px !important;
+            }
+            #mainContainer {
+            margin-top: -270px !important;
+            }
+            }
+
+    </style>
+}
 
 @featureList(title: String, moduleAccessors: List[_ <: ModuleAccessor]) = {
-    <h2>@title</h2>
+    <h2> @title </h2>
     <table class="table table-striped">
         <tbody>
-		@for(accessor <- moduleAccessors) {
-			@defining(accessor.getModule()) { module =>
-				<tr>
-                    <td>
-                        <a href="@routes.Modules.details(module.key)">@module.name</a>
-                        <br/>
-                        by @module.owner.displayName
-                    </td>
-                </tr>
-			}
-		}
+            @for(accessor <- moduleAccessors) {
+                @defining(accessor.getModule()) { module =>
+                    <tr>
+                        <td>
+                            <a href="@routes.Modules.details(module.key)"> @module.name </a>
+                            <br/>
+                                by @module.owner.displayName
+                        </td>
+                    </tr>
+                }
+            }
         </tbody>
     </table>
 }
 
-@main("Home", currentUser) {
-<header>
-    <h1 class="introduction">Play Modules</h1>
-</header>
+@main(title = "Home", currentUser = currentUser, moreStyles = moreStyles) {
+    <header>
+        <h1 class="introduction centered"> Play Modules </h1>
+    </header>
 
-<div class="landingDetails">
-    <h1>@moduleCount Play framework modules for Play 2.x and Play 1.x</h1>
-    <div class="subheader">Here you can find great modules contributed by the Play! community.Browse the catalog and add instant power to your application.</div>
-</div>
+    <div class="landingDetails">
+        <h1> @moduleCount Play framework modules for Play 2.x and Play 1.x </h1>
+    </div>
 
-<div class="row">
-    <div class="span4">
-        <a href='@routes.Modules.getModulesByPlayVersion("2")' class="btn btn-large btn-block">Browse Play 2.x Modules</a>
-        <br/>
-        <p>Or browse by <a href="@routes.Modules.getFeaturedModulesByPlayVersion("2")">Featured </a>, <a href="@routes.Modules.getLatestModulesByPlayVersion("2")">Latest </a>, <a href="@routes.Modules.getHighestRatedModulesByPlayVersion("2")">Highest-rated</a></p>
+    <div class="row">
+        <div class="span6">
+            <div class="modulesArea">
+                <h2> See the modules </h2>
+                <p> Browse the catalogs and add instant power to your application.</p>
+                <a href='@routes.Modules.getModulesByPlayVersion("1")' class="btn btn-large btn-info btn-modal-main"> Play 1.x Modules </a> &nbsp;
+                <a href='@routes.Modules.getModulesByPlayVersion("2")' class="btn btn-large btn-success btn-modal-main"> Play 2.x Modules </a>
+            </div>
+        </div>
+        <div class="span6">
+            <div class="modulesArea">
+                <h2> Contribute </h2>
+                <p>
+                        Modules feeds:
+                    <a href='@routes.Assets.at("feeds/mpo.atom.xml")'> <img src="@routes.Assets.at("images/feed-icon-14x14.png")"> &nbsp;Atom 1.0 </a>,
+                    <a href='@routes.Assets.at("feeds/mpo.rss1.xml")'> <img src="@routes.Assets.at("images/feed-icon-14x14.png")"> &nbsp;RSS 1.0 </a>,
+                    <a href='@routes.Assets.at("feeds/mpo.rss2.xml")'> <img src="@routes.Assets.at("images/feed-icon-14x14.png")"> &nbsp;RSS 2.0 </a>
+                </p>
+                <a href="@if(currentUser == null) {
+                    @securesocial.controllers.routes.LoginPage.login
+                } else {
+                    @routes.Modules.showModuleRegistrationForm()
+                }" class="btn btn-large btn-success btn-modal-main"> Contribute your Modules </a>
+            </div>
+        </div>
     </div>
-    <div class="span4">
-        <a href='@routes.Modules.getModulesByPlayVersion("1")' class="btn btn-large btn-inverse btn-block">Browse Play 1.x Modules</a>
-        <br/>
-        <p>Or browse by <a href="@routes.Modules.getFeaturedModulesByPlayVersion("1")">Featured </a>, <a href="@routes.Modules.getLatestModulesByPlayVersion("1")">Latest </a>, <a href="@routes.Modules.getHighestRatedModulesByPlayVersion("1")">Highest-rated</a></p>
-    </div>
-    <div class="span4">
-        <a href="@if(currentUser == null){ @securesocial.controllers.routes.LoginPage.login } else { @routes.Modules.showModuleRegistrationForm() }" class="btn btn-large btn-success">Contribute your Modules</a>
-        <br/><br/>
-        <p>
-        New and updated modules will be published to a syndication feed. You can subscribe here:<br/>
-        <a href='@routes.Assets.at("feeds/mpo.atom.xml")'><img src="@routes.Assets.at("images/feed-icon-14x14.png")">&nbsp;Atom 1.0</a>,
-        <a href='@routes.Assets.at("feeds/mpo.rss1.xml")'><img src="@routes.Assets.at("images/feed-icon-14x14.png")">&nbsp;RSS 1.0</a>,
-        <a href='@routes.Assets.at("feeds/mpo.rss2.xml")'><img src="@routes.Assets.at("images/feed-icon-14x14.png")">&nbsp;RSS 2.0</a>
-        </p>
-    </div>
-</div>
 
-<hr/>
-<div class="row">
-    <div class="span4">
-        @featureList("Latest 2.x modules", mostRecentModules2)
+    <div class="row">
+        <div class="span12">
+                &nbsp;
+        </div>
     </div>
-    <div class="span4">
-        @featureList("Featured 2.x modules", featuredModules2)
-    </div>
-    <div class="span4">
-        @featureList("Highest-rated 2.x", highestRatedModules2)
-    </div>
-</div>
 
-<div class="row">
-    <div class="span4">
-        @featureList("Latest 1.x modules", mostRecentModules1)
+    <div class="row">
+        <div class="span12">
+            <h2 class="subtitle"> Here you can find great modules contributed by the Play! community.</h2>
+        </div>
     </div>
-    <div class="span4">
-        @featureList("Featured 1.x modules", featuredModules1)
+    <div class="row">
+        <div class="span12">
+            <p> Browse Play 1 listings of <a href="@routes.Modules.getFeaturedModulesByPlayVersion("1")"> Featured </a>, <a href="@routes.Modules.getLatestModulesByPlayVersion("1")"> Latest </a>, <a href="@routes.Modules.getHighestRatedModulesByPlayVersion("1")"> Highest-rated </a> modules
+                or browse Play 2 listings of <a href="@routes.Modules.getFeaturedModulesByPlayVersion("2")"> Featured </a>, <a href="@routes.Modules.getLatestModulesByPlayVersion("2")"> Latest </a>, <a href="@routes.Modules.getHighestRatedModulesByPlayVersion("2")"> Highest-rated </a> modules
+            </p>
+        </div>
     </div>
-    <div class="span4">
-        @featureList("Highest-rated 1.x", highestRatedModules1)
+
+    <div class="row">
+        <div class="span4">
+            @featureList("Latest 2.x modules", mostRecentModules2)
+        </div>
+        <div class="span4">
+            @featureList("Featured 2.x modules", featuredModules2)
+        </div>
+        <div class="span4">
+            @featureList("Highest-rated 2.x", highestRatedModules2)
+        </div>
     </div>
-</div>
+
+    <div class="row">
+        <div class="span4">
+            @featureList("Latest 1.x modules", mostRecentModules1)
+        </div>
+        <div class="span4">
+            @featureList("Featured 1.x modules", featuredModules1)
+        </div>
+        <div class="span4">
+            @featureList("Highest-rated 1.x", highestRatedModules1)
+        </div>
+    </div>
 
 
-<script>
-    $(function(){
-        setNavbar("Home");
-    });
-</script>
+    <script>
+            $(function(){
+            setNavbar("Home");
+            });
+    </script>
 
 }

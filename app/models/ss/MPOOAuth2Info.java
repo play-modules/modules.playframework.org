@@ -16,7 +16,9 @@
 package models.ss;
 
 import models.AbstractModel;
-import securesocial.core.java.OAuth2Info;
+import scala.Option;
+import scala.Some;
+import securesocial.core.OAuth2Info;
 
 import javax.persistence.Entity;
 
@@ -26,8 +28,7 @@ import javax.persistence.Entity;
  * @author Steve Chaloner (steve@objectify.be)
  */
 @Entity
-public class MPOOAuth2Info extends AbstractModel
-{
+public class MPOOAuth2Info extends AbstractModel {
     public String accessToken;
 
     public String tokenType;
@@ -36,27 +37,22 @@ public class MPOOAuth2Info extends AbstractModel
 
     public String refreshToken;
 
-    public MPOOAuth2Info()
-    {
+    public MPOOAuth2Info() {
         // no-op
     }
 
-    public MPOOAuth2Info(OAuth2Info oAuth2Info)
-    {
-        this.accessToken = oAuth2Info.accessToken;
-        this.tokenType = oAuth2Info.tokenType;
-        this.expiresIn = oAuth2Info.expiresIn;
-        this.refreshToken = oAuth2Info.refreshToken;
+    public MPOOAuth2Info(OAuth2Info oAuth2Info) {
+        this.accessToken = oAuth2Info.accessToken();
+        this.tokenType = oAuth2Info.tokenType().isEmpty() ? null : oAuth2Info.tokenType().get();
+        this.expiresIn = (Integer) (oAuth2Info.expiresIn().isEmpty() ? null : oAuth2Info.expiresIn().get());
+        this.refreshToken = oAuth2Info.refreshToken().isEmpty() ? null : oAuth2Info.refreshToken().get();
     }
 
-    public OAuth2Info toOAuth2Info()
-    {
-        OAuth2Info oAuth2Info = new OAuth2Info();
-
-        oAuth2Info.accessToken = this.accessToken;
-        oAuth2Info.tokenType = this.tokenType;
-        oAuth2Info.expiresIn = this.expiresIn;
-        oAuth2Info.refreshToken = this.refreshToken;
+    public OAuth2Info toOAuth2Info() {
+        OAuth2Info oAuth2Info = new OAuth2Info(this.accessToken,
+                this.tokenType != null ? new Some(this.tokenType) : Option.<String>empty(),
+                this.expiresIn != null ? new Some(this.expiresIn) : Option.empty(),
+                this.refreshToken != null ? new Some(this.refreshToken) : Option.<String>empty());
 
         return oAuth2Info;
     }

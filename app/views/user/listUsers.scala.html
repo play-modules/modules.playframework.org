@@ -1,31 +1,38 @@
 @(currentUser: User,
-  allUsers: List[User])
+allUsers: List[User])
 
-@import tags._
 
 @main("My account", currentUser) {
-<header>
-    <h1 class="introduction">All users</h1>
-</header>
+    <header>
+        <h1 class="introduction"> All users </h1>
+    </header>
 
-<div class="row">
-    <div class="span12">
-        <table class="table table-striped" id="userTable">
-            <tbody id="userTableBody">
-            @for(user <- allUsers) {
-            <tr>
-                <td><a href="@routes.Application.viewAccount(user.userName)">@user.displayName</a></td>
-            </tr>
-            }
-            </tbody>
-        </table>
+    <div class="row">
+        <div class="span12">
+                &nbsp;
+        </div>
     </div>
-</div>
 
-<script>
-    $(function(){
-        setNavbar("Users");
+    <div class="row">
+        <div class="span12">
+            <table class="table table-striped" id="userTable">
+                <tbody id="userTableBody">
+                    @for(user <- allUsers) {
+                        <tr>
+                        <td> <a href="@routes.Application.viewAccount(user.userName)"> @user.displayName </a> </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+            $(function(){
+            setNavbar("Users");
     });
 </script>
+
+
 
 }
