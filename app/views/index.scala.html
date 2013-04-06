@@ -12,58 +12,53 @@ moduleCount: Int)
 @moreStyles = {
     <style type="text/css">
             .stripe {
-            height: 340px;
+                height: 340px;
             }
             #mainContainer {
-            margin-top: -310px;
+                margin-top: -310px;
             }
 
-            @@
-            media all and (max-width: 465px) {
-            header {
-            display: none;
-            }
-            .landingDetails {
-            display: none;
-            }
-            }
-
-            @@
-            media all and (max-width: 768px) {
-            header {
-            display: none;
-            }
-            .landingDetails {
-            display: none;
-            }
-            .stripe {
-            height: 320px !important;
-            }
-            #mainContainer {
-            margin-top: -280px !important;
-            }
+            @@media all and (max-width: 465px) {
+                header {
+                    display: none;
+                }
+                .landingDetails {
+                    display: none;
+                }
             }
 
-            @@
-            media all and (min-width: 768px) and (max-width: 980px) {
-            .stripe {
-            height: 390px !important;
-            }
-            #mainContainer {
-            margin-top: -360px !important;
-            }
-            }
-
-            @@
-            media all and (min-width: 1200px) {
-            .stripe {
-            height: 300px !important;
-            }
-            #mainContainer {
-            margin-top: -270px !important;
-            }
+            @@media all and (max-width: 768px) {
+                header {
+                    display: none;
+                }
+                .landingDetails {
+                    display: none;
+                }
+                .stripe {
+                    height: 320px !important;
+                }
+                #mainContainer {
+                    margin-top: -280px !important;
+                }
             }
 
+            @@media all and (min-width: 768px) and (max-width: 980px) {
+                .stripe {
+                    height: 390px !important;
+                }
+                #mainContainer {
+                    margin-top: -360px !important;
+                }
+            }
+
+            @@media all and (min-width: 1200px) {
+                .stripe {
+                    height: 300px !important;
+                }
+                #mainContainer {
+                    margin-top: -270px !important;
+                }
+            }
     </style>
 }
 

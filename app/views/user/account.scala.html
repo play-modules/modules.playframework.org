@@ -3,44 +3,48 @@ targetUser: User,
 modules: List[Module],
 socialActivities: List[SocialActivity])
 
+@import tags._
 
 @main(targetUser.displayName, currentUser) {
-    <header>
-        <h1 class="introduction"> @targetUser.displayName </h1>
-    </header>
+<header>
+    <h1 class="introduction"> @targetUser.displayName </h1>
+</header>
 
-    <div class="row">
-        <div class="span12">
-                &nbsp;
+<div class="row">
+    <div class="span12">
+            &nbsp;
+    </div>
+</div>
+
+<div class="row">
+    <div class="span4 center">
+        <img src='@if(targetUser.avatarUrl != null) {
+            @targetUser.avatarUrl
+        } else {
+            @routes.Assets.at("images/missing-user.png")
+        }'/>
+    </div>
+    <div class="span4">
+        <h4> @{targetUser.displayName} 's modules </h4 >
+        <ul>
+            @if(modules.isEmpty()){
+                <li> This user doesn't have any modules.</li>
+            }else{@for(module <- modules) {
+                <li> <a href="@routes.Modules.details(module.key)"> @module.name </a> </li>
+            }}
+        </ul>
+        </div>
+            <div class="span4">
+                @socialActivitySummary(targetUser.displayName, socialActivities)
+            </div>
         </div>
     </div>
+</div>
 
-    <div class="row">
-        <div class="span4 center">
-            <img src='@if(targetUser.avatarUrl != null) {
-                @targetUser.avatarUrl
-            } else {
-                @routes.Assets.at("images/missing-user.png")
-            }'/>
-        </div>
-        <div class="span4">
-            <h4> @{
-                targetUser.displayName
-            } 's modules </ h4 >
-                <ul>
-                        @if(modules.isEmpty()){<li> This user doesn't have any modules.</li>}else{@for(module <- modules) {
-                    <li> <a href="@routes.Modules.details(module.key)"> @module.name </a> </li>
-                }}</ul>
-            </ div >
-                <div class="span4">
-                        @socialActivitySummary(targetUser.displayName, socialActivities)
-                </div>
-            </ div >
-
-                <script>
-                        $(function()
-                        {setNavbar("Users");}
-                        );
-                </script>
+<script>
+    $(function()
+        {setNavbar("Users");}
+    );
+</script>
 
 }

@@ -4,12 +4,12 @@
 <h4>Social activity</h4>
 <table class="table table-striped">
     @if(socialActivities.isEmpty()) {
-    <tr><td>No social activity</td></tr>
+        <tr><td>No social activity</td></tr>
     }else{
-    @for(socialActivity <- socialActivities) {
-    @defining("%s %s %s".format(socialActivity.getDate().format("dd/MM/yyyy"), userName, socialActivity.getDescription())) { description =>
-    <tr><td><img src='@routes.Assets.at("images/social/type/" + socialActivity.getType() + ".png")'/> @description</td></tr>
-    }
-    }
+        @for(socialActivity <- socialActivities) {
+            @defining("%s %s %s".format(socialActivity.getDate().format("dd/MM/yyyy"), userName, socialActivity.getDescription())) { description =>
+                <tr><td><img src='@routes.Assets.at("images/social/type/" + socialActivity.getType() + ".png")'/> @description</td></tr>
+            }
+        }
     }
 </table>
