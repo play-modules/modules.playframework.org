@@ -12,7 +12,7 @@
     <input type="hidden" id="id" name="id" value="1"/>
 
     <label for="name">Name</label>
-    <input type="text" name="name" id="name" value="1"/>
+    <input type="text" name="name" id="name" style="height: 24px;" value="1"/>
     }
 }
 
@@ -24,7 +24,7 @@
         <div class="adminBadge">
             <h4>Add new category</h4>
             @helper.form(routes.Categories.addNewCategory) {
-                @helper.inputText(versionForm("name"))
+                @helper.inputText(versionForm("name"), 'style -> "height: 24px;")
 
                 <button type="submit" class="btn">Add</button>
 

@@ -20,10 +20,10 @@
     <input type="hidden" id="id" name="id" value="1"/>
 
     <label for="name">Name</label>
-    <input type="text" id="name" name="name" class="input-mini" value="1"/>
+    <input type="text" id="name" name="name" class="input-mini" style="height: 24px;" value="1"/>
 
     <label for="documentationUrl">Documentation URL</label>
-    <input type="text" id="documentationUrl" name="documentationUrl" class="input-xxlarge" value="1"/>
+    <input type="text" id="documentationUrl" name="documentationUrl" style="height: 24px;" class="input-xxlarge" value="1"/>
     }
 }
 
@@ -36,8 +36,8 @@
         <div class="adminBadge">
             <h4>Add new version</h4>
             @helper.form(routes.PlayVersions.addNewPlayVersion) {
-                @helper.inputText(versionForm("name"))
-                @helper.inputText(versionForm("documentationUrl"))
+                @helper.inputText(versionForm("name"), 'style -> "height: 24px;")
+                @helper.inputText(versionForm("documentationUrl"), 'style -> "height: 24px;")
 
                 <button type="submit" class="btn">Add</button>
             }
