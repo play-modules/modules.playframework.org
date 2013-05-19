@@ -1,18 +1,16 @@
 package actors;
 
 import akka.actor.UntypedActor;
-import com.google.common.collect.Lists;
 import models.FeaturedModule;
 import models.Module;
 import models.ModuleVersion;
 import models.PlayVersion;
+import play.Logger;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
-
-import static controllers.AbstractController.createHistoricalEvent;
 
 /**
  * Selects the Featured Modules for the day
@@ -64,10 +62,7 @@ public class FeaturedModulesSelectionActor extends UntypedActor
                 fm.creationDate = new Date();
                 fm.save();
 
-                createHistoricalEvent("Selected new Featured Module - " + m.name,
-                        String.format("Module %s by %s added as a new ephemeral featured module",
-                                m.name,
-                                m.owner));
+                Logger.info(String.format("Module %s by %s added as a new ephemeral featured module", m.name, m.owner));
             }
         }
 

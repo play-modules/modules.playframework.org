@@ -54,8 +54,7 @@ public class Users extends AbstractController
             {
                 user.removeAdminRights();
 
-                createHistoricalEvent("Admin rights revoked - " + user.userName,
-                        String.format("%s (%s) revoked admin rights to user %s (%s)",
+                Logger.info(String.format("%s (%s) revoked admin rights to user %s (%s)",
                                 currentUser.displayName,
                                 currentUser.userName,
                                 user.displayName,
@@ -66,8 +65,7 @@ public class Users extends AbstractController
             {
                 user.giveAdminRights();
 
-                createHistoricalEvent("Admin rights given - " + user.userName,
-                        String.format("%s (%s) gave admin rights to user %s (%s)",
+                Logger.info(String.format("%s (%s) gave admin rights to user %s (%s)",
                                 currentUser.displayName,
                                 currentUser.userName,
                                 user.displayName,
