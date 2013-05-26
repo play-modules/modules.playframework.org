@@ -15,7 +15,6 @@
  */
 
 import actors.FeaturedModulesSelectionActor;
-import actors.FeedCreationActor;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
@@ -77,12 +76,6 @@ public class Global extends GlobalSettings
     public void scheduleJobs()
     {
         ActorSystem actorSystem = Akka.system();
-        // Create RSS feeds every hour
-        ActorRef feedCreationActor = actorSystem.actorOf(new Props(FeedCreationActor.class));
-        actorSystem.scheduler().schedule(Duration.create(0, TimeUnit.MILLISECONDS),
-                                           Duration.create(1, TimeUnit.HOURS),
-                                           feedCreationActor,
-                                           "generate");
 
         // Select featured modules daily
         ActorRef featuredModulesActor = actorSystem.actorOf(new Props(FeaturedModulesSelectionActor.class));

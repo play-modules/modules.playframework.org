@@ -19,9 +19,11 @@ import actions.CurrentUser;
 import models.*;
 import models.memory.Sitemap;
 import models.ss.ExternalAccount;
+import play.Logger;
 import play.cache.Cached;
 import play.mvc.Result;
 import play.mvc.With;
+import services.FeedServices;
 import services.SitemapServices;
 import views.html.index;
 import views.html.sitemap;
@@ -44,7 +46,8 @@ import static models.Module.findMostRecentModules;
  */
 @With(CurrentUser.class)
 public class Application extends AbstractController {
-    public static Result index() {
+    public static Result index()
+    {
         final List<Module> mostRecentModules1 = findMostRecentModules(5, PlayVersion.MajorVersion.ONE);
         final List<Module> mostRecentModules2 = findMostRecentModules(5, PlayVersion.MajorVersion.TWO);
         final List<Module> highestRatedModules1 = findHighestRatedModules(5, PlayVersion.MajorVersion.ONE);
@@ -71,17 +74,35 @@ public class Application extends AbstractController {
      * Cache entry is wiped when a new module is added so it is included on next request
      */
     @Cached(key = SitemapServices.SITEMAP_CACHE_KEY, duration = 24 * 60 * 60)
-    public static Result sitemap() {
+    public static Result sitemap()
+    {
         List<Sitemap> list = SitemapServices.generateSitemap(request());
         return ok(sitemap.render(list)).as("application/xml");
     }
+
+
+    public static Result getFeed(String type)
+    {
+        Result result;
+        try {
+            result = ok(FeedServices.generateFeed(type, request())).as(FeedServices.feedTypes.get(type));
+        }
+        catch(Exception ex)
+        {
+            Logger.error("Exception generating feeds", ex);
+            result = internalServerError();
+        }
+        return result;
+    }
+
 
     public static Result listUsers() {
         return ok(listUsers.render(currentUser(),
                 User.all()));
     }
 
-    public static Result viewAccount(String userName) {
+    public static Result viewAccount(String userName)
+    {
         Result result;
         User currentUser = currentUser();
         User user = User.getByUserName(userName);
@@ -107,7 +128,8 @@ public class Application extends AbstractController {
     }
 
     private static List<SocialActivity> getSocialActivities(User user,
-                                                            int limitTo) {
+                                                            int limitTo)
+    {
         List<SocialActivity> socialActivities = new ArrayList<SocialActivity>();
         socialActivities.addAll(user.rates);
         socialActivities.addAll(user.votes);

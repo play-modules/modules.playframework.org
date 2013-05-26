@@ -3,6 +3,9 @@ GET  /                       controllers.Application.index()
 # Sitemap
 GET  /sitemap.xml           controllers.Application.sitemap()
 
+# RSS feeds
+GET  /feed/:feedType            controllers.Application.getFeed(feedType: String)
+
 # User accounts
 GET /user/all                 controllers.Application.listUsers()
 GET /user/i/:userName         controllers.Application.viewAccount(userName)

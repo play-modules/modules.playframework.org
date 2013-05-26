@@ -1,6 +1,7 @@
 package actors;
 
 import akka.actor.UntypedActor;
+import controllers.AbstractController;
 import models.FeaturedModule;
 import models.Module;
 import models.ModuleVersion;
@@ -62,7 +63,11 @@ public class FeaturedModulesSelectionActor extends UntypedActor
                 fm.creationDate = new Date();
                 fm.save();
 
-                Logger.info(String.format("Module %s by %s added as a new ephemeral featured module", m.name, m.owner));
+                String msg = String.format("Module %s by %s added as a new featured module", m.name, m.owner);
+                Logger.info(msg);
+                AbstractController.createHistoricalEvent("Module featured - " + m.name,
+                        msg,
+                        m.key);
             }
         }
 

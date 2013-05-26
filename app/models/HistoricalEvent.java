@@ -36,6 +36,9 @@ public class HistoricalEvent extends AbstractModel
             nullable = false)
     public String message;
 
+    @Column(nullable = false)
+    public String moduleKey;
+
     public static final Finder<Long, HistoricalEvent> FIND = new Finder<Long, HistoricalEvent>(Long.class,
                                                                                                HistoricalEvent.class);
 

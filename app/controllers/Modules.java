@@ -87,7 +87,8 @@ public class Modules extends AbstractController
                                   String.format("%s (%s) created a new module - %s",
                                                 user.displayName,
                                                 user.userName,
-                                                module.name));
+                                                module.name),
+                                  module.key);
 
             // We clean the cached result for sitemaps as we have a new entry
             Cache.set(SitemapServices.SITEMAP_CACHE_KEY, null, 0);
@@ -133,7 +134,8 @@ public class Modules extends AbstractController
                     String.format("%s (%s) updated module - %s",
                             user.displayName,
                             user.userName,
-                            module.name));
+                            module.name),
+                    module.key);
 
             // We clean the cached result for sitemaps as we have a new entry
             Cache.set(SitemapServices.SITEMAP_CACHE_KEY, null, 0);
@@ -190,7 +192,8 @@ public class Modules extends AbstractController
                                                 user.displayName,
                                                 user.userName,
                                                 moduleVersion.versionCode,
-                                                moduleVersion.playModule.name));
+                                                moduleVersion.playModule.name),
+                                  moduleVersion.playModule.key);
 
             result = redirect(routes.Modules.showVersionManagement(moduleKey));
         }
@@ -241,7 +244,8 @@ public class Modules extends AbstractController
                                     user.displayName,
                                     user.userName,
                                     version.versionCode,
-                                    version.playModule.name));
+                                    version.playModule.name),
+                            version.playModule.key);
 
                     // return id to hide row
                     ObjectNode node = Json.newObject();

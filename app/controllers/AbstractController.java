@@ -32,7 +32,8 @@ import java.util.Date;
 public class AbstractController extends Controller
 {
     public static void createHistoricalEvent(String category,
-                                             String message)
+                                             String message,
+                                             String moduleKey)
     {
         Logger.info("[%s] %s".format(category, message));
 
@@ -40,6 +41,7 @@ public class AbstractController extends Controller
         historicalEvent.creationDate = new Date();
         historicalEvent.category = category;
         historicalEvent.message = message;
+        historicalEvent.moduleKey = moduleKey;
 
         ActorSystem actorSystem = Akka.system();
         ActorRef actor = actorSystem.actorOf(new Props(HistoricalEventActor.class));

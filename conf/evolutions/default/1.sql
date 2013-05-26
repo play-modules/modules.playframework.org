@@ -66,6 +66,7 @@ create table historical_event (
   creation_date             timestamp not null,
   category                  varchar(255) not null,
   message                   varchar(1000) not null,
+  module_key                varchar(255) not null,
   constraint pk_historical_event primary key (id))
 ;
 

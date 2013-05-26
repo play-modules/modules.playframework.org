@@ -17,6 +17,7 @@ package actors;
 
 import akka.actor.UntypedActor;
 import models.HistoricalEvent;
+import services.FeedServices;
 
 /**
  * @author Steve Chaloner (steve@objectify.be)
@@ -29,6 +30,8 @@ public class HistoricalEventActor extends UntypedActor
         if (o instanceof HistoricalEvent)
         {
             ((HistoricalEvent)o).save();
+            // we ensure the changes propagate to feeds
+            FeedServices.clearCachedFeeds();
         }
     }
 }
