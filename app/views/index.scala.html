@@ -62,20 +62,18 @@ moduleCount: Int)
     </style>
 }
 
-@featureList(title: String, moduleAccessors: List[_ <: ModuleAccessor]) = {
+@featureList(title: String, moduleAccessors: List[Module]) = {
     <h2> @title </h2>
     <table class="table table-striped">
         <tbody>
-            @for(accessor <- moduleAccessors) {
-                @defining(accessor.getModule()) { module =>
-                    <tr>
-                        <td>
-                            <a href="@routes.Modules.details(module.key)"> @module.name </a>
-                            <br/>
-                                by @module.owner.displayName
-                        </td>
-                    </tr>
-                }
+            @for(module <- moduleAccessors) {
+                <tr>
+                    <td>
+                        <a href="@routes.Modules.details(module.key)"> @module.name </a>
+                        <br/>
+                            by @module.owner.displayName
+                    </td>
+                </tr>
             }
         </tbody>
     </table>
@@ -104,9 +102,9 @@ moduleCount: Int)
                 <h2> Contribute </h2>
                 <p>
                         Modules feeds:
-                    <a href='@routes.Application.getFeed(services.FeedServices.ATOM)'> <img src="@routes.Assets.at("images/feed-icon-14x14.png")"> &nbsp;Atom 1.0 </a>
-                    <a href='@routes.Application.getFeed(services.FeedServices.RSS1)'> <img src="@routes.Assets.at("images/feed-icon-14x14.png")"> &nbsp;RSS 1.0 </a>
-                    <a href='@routes.Application.getFeed(services.FeedServices.RSS2)'> <img src="@routes.Assets.at("images/feed-icon-14x14.png")"> &nbsp;RSS 2.0 </a>
+                    <a href='@routes.Application.getFeed(services.FeedServices.ATOM)'> <img src="@routes.Assets.at("images/feed-icon-14x14.png")"> Atom 1.0&nbsp; </a>
+                    <a href='@routes.Application.getFeed(services.FeedServices.RSS1)'> <img src="@routes.Assets.at("images/feed-icon-14x14.png")"> RSS 1.0&nbsp; </a>
+                    <a href='@routes.Application.getFeed(services.FeedServices.RSS2)'> <img src="@routes.Assets.at("images/feed-icon-14x14.png")"> RSS 2.0&nbsp; </a>
 
                 </p>
                 <a href="@if(currentUser == null) {

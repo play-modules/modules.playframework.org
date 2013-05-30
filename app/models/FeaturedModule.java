@@ -85,6 +85,7 @@ public class FeaturedModule extends AbstractModel implements ModuleAccessor
                 .in("playModule.versions.compatibility", versions)
                 .query()
                 .fetch("playModule")
+                .fetch("playModule.owner")
                 .findList();
         return newArrayList(newHashSet(transform(featuredModules, toModules())));
     }
