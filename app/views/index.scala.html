@@ -104,9 +104,10 @@ moduleCount: Int)
                 <h2> Contribute </h2>
                 <p>
                         Modules feeds:
-                    <a href='@routes.Assets.at("feeds/mpo.atom.xml")'> <img src="@routes.Assets.at("images/feed-icon-14x14.png")"> &nbsp;Atom 1.0 </a>,
-                    <a href='@routes.Assets.at("feeds/mpo.rss1.xml")'> <img src="@routes.Assets.at("images/feed-icon-14x14.png")"> &nbsp;RSS 1.0 </a>,
-                    <a href='@routes.Assets.at("feeds/mpo.rss2.xml")'> <img src="@routes.Assets.at("images/feed-icon-14x14.png")"> &nbsp;RSS 2.0 </a>
+                    <a href='@routes.Application.getFeed(services.FeedServices.ATOM)'> <img src="@routes.Assets.at("images/feed-icon-14x14.png")"> &nbsp;Atom 1.0 </a>
+                    <a href='@routes.Application.getFeed(services.FeedServices.RSS1)'> <img src="@routes.Assets.at("images/feed-icon-14x14.png")"> &nbsp;RSS 1.0 </a>
+                    <a href='@routes.Application.getFeed(services.FeedServices.RSS2)'> <img src="@routes.Assets.at("images/feed-icon-14x14.png")"> &nbsp;RSS 2.0 </a>
+
                 </p>
                 <a href="@if(currentUser == null) {
                     @securesocial.controllers.routes.LoginPage.login
