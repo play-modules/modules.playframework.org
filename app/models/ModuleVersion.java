@@ -46,6 +46,7 @@ public class ModuleVersion extends AbstractModel {
 
     @Column(nullable = false)
     @Constraints.Required
+    @Constraints.MaxLength(255)
     public String releaseNotes;
 
     @Column(nullable = false)

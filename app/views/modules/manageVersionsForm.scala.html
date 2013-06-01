@@ -30,8 +30,8 @@
             <h4>Add new version</h4>
             @helper.form(routes.Modules.uploadNewVersion(module.key)) {
 
-                @helper.inputText(versions("versionCode"))
-                @helper.textarea(versions("releaseNotes"))
+                @helper.inputText(versions("versionCode"), 'style -> "height: 24px;")
+                @helper.inputText(versions("releaseNotes"), 'maxLength -> 255, 'style -> "height: 24px;")
 
                 <div class="control-group">
                     <label class="control-label"><strong>Compatibility</strong></label>
@@ -47,20 +47,33 @@
                 <div class="control-group">
                     <div class="controls">
                         <a href="@routes.Modules.myModules()" class="btn">Cancel</a>
-                        <button type="submit" class="btn btn-success">Add</button>
+                        <input id="addVersion" type="submit" disabled="disabled" class="btn btn-success" value="Add"/>
                     </div>
                 </div>
+                <script>
+                    $(function(){
+                        var checkSubmit = function() {
+                            var n = $( "input:checked" ).length;
+                            if(n > 0) {
+                                $("#addVersion").removeAttr('disabled');
+                            } else {
+                                $("#addVersion").attr('disabled', 'disabled');
+                            }
+                        };
+                        $("input[type=checkbox]").on("click", checkSubmit);
+                    });
+                </script>
             }
         </div>
     </div>
     <div class="span8">
-        <table class="table table-striped">
+        <table class="table table-striped" style="table-layout: fixed;">
             <thead>
                 <tr>
-                    <th>Version</th>
-                    <th>Release date</th>
-                    <th>Release notes</th>
-                    <th>Compatible with</th>
+                    <th style="width: 15%">Version</th>
+                    <th style="width: 15%">Release date</th>
+                    <th style="width: 40%">Release notes link</th>
+                    <th style="width: 30%">Compatible with</th>
                 </tr>
             </thead>
             <tbody>
@@ -68,7 +81,7 @@
                     <tr class="releaseRow versionItem-@version.id">
                         <td>@(if(version.versionCode == "0") "head" else version.versionCode)</td>
                         <td>@(if(version.releaseDate != null) version.releaseDate.format("dd-MM-yyyy"))</td>
-                        <td>@version.releaseNotes</td>
+                        <td style="overflow: hidden;">@version.releaseNotes</td>
                         <td>
                             @for(compatible <- version.compatibility) {
                                 <span class="lineList">[@compatible.name]&nbsp;</span>
