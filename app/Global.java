@@ -31,6 +31,7 @@ import models.UserRole;
 import play.Application;
 import play.GlobalSettings;
 import play.Logger;
+import play.Play;
 import play.libs.Akka;
 import play.libs.Yaml;
 import security.RoleDefinitions;
@@ -49,9 +50,6 @@ public class Global extends GlobalSettings
     @Override
     public void onStart(Application application)
     {
-        // Add code or TODOs here for startup behaviour
-        // I'll add this to the wiki later
-        // this space for rent
 
         if (UserRole.findByRoleName(RoleDefinitions.ADMIN) == null)
         {
@@ -68,7 +66,11 @@ public class Global extends GlobalSettings
             role.save();
         }
 
-        loadInitialData();
+        // Load data only on dev or test mode, to avoid filling the db with useless data
+        if(!Play.isProd())
+        {
+            loadInitialData();
+        }
 
         scheduleJobs();
     }
