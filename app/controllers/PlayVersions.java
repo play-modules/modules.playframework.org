@@ -56,6 +56,7 @@ public class PlayVersions extends AbstractController
         else
         {
             PlayVersion playVersion = form.get();
+            playVersion.name = playVersion.name.trim();
             playVersion.majorVersion = getMajorVersion(playVersion);
             playVersion.save();
             result = redirect(routes.PlayVersions.showPlayVersions());
@@ -75,7 +76,7 @@ public class PlayVersions extends AbstractController
         {
             PlayVersion incoming = form.get();
             PlayVersion storedVersion = PlayVersion.FIND.byId(incoming.id);
-            storedVersion.name = incoming.name;
+            storedVersion.name = incoming.name.trim();
             storedVersion.documentationUrl = incoming.documentationUrl;
             storedVersion.majorVersion = getMajorVersion(storedVersion);
             storedVersion.save();

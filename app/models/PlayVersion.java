@@ -68,7 +68,7 @@ public class PlayVersion extends AbstractModel {
 
     public static PlayVersion findByName(String name) {
         return FIND.where()
-                .eq("name", name)
+                .eq("name", name.trim())
                 .findUnique();
     }
 
@@ -80,7 +80,7 @@ public class PlayVersion extends AbstractModel {
      */
     public static List<PlayVersion> findByLooseName(String name) {
         return FIND.where()
-                .startsWith("name", name)
+                .startsWith("name", name.trim())
                 .findList();
     }
 

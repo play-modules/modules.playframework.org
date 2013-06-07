@@ -53,7 +53,7 @@ public class Category extends AbstractModel {
 
     public static Category findByName(String name) {
         return FIND.where()
-                .eq("name", name)
+                .eq("name", name.trim())
                 .findUnique();
     }
 }

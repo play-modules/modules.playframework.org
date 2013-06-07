@@ -59,6 +59,7 @@ public class Categories extends AbstractController
         else
         {
             Category category = form.get();
+            category.name = category.name.trim();
             category.save();
             result = redirect(routes.Categories.showCategories());
         }

@@ -32,7 +32,7 @@ public class Tag extends AbstractModel {
 
     public static Tag findByName(String name) {
         return FIND.where()
-                .eq("name", name)
+                .eq("name", name.trim())
                 .findUnique();
     }
 }

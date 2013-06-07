@@ -79,6 +79,8 @@ public class Modules extends AbstractController
         else
         {
             Module module = form.get();
+            module.key = module.key.trim(); // there were issues with spaces on the module key
+            module.name = module.name.trim();
             module.owner = user;
             module.rating = new Rating(true);
             module.save();
@@ -121,7 +123,7 @@ public class Modules extends AbstractController
         {
             Module module = form.get();
             Module original = Module.findByModuleKey(moduleKey);
-            original.name = module.name;
+            original.name = module.name.trim();
             original.organisation = module.organisation;
             original.summary = module.summary;
             original.description = module.description;

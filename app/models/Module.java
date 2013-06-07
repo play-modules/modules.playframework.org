@@ -135,7 +135,7 @@ public class Module extends AbstractModel implements Comparable<Module>, ModuleA
     }
 
     public static Module findByModuleKey(String moduleKey) {
-        return FIND.fetch("owner").where().eq("key", moduleKey).findUnique();
+        return FIND.fetch("owner").where().eq("key", moduleKey.trim()).findUnique();
     }
 
     public static Map<String, String> options() {

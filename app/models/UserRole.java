@@ -50,7 +50,7 @@ public class UserRole extends Model implements Role
     {
         return FIND.where()
                    .eq("roleName",
-                       roleName)
+                       roleName.trim())
                    .findUnique();
 
     }

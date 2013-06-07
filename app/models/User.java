@@ -71,7 +71,7 @@ public class User extends AbstractModel implements RoleHolder
     public static User getByUserName(String userName)
     {
         return FIND.where()
-                   .eq("userName", userName)
+                   .eq("userName", userName.trim())
                    .findUnique();
     }
 
